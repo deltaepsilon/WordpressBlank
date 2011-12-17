@@ -343,6 +343,8 @@ ol.commentlist,
   padding: 25px;
   width: 609px;
   border-bottom: 1px dotted #75726c;
+  position: relative;
+  overflow: hidden;
 }
 .post-banner {
   margin: 14px 0 14px -25px;
@@ -355,6 +357,12 @@ ol.commentlist,
 }
 .entry {
   padding: 5px 0;
+}
+.postmetadata ul {
+  display: inline-block;
+  margin: 15px 0 -20px;
+  position: relative;
+  width: 100%;
 }
 .postmetadata span {
   display: inline-block;
@@ -395,6 +403,24 @@ ol.commentlist,
 }
 .comment-body p {
   margin-top: 10px;
+}
+#archives-title {
+  display: inline-block;
+  font-size: 20px;
+  margin-top: 100px;
+  text-transform: uppercase;
+  width: 100%;
+}
+.first-image {
+  float: left;
+  height: 200px;
+  margin-right: 25px;
+  width: 250px;
+}
+.truncated-text {
+  display: inline-block;
+  float: left;
+  width: 250px;
 }
 #search-results-title {
   margin: 0 0 0 50px;

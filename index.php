@@ -1,7 +1,11 @@
-<?php get_header(); ?>
-	
+<?php 
+	get_header(); 
+	$counter = 0;
+	$featuredPostCount = 1;
+	$truncateLength = 450;
+?>
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
+		<?php $counter ++; ?>
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			
 			<?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
@@ -11,13 +15,39 @@
 			
 
 			<div class="entry">
-				<?php the_content(); ?>
+				<?php
+				 if ($counter <= $featuredPostCount) {
+				 	the_content();
+				 }
+				 else {
+				 	$contents =	$post->post_content;
+					preg_match('/<img.+?>/', $contents, $images);
+					preg_match('/http:.+?\.(jpg|jpeg|gif|png)/', $images[0], $link);
+					// echo print_r($link);
+					$firstImagePath = $link[0];
+					$truncatedText = substr(preg_replace('/<.+?>/', '', $contents), 0, $truncateLength);
+					if(!empty($firstImagePath)) {
+						echo "<div class=\"first-image\" style=\"background-image: url($firstImagePath);\"></div>";
+					}
+					if(!empty($truncatedText)) {
+						echo $truncatedText.'...';
+					}
+					 
+				 }
+				 
+				 ?>
 			</div>
 
 			<div class="postmetadata">
 				<ul>
-					<li class="share-popup"><a href="#">share</a></li>
-					<li class="comment-count"><?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?></li>
+					<?php
+						if ($counter <= $featuredPostCount) {
+						 	echo "<li class=\"share-popup\"><a href=\"#\">share</a></li>";
+							echo '<li class="comment-count">';
+							comments_popup_link('No Comments', '1 Comment', '% Comments');
+							echo '</li>';
+						 }
+					?>
 					<li class="read-more-image"><a href="<?php the_permalink() ?>"><div class="read-more"></div></a></li>
 				</ul>
 				<span></span>
@@ -26,7 +56,13 @@
 					Posted in: <?php the_category(', ') ?>
 				</div>
 			</div>
-
+			<?php
+				if ($counter == $featuredPostCount) {
+				 	echo '<div id="archives-title"><a href="'.get_month_link(2012, 12).'">archives: ';
+				 	the_time('F');
+				 	echo '</a></div>';
+				 }
+			?>
 		</div>
 
 	<?php endwhile; ?>

@@ -60,7 +60,7 @@
 					<li><a href="facebook.com"><div class="facebook"></div></a></li>
 					<li><a href="facebook.com"><div class="twitter"></div></a></li>
 					<li><a href="facebook.com"><div class="pinterest"></div></a></li>
-					<li><a href="/?feed=rss2"><div class="rss"></div></a></li>
+					<li><a href="<?php bloginfo('rss2_url'); ?>"><div class="rss"></div></a></li>
 					<li><a href="facebook.com"><div class="email"></div></a></li>
 					<li><a href="facebook.com"><div class="shopping-cart"></div></a></li>
 				</ul> 
