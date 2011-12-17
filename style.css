@@ -1,10 +1,10 @@
 /*   
-Theme Name: Sweet Muffin Suite
-Theme URI: http://sweetmuffinsuite.com
-Description: Designed by Pauline Grayson (AKA MUFFIN!) -- WordPress v3.3
-Author: Christopher Esplin
-Author URI: http://christopheresplin.com
-Version: 1.0
+Theme Name: BLANK Theme
+Theme URI: http://digwp.com
+Description: This is just a BLANK starter WordPress Theme template -- WordPress v2.9.1
+Author: Chris Coyier
+Author URI: http://chriscoyier.net
+Version: 1
 */
 @media screen {
   * {
@@ -348,9 +348,9 @@ ol.commentlist,
   margin: 14px 0 14px -25px;
 }
 .post-banner h2 {
-  font-size: 18pt;
-  letter-spacing: 3px;
-  padding: 5px 0 0 25px;
+  font-size: 13pt;
+  letter-spacing: 2px;
+  padding: 10px 0 0 10px;
   text-transform: uppercase;
 }
 .entry {
@@ -399,6 +399,24 @@ ol.commentlist,
 #search-results-title {
   margin: 0 0 0 50px;
   padding-top: 25px;
+}
+.stripe-right {
+  background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png);
+  background-position: -922px -8px;
+  width: 31px;
+  height: 261px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.stripe-left {
+  background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png);
+  background-position: -962px -8px;
+  width: 32px;
+  height: 261px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }
 /*	Sprites		*/
 .facebook {
