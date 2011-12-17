@@ -58,7 +58,7 @@
 			</div>
 			<?php
 				if ($counter == $featuredPostCount) {
-				 	echo '<div id="archives-title"><a href="'.get_month_link(2012, 12).'">archives: ';
+				 	echo '<div id="month-archives-title"><a href="'.get_month_link('', '').'">archives: ';
 				 	the_time('F');
 				 	echo '</a></div>';
 				 }

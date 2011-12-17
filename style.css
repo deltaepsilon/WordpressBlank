@@ -308,6 +308,7 @@ li#my-work {
 #s {
   border: 2px solid #75726c;
   height: 25px;
+  width: 261px;
   vertical-align: bottom;
 }
 .widget_archive h2 {
@@ -378,7 +379,7 @@ ol.commentlist,
   text-transform: uppercase;
 }
 .share-popup {
-  padding-right: 200px;
+  padding-right: 120px;
 }
 .share-popup, .comment-count {
   float: left;
@@ -406,7 +407,7 @@ ol.commentlist,
 .comment-body p {
   margin-top: 10px;
 }
-#archives-title {
+#month-archives-title {
   display: inline-block;
   font-size: 20px;
   margin-top: 100px;
@@ -445,6 +446,9 @@ ol.commentlist,
   top: 10px;
   width: 33px;
   left: -15px;
+}
+#archive-title {
+  padding: 25px 0 0 50px;
 }
 /*	Sprites		*/
 .facebook {
