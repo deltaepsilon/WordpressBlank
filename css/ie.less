@@ -133,59 +133,136 @@ a { text-decoration: none; color: black; }
 /* Custom Muffin Stylee */
 @pageWidth: 1110px;
 @marginTop: 20px;
+@sidePadding: 50px;
+
+@white: hsla(0, 0%, 100%, 1);
+@gray: hsla(40, 4%, 44%, 1);
+
+@dashedLine: thin dashed @gray;
 
 @font-face {
     font-family: 'FuturaStdBold';
-    src: url('futura/futurastd-bold-webfont.eot');
-    src: url('futura/futurastd-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('futura/futurastd-bold-webfont.woff') format('woff'),
-         url('futura/futurastd-bold-webfont.ttf') format('truetype'),
-         url('futura/futurastd-bold-webfont.svg#FuturaStdBold') format('svg');
+    src: url('/wp-content/themes/muffin/css/FuturaStd-Book.otf');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
-    font-family: 'FuturaStdBold';
-    src: url('FuturaStd-Book.otf');
+    font-family: 'MrsEavesItalic';
+    src: url('/wp-content/themes/muffin/css/MrsEavesItalic.ttf');
     font-weight: normal;
     font-style: normal;
 }
 
 body {
-	background: ;
+	background: repeat url(/wp-content/themes/muffin/images/muffin-background.png);
 	font-family: FuturaStdBold, Helvetica, Arial, sans-serif;
+	margin-top: -10px;
+}
+a, a:visited {
+	text-decoration: none;
+	color: @gray;
+}
+#header {
+	position: relative;
+	margin: 75px 0 50px;
+}
+#header-image {
+	margin: 0px auto;
+}
+#header div.see-my-work {
+	position: absolute;
+    right: -40px;
+    top: 15px;
+    z-index: 10;
+}
+#header div.shop-badge {
+	position: absolute;
+    right: -65px;
+    top: 95px;
 }
 #page-wrap {
-	margin: @marginTop auto;
-	width: @pageWidth
+	margin: 0px auto;
+	padding: 40px 0 0 0;
+	width: @pageWidth;
+	background: @white;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.58);
+    -moz-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.58);
+    -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.58);
 }
-
+#social-buttons {
+	position: absolute;
+    right: 75px;
+    top: -65px;
+    width: 220px;
+}
+#social-buttons ul li {
+	display: inline;
+	list-style-type: none;
+	padding-right: 5px;
+	float: left;
+}
+#social-buttons div.find-me-here {
+	margin: 8px auto;
+} 
+#top-links {
+	border-bottom: @dashedLine;
+    border-top: @dashedLine;
+    overflow: hidden;
+    padding: 10px 100px;
+    text-transform: uppercase;
+    margin: 0 @sidePadding;
+}
+#top-links ul li{
+	display: inline;
+	list-style-type: none;
+	padding-right: 30px;
+	float: left;
+}
+li#my-work {
+	padding-right: 60px;
+}
+.post {
+    margin: 0 0 0 @sidePadding;
+    padding: 25px 25px 25px 0;
+}
+#sidebar {
+	position: absolute;
+    right: 156px;
+    top: 469px;
+    border-left: @dashedLine;
+}
+.widget {
+	padding: 25px 20px;
+	border-top: @dashedLine;
+}
+.widget_search {
+	border-top: none;
+}
 /*	Sprites		*/
-.facebook { background-position: -7px -37px; width: 31px; height: 32px; }
-.twitter { background-position: -43px -37px; width: 32px; height: 32px; }
-.pinterest { background-position: -80px -37px; width: 32px; height: 32px; }
-.rss { background-position: -117px -37px; width: 32px; height: 32px; }
-.email { background-position: -154px -37px; width: 31px; height: 32px; }
-.shopping-cart { background-position: -190px -37px; width: 32px; height: 32px; }
-.find-me-here { background-position: -68px -6px; width: 92px; height: 22px; }
-.post-banner { background-position: -273px -3px; width: 329px; height: 49px; }
-.read-more { background-position: -624px -9px; width: 185px; height: 22px; }
-.go-button { background-position: -879px -13px; width: 34px; height: 30px; }
-.stripe-right { background-position: -922px -8px; width: 31px; height: 261px; }
-.stripe-left { background-position: -962px -8px; width: 32px; height: 261px; }
-.see-my-work { background-position: -29px -92px; width: 121px; height: 121px; }
-.shop-badge { background-position: -174px -110px; width: 97px; height: 97px; }
-.sponsors-banner { background-position: -295px -59px; width: 256px; height: 80px; }
-.categories-banner { background-position: -604px -60px; width: 244px; height: 80px; }
-.archives-banner { background-position: -309px -160px; width: 247px; height: 87px; }
-.copyright-banner { background-position: -622px -156px; width: 270px; height: 86px; }
-.sweet-muffin-small { background-position: -13px -223px; width: 302px; height: 156px; }
-.sponsor-me-large { background-position: -338px -283px; width: 302px; height: 146px; }
-.sponsor-me-small { background-position: -647px -284px; width: 146px; height: 146px; }
-.show-the-love { background-position: -52px -391px; width: 236px; height: 23px; }
-.sweet-muffin-large { background-position: -15px -442px; width: 953px; height: 247px; }
+.facebook { background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png); background-position: -7px -37px; width: 31px; height: 32px; }
+.twitter { background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png); background-position: -43px -37px; width: 32px; height: 32px; }
+.pinterest { background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png); background-position: -80px -37px; width: 32px; height: 32px; }
+.rss { background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png); background-position: -117px -37px; width: 32px; height: 32px; }
+.email { background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png); background-position: -154px -37px; width: 31px; height: 32px; }
+.shopping-cart { background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png); background-position: -190px -37px; width: 32px; height: 32px; }
+.find-me-here { background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png); background-position: -68px -6px; width: 92px; height: 22px; }
+.post-banner { background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png); background-position: -273px -3px; width: 329px; height: 49px; }
+.read-more { background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png); background-position: -624px -9px; width: 185px; height: 22px; }
+.go-button { background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png); background-position: -879px -13px; width: 34px; height: 30px; }
+.stripe-right { background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png); background-position: -922px -8px; width: 31px; height: 261px; }
+.stripe-left { background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png); background-position: -962px -8px; width: 32px; height: 261px; }
+.see-my-work { background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png); background-position: -29px -92px; width: 121px; height: 121px; }
+.shop-badge { background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png); background-position: -174px -110px; width: 97px; height: 97px; }
+.sponsors-banner { background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png); background-position: -295px -59px; width: 256px; height: 80px; }
+.categories-banner { background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png); background-position: -604px -60px; width: 244px; height: 80px; }
+.archives-banner { background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png); background-position: -309px -160px; width: 247px; height: 87px; }
+.copyright-banner { background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png); background-position: -622px -156px; width: 270px; height: 86px; }
+.sweet-muffin-small { background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png); background-position: -13px -223px; width: 302px; height: 156px; }
+.sponsor-me-large { background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png); background-position: -338px -283px; width: 302px; height: 146px; }
+.sponsor-me-small { background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png); background-position: -647px -284px; width: 146px; height: 146px; }
+.show-the-love { background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png); background-position: -52px -391px; width: 236px; height: 23px; }
+.sweet-muffin-large { background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png); background-position: -15px -442px; width: 953px; height: 247px; }
 
 
 
