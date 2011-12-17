@@ -49,8 +49,8 @@
 	<div id="page-wrap">
 
 		<div id="header">
-			<h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
-			<div class="description"><?php bloginfo('description'); ?></div>
+			<!-- <h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1> -->
+			<!-- <div class="description"><?php bloginfo('description'); ?></div> -->
 			<a href="/"><div id="header-image" class="sweet-muffin-large"></div></a>
 			<div id="social-buttons">
 				<div class="find-me-here"></div>
