@@ -35,6 +35,7 @@
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 	
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
+	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>/css/ie.css" type="text/css" />
 	
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
