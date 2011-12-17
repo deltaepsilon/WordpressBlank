@@ -47,10 +47,9 @@
 <body <?php body_class(); ?>>
 	
 	<div id="page-wrap">
-		
+		<div class="stripe-left"></div>
+		<div class="stripe-right"></div>		
 		<div id="header">
-			<div class="stripe-left"></div>
-			<div class="stripe-right"></div>
 			<!-- <h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1> -->
 			<!-- <div class="description"><?php bloginfo('description'); ?></div> -->
 			<a href="/"><div id="header-image" class="sweet-muffin-large"></div></a>

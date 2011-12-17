@@ -1,7 +1,7 @@
 <?php 
 	get_header(); 
 	$counter = 0;
-	$featuredPostCount = 1;
+	$featuredPostCount = 2;
 	$truncateLength = 450;
 ?>
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>

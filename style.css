@@ -229,6 +229,7 @@ a, a:visited {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.58);
   -moz-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.58);
   -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.58);
+  position: relative;
 }
 #social-buttons {
   position: absolute;
@@ -264,10 +265,11 @@ li#my-work {
 }
 #sidebar {
   position: absolute;
-  right: 156px;
-  top: 471px;
   border-left: 1px dotted #75726c;
   width: 250;
+  right: 49px;
+  top: 454px;
+  bottom: 0px;
 }
 .sidebar-banner {
   margin: 0 auto 20px;
@@ -427,22 +429,22 @@ ol.commentlist,
   padding-top: 25px;
 }
 .stripe-right {
-  background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png);
-  background-position: -922px -8px;
-  width: 31px;
-  height: 261px;
+  background-image: url(/wp-content/themes/muffin/images/muffin-right-stripe.png);
+  background-repeat: repeat-y;
+  bottom: 0;
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 310px;
+  width: 33px;
+  right: -15px;
 }
 .stripe-left {
-  background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png);
-  background-position: -962px -8px;
-  width: 32px;
-  height: 261px;
+  background-image: url(/wp-content/themes/muffin/images/muffin-left-stripe.png);
+  background-repeat: repeat-y;
+  bottom: 0;
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 10px;
+  width: 33px;
+  left: -15px;
 }
 /*	Sprites		*/
 .facebook {
@@ -505,18 +507,8 @@ ol.commentlist,
   width: 34px;
   height: 30px;
 }
-.stripe-right {
-  background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png);
-  background-position: -922px -8px;
-  width: 31px;
-  height: 261px;
-}
-.stripe-left {
-  background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png);
-  background-position: -962px -8px;
-  width: 32px;
-  height: 261px;
-}
+/*.stripe-right { background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png); background-position: -922px -8px; width: 31px; height: 261px; }
+.stripe-left { background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png); background-position: -962px -8px; width: 32px; height: 261px; }*/
 .see-my-work {
   background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png);
   background-position: -29px -92px;
