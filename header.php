@@ -51,7 +51,7 @@
 		<div id="header">
 			<h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
 			<div class="description"><?php bloginfo('description'); ?></div>
-			<div id="header-image" class="sweet-muffin-large"></div>
+			<a href="/"><div id="header-image" class="sweet-muffin-large"></div></a>
 			<div id="social-buttons">
 				<div class="find-me-here"></div>
 				<ul>
@@ -66,4 +66,14 @@
 			<div class="see-my-work"></div>
 			<div class="shop-badge"></div>
 		</div>
-
+		<div id="top-links">
+			<ul>
+				<li id="about-me"><a href="/about-me">about me</a></li>
+				<li id="contact"><a href="/contact">contact</a></li>
+				<li id="my-work" style="padding-right: 150px;"><a href="/my-work">my work</a></li>
+				<li id="freebies"><a href="/freebies">freebies</a></li>
+				<li id="tutorial"><a href="tutorial">tutorials</a></li>
+				<li id="books"><a href="/books">books</a></li>
+				<li id="shop"><a href="/shop">shop</a></li>
+			</ul>
+		</div>

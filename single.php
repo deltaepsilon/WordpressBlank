@@ -4,10 +4,10 @@
 
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			
-			<h2><?php the_title(); ?></h2>
-			
 			<?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
-
+			
+			<div class="post-banner"><h2><?php the_title(); ?></h2></div>
+			
 			<div class="entry">
 				
 				<?php the_content(); ?>

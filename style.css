@@ -196,6 +196,7 @@ body {
   background: repeat url(/wp-content/themes/muffin/images/muffin-background.png);
   font-family: FuturaStdBold, Helvetica, Arial, sans-serif;
   margin-top: -10px;
+  color: #75726c;
 }
 a, a:visited {
   text-decoration: none;
@@ -223,7 +224,7 @@ a, a:visited {
   margin: 0px auto;
   padding: 40px 0 0 0;
   width: 1110px;
-  min-height: 1200px;
+  min-height: 3000px;
   background: #ffffff;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.58);
   -moz-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.58);
@@ -245,8 +246,8 @@ a, a:visited {
   margin: 8px auto;
 }
 #top-links {
-  border-bottom: thin dashed #75726c;
-  border-top: thin dashed #75726c;
+  border-bottom: 1px dotted #75726c;
+  border-top: 1px dotted #75726c;
   overflow: hidden;
   padding: 10px 100px;
   text-transform: uppercase;
@@ -264,21 +265,84 @@ li#my-work {
 #sidebar {
   position: absolute;
   right: 156px;
-  top: 469px;
-  border-left: thin dashed #75726c;
+  top: 471px;
+  border-left: 1px dotted #75726c;
+  width: 250;
+}
+.sidebar-banner {
+  margin: 0 auto 20px;
+}
+.widget_text ul {
+  font-size: 20px;
+  margin: 0 0 0 25px;
+  list-style: none;
+}
+.widget_text li:before {
+  /*	content: "&middot;";*/
+
+  content: ".";
+  color: #75726c;
 }
 .widget {
   padding: 25px 20px;
-  border-top: thin dashed #75726c;
+  border-top: 1px dotted #75726c;
+}
+.widget h2 {
+  text-transform: uppercase;
+  color: #75726c;
+  font-size: 16px;
 }
 .widget_search {
   border-top: none;
 }
-.post {
+#searchsubmit {
+  background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png);
+  background-position: -879px -13px;
+  width: 34px;
+  height: 30px;
+  font-size: 0;
+  border: none;
+}
+#s {
+  border: 2px solid #75726c;
+  height: 25px;
+  vertical-align: bottom;
+}
+.widget_archive h2 {
+  background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png);
+  background-position: -309px -160px;
+  width: 247px;
+  height: 87px;
+  font-size: 0;
+  margin: 0 auto 20px;
+}
+#sponsors-sidebar {
+  overflow: hidden;
+}
+#sponsors-sidebar a {
+  float: left;
+  margin: 4px;
+  loat: left;
+}
+#etsy-sidebar {
+  margin: auto;
+  text-align: center;
+  width: 200px;
+}
+#copyright-sidebar {
+  color: #75726c;
+  /*font-family: MrsEavesItalic;
+	font-size: 28px;*/
+
+}
+.post,
+ol.commentlist,
+#respond,
+#page-404 {
   margin: 0 0 0 50px;
   padding: 25px;
-  width: 705px;
-  border-bottom: thin dashed #75726c;
+  width: 609px;
+  border-bottom: 1px dotted #75726c;
 }
 .post-banner {
   margin: 14px 0 14px -25px;
@@ -321,6 +385,20 @@ li#my-work {
 }
 .posted-in a, .posted-in a:visited {
   color: #00a87e;
+}
+#comments {
+  margin: 0 0 0 50px;
+  padding: 25px 0 0 25px;
+}
+.comment-body div {
+  margin-bottom: 5px;
+}
+.comment-body p {
+  margin-top: 10px;
+}
+#search-results-title {
+  margin: 0 0 0 50px;
+  padding-top: 25px;
 }
 /*	Sprites		*/
 .facebook {

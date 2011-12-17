@@ -1,15 +1,5 @@
 <?php get_header(); ?>
-	<div id="top-links">
-		<ul>
-			<li id="about-me"><a href="#">about me</a></li>
-			<li id="contact"><a href="#">contact</a></li>
-			<li id="my-work" style="padding-right: 150px;"><a href="#">my work</a></li>
-			<li id="freebies"><a href="#">freebies</a></li>
-			<li id="tutorial"><a href="#">tutorials</a></li>
-			<li id="books"><a href="#">books</a></li>
-			<li id="shop"><a href="#">shop</a></li>
-		</ul>
-	</div>
+	
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
