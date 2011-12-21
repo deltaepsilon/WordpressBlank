@@ -56,16 +56,16 @@
 			<div id="social-buttons">
 				<div class="find-me-here"></div>
 				<ul>
-					<li><a href="facebook.com"><div class="facebook"></div></a></li>
-					<li><a href="facebook.com"><div class="twitter"></div></a></li>
-					<li><a href="facebook.com"><div class="pinterest"></div></a></li>
+					<li><a href="http://www.facebook.com/profile.php?id=508841918"><div class="facebook"></div></a></li>
+					<li><a href="http://twitter.com/mufninc"><div class="twitter"></div></a></li>
+					<li><a href="http://pinterest.com/sweetmuffin/"><div class="pinterest"></div></a></li>
 					<li><a href="<?php bloginfo('rss2_url'); ?>"><div class="rss"></div></a></li>
-					<li><a href="facebook.com"><div class="email"></div></a></li>
-					<li><a href="facebook.com"><div class="shopping-cart"></div></a></li>
+					<li><a href="mailto:sweetmuffinsuite@gmail.com?subject=Hello Muffin."><div class="email"></div></a></li>
+					<li><a href="http://www.etsy.com/shop/mufninc"><div class="shopping-cart"></div></a></li>
 				</ul> 
 			</div>
-			<div class="see-my-work"></div>
-			<div class="shop-badge"></div>
+			<a href="/my-work/"><div class="see-my-work"></div></a>
+			<a href="http://www.etsy.com/shop/mufninc"><div class="shop-badge"></div></a>
 		</div>
 		<div id="top-links">
 			<ul>
