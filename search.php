@@ -17,9 +17,28 @@
 				<div class="entry">
 
 					<?php the_excerpt(); ?>
-
+					<div class="postmetadata">
+						<ul>
+							<?php
+								if ($counter <= $featuredPostCount) {
+								 	// echo "<li class=\"share-popup\"><a href=\"#\">share</a></li>";
+								 	
+								 	if( function_exists('ADDTOANY_SHARE_SAVE_KIT') ) {
+								    	echo '<li>';	
+								    	ADDTOANY_SHARE_SAVE_KIT();
+										echo '</li>'; 
+									}
+								 }
+							?>
+							<li><?php edit_post_link('Edit this entry','','');?></li>
+							<li class="read-more-image"><a href="<?php the_permalink() ?>"><div class="read-more"></div></a></li>
+						</ul>
+						<span></span>
+						<div class="posted-in">
+							Posted in: <?php the_category(', ') ?>
+						</div>
+					</div>
 				</div>
-
 			</div>
 
 		<?php endwhile; ?>
@@ -27,9 +46,9 @@
 		<?php include (TEMPLATEPATH . '/inc/nav.php' ); ?>
 
 	<?php else : ?>
-
-		<h2>No posts found.</h2>
-
+	<div class="post">
+			<h2>No posts found.</h2>
+	</div>
 	<?php endif; ?>
 
 <?php get_sidebar(); ?>
