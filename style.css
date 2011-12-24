@@ -1,10 +1,10 @@
 /*   
-Theme Name: BLANK Theme
-Theme URI: http://digwp.com
-Description: This is just a BLANK starter WordPress Theme template -- WordPress v2.9.1
-Author: Chris Coyier
-Author URI: http://chriscoyier.net
-Version: 1
+Theme Name: Muffin
+Theme URI: http://sweetmuffinsuite.com
+Description: A custom theme designed by Pauline Grayson -- WordPress v3.3
+Author: Christopher Esplin
+Author URI: http://christopheresplin.com
+Version: 1.0
 */
 @media screen {
   * {
@@ -378,10 +378,14 @@ ol.commentlist,
   list-style-type: none;
   text-transform: uppercase;
 }
-.share-popup {
+.addtoany_list {
   padding-right: 120px;
+  margin-top: -20px;
 }
-.share-popup, .comment-count {
+.addtoany_list a {
+  padding: 0;
+}
+.addtoany_list, .comment-count {
   float: left;
 }
 .read-more-image {

@@ -17,9 +17,27 @@
 				<?php the_tags( 'Tags: ', ', ', ''); ?>
 
 			</div>
-			
-			<?php edit_post_link('Edit this entry','','.'); ?>
-			
+			<div class="postmetadata">
+				<ul>
+					<?php
+						if ($counter <= $featuredPostCount) {
+						 	// echo "<li class=\"share-popup\"><a href=\"#\">share</a></li>";
+						 	
+						 	if( function_exists('ADDTOANY_SHARE_SAVE_KIT') ) {
+						    	echo '<li>';	
+						    	ADDTOANY_SHARE_SAVE_KIT();
+								echo '</li>'; 
+							}
+						 }
+					?>
+					<li><?php edit_post_link('Edit this entry','','');?></li>
+				</ul>
+				<span></span>
+				<!-- <?php the_tags('Tags: ', ', ', '<br />'); ?> -->
+				<div class="posted-in">
+					Posted in: <?php the_category(', ') ?>
+				</div>
+			</div>
 		</div>
 
 	<?php comments_template(); ?>

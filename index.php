@@ -42,7 +42,13 @@
 				<ul>
 					<?php
 						if ($counter <= $featuredPostCount) {
-						 	echo "<li class=\"share-popup\"><a href=\"#\">share</a></li>";
+						 	// echo "<li class=\"share-popup\"><a href=\"#\">share</a></li>";
+						 	
+						 	if( function_exists('ADDTOANY_SHARE_SAVE_KIT') ) {
+						    	echo '<li>';	
+						    	ADDTOANY_SHARE_SAVE_KIT();
+								echo '</li>'; 
+							}
 							echo '<li class="comment-count">';
 							comments_popup_link('No Comments', '1 Comment', '% Comments');
 							echo '</li>';

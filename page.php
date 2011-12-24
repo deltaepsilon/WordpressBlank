@@ -15,9 +15,21 @@
 				<?php wp_link_pages(array('before' => 'Pages: ', 'next_or_number' => 'number')); ?>
 
 			</div>
-
-			<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
-
+			<div class="postmetadata">
+				<ul>
+					<?php
+						if ($counter <= $featuredPostCount) {
+						 	if( function_exists('ADDTOANY_SHARE_SAVE_KIT') ) {
+						    	echo '<li>';	
+						    	ADDTOANY_SHARE_SAVE_KIT();
+								echo '</li>'; 
+							}
+						 }
+					?>
+					<li><?php edit_post_link('Edit this page','','');?></li>
+				</ul>
+				<span></span>
+			</div>
 		</div>
 		
 		<?php comments_template(); ?>
