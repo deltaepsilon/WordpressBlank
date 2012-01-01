@@ -130,18 +130,79 @@ a { text-decoration: none; color: black; }
 
 /* Custom Frugal Stylee */
 
+/*	Globals	*/
+@widthPage: 1060px;
+@black: #000000;
+@coal: #414042;
+@purple: #BDA9B9;
+@blug: #404A64;
+@peach: #DC9E97;
+@gray: #BEBEBF;
+body {
+	background-image: url(/wp-content/themes/frugal/images/ff-graphics-repeate.png);
+	background-color: @coal;
+	font-family: Helvetica, Arial;
+	font-weight: light;
+}
+a, a:hover, a:visited {
+	text-decoration: none;
+	color: @coal;
+}
+/*	Elements	*/
+#page-wrap, #footer{
+	width: @widthPage;
+	margin: auto;
+	position: relative;
+	overflow: hidden;
+}
+#page-wrap {
+	background-color: @gray;
+}
+.widget_links {
+	width: @widthPage + 50;
+	background-color: @coal;
+}
+.widget_links a {
+	color: @peach;
+}
+#navigation li:hover {
+	color: @black;
+}
+.post, .page {
+	width: 621px;
+	float: left;
+}
+#sidebar {
+	width: 439px;
+	float: right;
+}
+.banner {
+	float: left;
+}
+.banner-right {
+	float: right;
+}
+.banner-right div { 
+	float: left;
+}
 /*	 Sprites	*/
 .banner-main, .banner-ny, .banner-chicago, .comments, .like, .tweet, .spyglass, .checkout-out-more, .facebook, .twitter, .youtube, .pinterest, .email, .google-plus, .rss, .subscribe {
 	background-image: url(/wp-content/themes/frugal/images/ff-graphics-spritesheet.png);
 }
 .banner-main {
-	background-position: -15px -36px; width: 621px; height: 264px;
+	background-position: -16px -316px;
+    height: 261px;
+    width: 619px;
 } 
 .banner-ny {
-	background-position: -15px -36px; width: 621px; height: 264px;
+	background-position: -16px -37px;
+	height: 261px;
+    width: 619px;
 }
 .banner-chicago {
-	background-position: -649px -36px; width: 622px; height: 264px;
+	background-position: -651px -38px;
+    height: 260px;
+    width: 618px;
 } 
 .comments {
 	background-position: -16px -605px; width: 149px; height: 23px;

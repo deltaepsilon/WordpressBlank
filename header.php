@@ -51,7 +51,27 @@
 	<div id="page-wrap">
 
 		<div id="header">
-			<h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
-			<div class="description"><?php bloginfo('description'); ?></div>
+			<a href="<?php echo get_option('home'); ?>/">
+				<div class="banner-main banner">
+					<div id="blog-selector">
+						<ul>
+							<li id="blog-current">main</li>
+							<li><a href="http://ny.fantabulouslyfrugal.com">new york</a></li>
+							<li><a href="http://chicago.fantabulouslyfrugal.com">chicago</a></li>
+						</ul>
+					</div>
+				</div>
+			</a>
+			<div id="banner-right">
+				<div class="checkout-out-more"></div>
+				<div class="facebook"></div>
+				<a href="#"><div class="twitter"></div></a>
+				<a href="#"><div class="youtube"></div></a>
+				<a href="#"><div class="pinterest"></div></a>
+				<a href="#"><div class="email"></div></a>
+				<a href="#"><div class="google-plus"></div></a>
+				<a href="#"><div class="rss"></div></a>
+				<a href="#"><div class="subscribe"></div></a>
+			</div>
 		</div>
 

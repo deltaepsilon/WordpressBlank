@@ -180,6 +180,54 @@ Version: 1.0
 }
 /* END print media */
 /* Custom Frugal Stylee */
+/*	Globals	*/
+body {
+  background-image: url(/wp-content/themes/frugal/images/ff-graphics-repeate.png);
+  background-color: #414042;
+  font-family: Helvetica, Arial;
+  font-weight: light;
+}
+a, a:hover, a:visited {
+  text-decoration: none;
+  color: #414042;
+}
+/*	Elements	*/
+#page-wrap, #footer {
+  width: 1060px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+#page-wrap {
+  background-color: #bebebf;
+}
+.widget_links {
+  width: 1110px;
+  background-color: #414042;
+}
+.widget_links a {
+  color: #dc9e97;
+}
+#navigation li:hover {
+  color: #000000;
+}
+.post, .page {
+  width: 621px;
+  float: left;
+}
+#sidebar {
+  width: 439px;
+  float: right;
+}
+.banner {
+  float: left;
+}
+.banner-right {
+  float: right;
+}
+.banner-right div {
+  float: left;
+}
 /*	 Sprites	*/
 .banner-main,
 .banner-ny,
@@ -200,19 +248,19 @@ Version: 1.0
   background-image: url(/wp-content/themes/frugal/images/ff-graphics-spritesheet.png);
 }
 .banner-main {
-  background-position: -15px -36px;
-  width: 621px;
-  height: 264px;
+  background-position: -16px -316px;
+  height: 261px;
+  width: 619px;
 }
 .banner-ny {
-  background-position: -15px -36px;
-  width: 621px;
-  height: 264px;
+  background-position: -16px -37px;
+  height: 261px;
+  width: 619px;
 }
 .banner-chicago {
-  background-position: -649px -36px;
-  width: 622px;
-  height: 264px;
+  background-position: -651px -38px;
+  height: 260px;
+  width: 618px;
 }
 .comments {
   background-position: -16px -605px;
