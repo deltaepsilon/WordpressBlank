@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+	<div id="post-wrapper">
 		<?php if (have_posts()) : ?>
 
  			<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
@@ -47,12 +47,12 @@
 
 			<?php include (TEMPLATEPATH . '/inc/nav.php' ); ?>
 			
-	<?php else : ?>
-
-		<h2>Nothing found</h2>
-
-	<?php endif; ?>
-
-<?php get_sidebar(); ?>
-
+		<?php else : ?>
+	
+			<h2>Nothing found</h2>
+	
+		<?php endif; ?>
+	
+		<?php get_sidebar(); ?>
+	</div>
 <?php get_footer(); ?>

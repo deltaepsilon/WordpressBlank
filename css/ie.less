@@ -179,7 +179,17 @@ h2 {
 	background: @darkGray;
 	overflow: hidden;
 }
-.post, .page {
+#post-wrapper > h2 {
+	background: @gray;
+    border-bottom: 1px solid @peach;
+    font-style: italic;
+    padding: 25px;
+    width: 100%;
+/*    text-shadow: @gray -1px 1px, @gray -1px 1px, @gray -1px 1px, @gray -1px 1px, @gray -1px 1px, @gray -1px 1px;*/
+    color: @coal;
+    font-weight: normal;
+}
+.post, .post, #respond {
 	border-right: 1px solid @peach;
 	width: 550px;
 	padding: 30px 34px;
@@ -187,11 +197,12 @@ h2 {
 	background-color: @darkGray;
 }
 #sidebar {
-    height: 500px;
+    height: 100%;
     margin-left: 618px;
     padding: 49px;
     width: 343px;
     background-color: @darkGray;
+    border-left: 1px solid @peach;
 }
 #sidebar li {
 	list-style: none;
@@ -294,7 +305,7 @@ h2 {
 	letter-spacing: .5px;
 }
 .entry {
-	margin-top: 50px;
+	margin-top: 20px;
 	letter-spacing: .5px;
 	font-size: @navFontSize;
 }
@@ -334,28 +345,30 @@ h2 {
 	overflow: hidden;
 	margin-bottom: 15px;
 }
-.frugal-ads img {
+.frugal-ads div {
 	display: block;
 }
 .square-ads {
 	background-color: @peach;
 }
-.square-ads img {
+.square-ads div {
 	margin: 15px auto;
+	width: 300px;
 }
 .tall-ads, .small-ads {
 	padding: 5px;
 }
-.tall-ads img, .small-ads img {
+.tall-ads div, .small-ads div {
 	margin: 2.5px;
 	float: left;
+	width: 160px;
 }
 .small-ads {
 	padding: 15px;
 	border: 1px solid @peach;
 }
-.small-ads img {
-/*	margin: 2px auto;*/
+.small-ads div {
+	width: 150px;
 }
 .sample-sale-title {
 	text-align: center;
@@ -365,6 +378,12 @@ h2 {
 	text-transform: uppercase;
 	padding: 10px;
 	text-shadow: @darkGray -1px 1px, @darkGray -2px 2px, @darkGray -3px 3px;
+	font-weight: bold;
+}
+
+/*	Comments	*/
+#respond {
+	
 }
 /*	 Sprites	*/
 .banner-main, .banner-ny, .banner-chicago, .comments, .like, .tweet, .spyglass, .checkout-out-more, .facebook, .twitter, .youtube, .pinterest, .email, .google-plus, .rss, .subscribe, #searchsubmit {
