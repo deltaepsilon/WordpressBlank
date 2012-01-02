@@ -25,7 +25,7 @@
 	<?php comments_template(); ?>
 
 	<?php endwhile; endif; ?>
-	
-<?php get_sidebar(); ?>
-
+	<div id="sidebar-wrapper">
+		<?php get_sidebar(); ?>
+	</div>
 <?php get_footer(); ?>

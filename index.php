@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
+	<div id="post-wrapper">
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
@@ -13,9 +14,10 @@
 			</div>
 
 			<div class="postmetadata">
-				<?php the_tags('Tags: ', ', ', '<br />'); ?>
-				Posted in <?php the_category(', ') ?> | 
-				<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
+				<!-- <?php the_tags('Tags: ', ', ', '<br />'); ?> -->
+				<!-- Posted in <?php the_category(', ') ?> | --> 
+				<div class="comment-brackets">{<span><?php comments_popup_link('0', '1', '%'); ?></span>}</div><div class="comments"></div>
+				<div class="share"><?php if( function_exists('ADDTOANY_SHARE_SAVE_KIT') ) { ADDTOANY_SHARE_SAVE_KIT(); } ?></div>
 			</div>
 
 		</div>
@@ -29,7 +31,7 @@
 		<h2>Not Found</h2>
 
 	<?php endif; ?>
-
-<?php get_sidebar(); ?>
-
+	
+		<?php get_sidebar(); ?>
+	</div>
 <?php get_footer(); ?>

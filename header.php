@@ -51,7 +51,7 @@
 	<div id="page-wrap">
 
 		<div id="header">
-			<a href="<?php echo get_option('home'); ?>/">
+			<a href="<?php echo get_option('home'); ?>"></a>
 				<div class="banner-main banner">
 					<div id="blog-selector">
 						<ul>
@@ -61,10 +61,10 @@
 						</ul>
 					</div>
 				</div>
-			</a>
+			
 			<div id="banner-right">
 				<div class="checkout-out-more"></div>
-				<div class="facebook"></div>
+				<a href="#"><div class="facebook"></div></a>
 				<a href="#"><div class="twitter"></div></a>
 				<a href="#"><div class="youtube"></div></a>
 				<a href="#"><div class="pinterest"></div></a>
