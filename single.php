@@ -19,10 +19,10 @@
 				</div>
 				
 				<?php edit_post_link('Edit this entry','','.'); ?>
-				
+				<?php comments_template(); ?>		
 			</div>
 	
-		<?php comments_template(); ?>
+		
 	
 		<?php endwhile; endif; ?>
 		<?php get_sidebar(); ?>

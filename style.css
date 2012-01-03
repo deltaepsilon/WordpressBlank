@@ -228,18 +228,29 @@ h2 a, h2 a:hover, h2 a:visited {
   border-bottom: 1px solid #dc9e97;
   font-style: italic;
   padding: 25px;
-  width: 100%;
-  /*    text-shadow: @gray -1px 1px, @gray -1px 1px, @gray -1px 1px, @gray -1px 1px, @gray -1px 1px, @gray -1px 1px;*/
+  /*    width: 100%;*/
 
   color: #2b2b2b;
   font-weight: normal;
 }
-.post, .post, #respond {
+.post, .post {
   border-right: 1px solid #dc9e97;
   width: 550px;
   padding: 30px 34px;
   float: left;
   background-color: #ffffff;
+}
+#comments, #respond, #respond h2 {
+  margin-top: 50px;
+}
+.commentlist {
+  margin-bottom: 50px;
+}
+.comment-meta {
+  margin-bottom: 10px;
+}
+.comment-author {
+  color: #bda9b9;
 }
 #sidebar {
   height: 100%;
@@ -295,7 +306,7 @@ h2 a, h2 a:hover, h2 a:visited {
   display: none;
 }
 #frugal-nav ul {
-  margin-left: 174.5px;
+  margin-left: 166px;
 }
 #frugal-nav li {
   float: left;
@@ -364,6 +375,8 @@ h2 a, h2 a:hover, h2 a:visited {
   border: none;
   text-transform: uppercase;
   color: #bda9b9;
+  position: absolute;
+  bottom: 45px;
 }
 #form-close {
   bottom: 15px;
@@ -389,10 +402,13 @@ h2 a, h2 a:hover, h2 a:visited {
   color: #bda9b9;
   letter-spacing: .5px;
 }
-.entry {
+.entry, .commentlist {
   margin-top: 20px;
   letter-spacing: .5px;
   font-size: 14px;
+}
+.entry {
+  margin-top: 20px;
 }
 .postmetadata {
   padding: 5px 10px;
@@ -421,6 +437,12 @@ h2 a, h2 a:hover, h2 a:visited {
   font-size: 0;
   margin-top: 10px;
   width: 145px;
+}
+.commentlist {
+  float: left;
+}
+#commentform input {
+  margin-top: 10px;
 }
 /*	Ad Boxes	*/
 .widget_text h2 {
