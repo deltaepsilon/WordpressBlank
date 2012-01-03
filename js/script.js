@@ -42,9 +42,6 @@
       link.click(function(e) {
         var height;
         height = form.height() + (2 * parseInt(form.css('padding-top'))) + 47;
-        console.log(form.height());
-        console.log(2 * parseInt(form.css('padding-top')));
-        console.log(height);
         e.preventDefault();
         if ($('.open').length >= 1) {
           return;
@@ -82,10 +79,8 @@
     }
   };
   $(document).ready(function() {
-    console.log("We're ready snitches.");
     window.frugal.layout();
     window.frugal.shareButtons();
-    window.frugal.contactLink();
-    return console.log(window.frugal);
+    return window.frugal.contactLink();
   });
 }).call(this);

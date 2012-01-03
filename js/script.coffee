@@ -34,9 +34,6 @@ window.frugal =
     $('#form-message textarea').attr 'cols', 125
     link.click (e) ->
       height = form.height() + (2 * parseInt(form.css('padding-top'))) + 47
-      console.log form.height()
-      console.log (2 * parseInt(form.css('padding-top')))
-      console.log height
       e.preventDefault()
       if $('.open').length >= 1
         return
@@ -62,8 +59,6 @@ window.frugal =
       if $('.wpcf7-mail-sent-ok').length >= 1
         setTimeout clickCloser, 2000
 $(document).ready ->
-  console.log "We're ready snitches."
   window.frugal.layout()
   window.frugal.shareButtons()
   window.frugal.contactLink()
-  console.log window.frugal
