@@ -219,7 +219,7 @@ h2 a, h2 a:hover, h2 a:visited {
   background-color: #000000;
 }
 #post-wrapper {
-  background: #7f7f7f;
+  background: #ffffff;
   overflow: hidden;
   margin-top: 0px;
 }
@@ -239,14 +239,14 @@ h2 a, h2 a:hover, h2 a:visited {
   width: 550px;
   padding: 30px 34px;
   float: left;
-  background-color: #7f7f7f;
+  background-color: #ffffff;
 }
 #sidebar {
   height: 100%;
   margin-left: 618px;
   padding: 49px;
   width: 343px;
-  background-color: #7f7f7f;
+  background-color: #ffffff;
   border-left: 1px solid #dc9e97;
 }
 #sidebar li {
@@ -276,15 +276,14 @@ h2 a, h2 a:hover, h2 a:visited {
 #frugal-nav {
   background-color: #2b2b2b;
   display: table;
-  left: 0;
   margin: 0 auto;
   position: absolute;
-  right: 0;
   top: 260px;
-  width: 98%;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.8);
   -moz-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.8);
   -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.8);
+  left: 20px;
+  width: 1100px;
 }
 #frugal-nav a {
   color: #bda9b9;
@@ -303,7 +302,7 @@ h2 a, h2 a:hover, h2 a:visited {
 }
 .banner {
   float: left;
-  background-color: #7f7f7f;
+  background-color: #ffffff;
 }
 #banner-right {
   float: right;
@@ -413,8 +412,9 @@ h2 a, h2 a:hover, h2 a:visited {
   color: #404a64;
 }
 .comments {
-  margin-top: 7px;
-  float: left;
+  position: absolute;
+  top: 16px;
+  left: 75px;
 }
 .share {
   float: right;
@@ -462,7 +462,7 @@ h2 a, h2 a:hover, h2 a:visited {
   border: 1px solid #dc9e97;
   text-transform: uppercase;
   padding: 10px;
-  text-shadow: #7f7f7f -1px 1px, #7f7f7f -2px 2px, #7f7f7f -3px 3px;
+  text-shadow: #2b2b2b -1px 1px, #2b2b2b -2px 2px, #2b2b2b -3px 3px;
   font-weight: bold;
 }
 /*	Comments	*/
