@@ -251,7 +251,7 @@ a, a:visited {
   border-bottom: 1px dotted #75726c;
   border-top: 1px dotted #75726c;
   overflow: hidden;
-  padding: 10px 100px;
+  padding: 10px 163px;
   text-transform: uppercase;
   margin: 0 50px;
 }
@@ -475,9 +475,9 @@ ol.commentlist,
 }
 .post-banner {
   border-width: 0 16px 11px 0;
+  border-image: url("/wp-content/themes/muffin/images/muffin-title.png") 0 20 10 0 stretch stretch;
   -moz-border-image: url("/wp-content/themes/muffin/images/muffin-title.png") 0 20 10 0 stretch stretch;
   -webkit-border-image: url("/wp-content/themes/muffin/images/muffin-title.png") 0 20 10 0 stretch stretch;
-  border-image: url("/wp-content/themes/muffin/images/muffin-title.png") 0 20 10 0 stretch stretch;
   display: inline-block;
 }
 /*	Sprites		*/
