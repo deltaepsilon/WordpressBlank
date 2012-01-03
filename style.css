@@ -195,6 +195,7 @@ Version: 1.0
 body {
   background: repeat url(/wp-content/themes/muffin/images/muffin-background.png);
   font-family: FuturaStdBold, Helvetica, Arial, sans-serif;
+  font-size: 14px;
   margin-top: -10px;
   color: #75726c;
   min-width: 1250px;
@@ -351,6 +352,7 @@ ol.commentlist,
 }
 .entry a, .page a, ol.commentlist a {
   color: #00a87e;
+  font-weight: lighter;
 }
 .post-banner {
   margin: 14px 0 14px -25px;
