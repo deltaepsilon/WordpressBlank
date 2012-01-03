@@ -150,12 +150,15 @@ body {
 }
 a, a:hover, a:visited {
 	text-decoration: none;
-	color: @coal;
+	color: @peach;
 }
 h2 {
 	text-transform: uppercase;
 	font-weight: lighter;
 	margin: 0;
+}
+h2 a, h2 a:hover, h2 a:visited {
+	color: @coal;
 }
 /*	Elements	*/
 #page-wrap, #footer{
@@ -178,6 +181,7 @@ h2 {
 #post-wrapper {
 	background: @darkGray;
 	overflow: hidden;
+	margin-top: 0px;
 }
 #post-wrapper > h2 {
 	background: @gray;
@@ -250,6 +254,9 @@ h2 {
 #frugal-nav h2 {
 	display: none;
 }
+#frugal-nav ul {
+	margin-left: 174.5px;
+}
 #frugal-nav li {
 	float: left;
 }
@@ -297,8 +304,51 @@ h2 {
 	background-color: @black;
 }
 
+
+/*	Contact form*/
+#contact-form {
+    left: 40px;
+    right: 40px;
+    position: absolute;
+    top: 307px;
+    z-index: -1;
+    background-color: @peach;
+    padding: 35px;
+    font-size: @navFontSize;
+    height: 248px;
+}
+#contact-form p {
+	float: left;
+	margin-right: 10px;
+}
+#contact-form input {
+	border: none;
+}
+#contact-form p#form-submit input {
+	background-color: @coal;
+	border: none;
+	text-transform: uppercase;
+	color: @purple;
+}
+#form-close {
+    bottom: 15px;
+    cursor: pointer;
+    font-size: 10px;
+    position: absolute;
+    text-transform: uppercase;
+}
+.wpcf7-response-output {
+	bottom: 8px;
+    display: block;
+    height: 30px;
+    left: 75px;
+    margin: 0;
+    padding: 10px;
+    position: absolute;
+    right: 30px;
+}
 /*	Post/Page Elements	*/
-.meta {
+.meta, #commentform {
 	text-transform: uppercase;
 	font-size: @navFontSize - 1;
 	color: @purple;
@@ -345,20 +395,20 @@ h2 {
 	overflow: hidden;
 	margin-bottom: 15px;
 }
-.frugal-ads div {
+.frugal-ads > div {
 	display: block;
 }
 .square-ads {
 	background-color: @peach;
 }
-.square-ads div {
+.square-ads > div {
 	margin: 15px auto;
 	width: 300px;
 }
 .tall-ads, .small-ads {
 	padding: 5px;
 }
-.tall-ads div, .small-ads div {
+.tall-ads > div, .small-ads > div {
 	margin: 2.5px;
 	float: left;
 	width: 160px;
