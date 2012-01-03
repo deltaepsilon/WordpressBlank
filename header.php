@@ -71,7 +71,7 @@
 			<ul>
 				<li id="about-me"><a href="/about-me">about me</a></li>
 				<li id="contact"><a href="/contact">contact</a></li>
-				<li id="my-work" style="padding-right: 150px;"><a href="/my-work">my work</a></li>
+				<li id="my-work"><a href="/my-work">my work</a></li>
 				<li id="freebies"><a href="/freebies">freebies</a></li>
 				<li id="tutorial"><a href="tutorial">tutorials</a></li>
 				<li id="books"><a href="/books">books</a></li>

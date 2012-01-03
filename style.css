@@ -428,10 +428,6 @@ ol.commentlist,
 .index-gallery {
   width: 609px;
   margin-top: 20px;
-  /*	border-bottom: none;
-    position: relative;
-    overflow: hidden;*/
-
 }
 .clipwrapper {
   position: relative;
@@ -445,7 +441,7 @@ ol.commentlist,
   clip: rect(0px 90px 90px 0px);
 }
 .index-thumbnails {
-  width: 300px;
+  width: 125px;
 }
 .truncated-text {
   display: inline-block;
