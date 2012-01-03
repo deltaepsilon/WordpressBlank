@@ -349,6 +349,9 @@ ol.commentlist,
   position: relative;
   overflow: hidden;
 }
+.entry a, .page a, ol.commentlist a {
+  color: #00a87e;
+}
 .post-banner {
   margin: 14px 0 14px -25px;
 }
@@ -420,7 +423,7 @@ ol.commentlist,
 }
 .first-image {
   float: left;
-  height: 185px;
+  height: 169px;
   margin-right: 25px;
   width: 250px;
   background-repeat: no-repeat;
