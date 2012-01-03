@@ -420,7 +420,7 @@ ol.commentlist,
 }
 .first-image {
   float: left;
-  height: 200px;
+  height: 185px;
   margin-right: 25px;
   width: 250px;
   background-repeat: no-repeat;
@@ -434,7 +434,7 @@ ol.commentlist,
   height: 90px;
   width: 90px;
   float: left;
-  margin: 5px;
+  margin: 5px 5px 5px 0;
 }
 .clip {
   position: absolute;
@@ -483,6 +483,21 @@ ol.commentlist,
   border-bottom: 10px;
   border-left: 0px;
   display: inline-block;
+}
+.navigation {
+  padding: 15px 0px 50px 0px;
+  width: 660px;
+  margin-left: 50px;
+}
+.next-posts {
+  width: 200px;
+  float: left;
+}
+.prev-posts {
+  width: 200px;
+  float: right;
+  text-align: right;
+  margin-right: 25px;
 }
 /*	Sprites		*/
 #searchsubmit,
