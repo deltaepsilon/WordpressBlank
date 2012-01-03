@@ -1,8 +1,8 @@
 <?php 
 	get_header(); 
 	$counter = 0;
-	$featuredPostCount = 2;
-	$truncateLength = 450;
+	$featuredPostCount = 6;
+	$truncateLength = 400;
 ?>
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<?php $counter ++; ?>
@@ -11,19 +11,22 @@
 			<?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
 			
 			<div class="post-banner"><h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2></div>
-
-			
-
 			<div class="entry">
 				<?php
+  				// Show full post until featuredPostCount
 				 if ($counter <= $featuredPostCount) {
-				 	the_content();
+				 	the_content();				
 				 }
 				 else {
+				 	if ($counter == $featuredPostCount) {
+					 	echo '<div id="month-archives-title"><a href="'.get_month_link('', '').'">archives: ';
+					 	the_time('F');
+					 	echo '</a></div>';
+					 }
+					
 				 	$contents =	$post->post_content;
 					preg_match('/<img.+?>/', $contents, $images);
 					preg_match('/http:.+?\.(jpg|jpeg|gif|png)/', $images[0], $link);
-					// echo print_r($link);
 					$firstImagePath = $link[0];
 					$truncatedText = substr(preg_replace('/<.+?>/', '', $contents), 0, $truncateLength);
 					if(!empty($firstImagePath)) {
@@ -34,7 +37,32 @@
 					}
 					 
 				 }
-				 
+				 /* 
+					 * 	Gallery Begin
+					 * 	Tweak maxImages and image tags to control output
+					 */
+					$contents =	$post->post_content;
+					// var_dump($contents);
+					preg_match_all('/<img.+?>/', $contents, $images);
+					$maxImages = 12;
+					$gallery = array();
+					$imageCounter = 0;
+					foreach ($images[0] as $imageTag) {
+						$imageCounter ++;
+						if ($imageCounter <= $maxImages) {
+							preg_match_all('/http:.+?\.(jpg|jpeg|gif|png)/', $imageTag, $imageLink);
+							$gallery[] = $imageLink[0][0];
+						}
+					}
+					echo '<div class="index-gallery">';
+					foreach ($gallery as $imageLink) {
+						echo "<div class=\"clipwrapper\"><div class=\"clip\"><img class=\"index-thumbnails\" src=\"$imageLink\" /></div></div>";
+					}
+					echo '</div>';
+					
+					/*
+					 * Gallery End
+					 */
 				 ?>
 			</div>
 
@@ -63,11 +91,11 @@
 				</div>
 			</div>
 			<?php
-				if ($counter == $featuredPostCount) {
-				 	echo '<div id="month-archives-title"><a href="'.get_month_link('', '').'">archives: ';
-				 	the_time('F');
-				 	echo '</a></div>';
-				 }
+				// if ($counter == $featuredPostCount) {
+				 	// echo '<div id="month-archives-title"><a href="'.get_month_link('', '').'">archives: ';
+				 	// the_time('F');
+				 	// echo '</a></div>';
+				 // }
 			?>
 		</div>
 

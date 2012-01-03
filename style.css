@@ -423,6 +423,29 @@ ol.commentlist,
   height: 200px;
   margin-right: 25px;
   width: 250px;
+  background-repeat: no-repeat;
+}
+.index-gallery {
+  width: 609px;
+  margin-top: 20px;
+  /*	border-bottom: none;
+    position: relative;
+    overflow: hidden;*/
+
+}
+.clipwrapper {
+  position: relative;
+  height: 90px;
+  width: 90px;
+  float: left;
+  margin: 5px;
+}
+.clip {
+  position: absolute;
+  clip: rect(0px 90px 90px 0px);
+}
+.index-thumbnails {
+  width: 300px;
 }
 .truncated-text {
   display: inline-block;
@@ -456,9 +479,9 @@ ol.commentlist,
 }
 .post-banner {
   border-width: 0 16px 11px 0;
-  -moz-border-image: url("/wp-content/themes/muffin/images/muffin-title.png") 0 20 10 0 repeat stretch;
-  -webkit-border-image: url("/wp-content/themes/muffin/images/muffin-title.png") 0 20 10 0 repeat stretch;
-  border-image: url("/wp-content/themes/muffin/images/muffin-title.png") 0 20 10 0 repeat stretch;
+  -moz-border-image: url("/wp-content/themes/muffin/images/muffin-title.png") 0 20 10 0 stretch stretch;
+  -webkit-border-image: url("/wp-content/themes/muffin/images/muffin-title.png") 0 20 10 0 stretch stretch;
+  border-image: url("/wp-content/themes/muffin/images/muffin-title.png") 0 20 10 0 stretch stretch;
   display: inline-block;
 }
 /*	Sprites		*/
@@ -588,4 +611,20 @@ ol.commentlist,
   background-position: -15px -442px;
   width: 953px;
   height: 247px;
+}
+/*	Wordpress Styles	*/
+.aligncenter, div.aligncenter img {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.alignright {
+  display: inline !important;
+  float: right !important;
+  margin: 0 0 15px 30px !important;
+}
+.alignleft {
+  display: inline !important;
+  float: left !important;
+  margin: 0 30px 15px 0 !important;
 }
