@@ -55,7 +55,7 @@
 				<div class="banner-main banner">
 					<div id="blog-selector">
 						<ul>
-							<li id="blog-current">main</li>
+							<li id="blog-current"><a href="<?php echo get_option('home'); ?>">main</a></li>
 							<li><a href="http://ny.fantabulouslyfrugal.com">new york</a></li>
 							<li><a href="http://chicago.fantabulouslyfrugal.com">chicago</a></li>
 						</ul>

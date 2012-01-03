@@ -1,5 +1,5 @@
 		<div id="footer">
-			&copy;<?php echo date("Y"); echo " "; bloginfo('name'); ?>
+<!-- 			&copy;<?php echo date("Y"); echo " "; bloginfo('name'); ?> -->
 		</div>
 
 	</div>

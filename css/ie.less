@@ -142,6 +142,7 @@ a { text-decoration: none; color: black; }
 @peach: #DC9E97;
 @gray: #BEBEBF;
 @darkGray: #FFFFFF;
+@border: 1px solid @peach;
 body {
 	background-image: url(/wp-content/themes/frugal/images/ff-graphics-repeat.png);
 	background-color: @coal;
@@ -178,10 +179,32 @@ h2 a, h2 a:hover, h2 a:visited {
 #navigation li:hover, .widget_links li:hover {
 	background-color: @black;
 }
+.navigation {
+    bottom: 50px;
+    height: 50px;
+    left: 75px;
+    position: absolute;
+    width: 583px;
+    border-right: @border;
+}
+.next-posts {
+	width: 200px;
+	text-align: left;
+	margin-left: 0px;
+	float: left;
+}
+.prev-posts {
+	width: 200px;
+	text-align: right;
+	margin-right: 32px;
+	float: right;
+}
 #post-wrapper {
 	background: @darkGray;
 	overflow: hidden;
 	margin-top: 0px;
+	margin-bottom: 50px;
+	padding-bottom: 50px;
 }
 #post-wrapper > h2 {
 	background: @gray;
