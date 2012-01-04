@@ -195,11 +195,15 @@ Version: 1.0
 .meta, #categories-sidebar {
   font-family: 'MrsEavesItalic';
 }
+.portfolio-template {
+  display: none;
+}
 body {
   background: repeat url(/wp-content/themes/muffin/images/muffin-background.png);
   font-family: FuturaStdBold, Helvetica, Arial, sans-serif;
   font-size: 14px;
   margin-top: -10px;
+  margin-bottom: 10px;
   color: #75726c;
   min-width: 1250px;
 }
@@ -229,7 +233,8 @@ a, a:visited {
   margin: 0px auto;
   padding: 40px 0 0 0;
   width: 1110px;
-  min-height: 3000px;
+  /*	min-height: 3000px;*/
+
   background: #ffffff;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.58);
   -moz-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.58);
@@ -251,15 +256,15 @@ a, a:visited {
 #social-buttons div.find-me-here {
   margin: 8px auto;
 }
-#top-links {
+.top-links {
   border-bottom: 1px dotted #75726c;
   border-top: 1px dotted #75726c;
   overflow: hidden;
-  padding: 10px 120px;
+  padding: 10px 115px;
   text-transform: uppercase;
   margin: 0 50px;
 }
-#top-links ul li {
+.top-links ul li {
   display: inline;
   list-style-type: none;
   padding-right: 50px;
@@ -342,7 +347,6 @@ li#my-work {
 
 }
 .post,
-.page,
 ol.commentlist,
 #respond,
 #page-404 {
@@ -351,9 +355,10 @@ ol.commentlist,
   width: 609px;
   border-bottom: 1px dotted #75726c;
   position: relative;
-  overflow: hidden;
+  /*overflow: hidden;*/
+
 }
-.entry a, .page a, ol.commentlist a {
+.entry a, ol.commentlist a {
   color: #00a87e;
   font-weight: lighter;
 }

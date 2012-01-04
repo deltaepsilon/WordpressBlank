@@ -1,0 +1,75 @@
+/* Custom Muffin Stylee */
+@pageWidth: 1110px;
+@marginTop: 20px;
+@sidePadding: 50px;
+@sidebarBannerMargin: 0 auto 20px;
+@postWidth: 609px;
+@postMargin: 0 0 0 50px;
+@postPadding: 25px;
+
+@white: hsla(0, 0%, 100%, 1);
+@gray: hsla(40, 4%, 44%, 1);
+@turquoise: hsla(165, 100%, 33%, 1);
+
+@dashedLine: 1px dotted @gray;
+
+a, a:visited {
+	color: @gray;
+}
+a:hover {
+  color: @turquoise;
+}
+.current-page {
+	color: @turquoise;
+}
+.primary-template {
+	display: none;
+}
+.portfolio-template {
+	display: block;
+}
+.top-links.portfolio-template {
+	padding: 10px 90px;
+}
+.portfolio-post {
+	padding: 0px;
+	border-bottom: none;
+	width: 1012px;
+	padding-bottom: 50px;
+}
+.portfolio-entry {
+	width: 1012px;
+}
+.portfolio-row {
+	width: 100%;
+	border-bottom: @dashedLine;
+	overflow: hidden;
+	padding: 25px 0px;
+}
+.portfolio-item {
+	float: left;
+	
+	margin: 0 8px;
+	
+}
+.portfolio-item img {
+	border: @dashedLine;
+	padding: 5px;
+}
+.portfolio-item h1, .portfolio-item h2{
+	text-align: right;
+	margin-right: 10px;
+	margin-bottom: 0px;
+}
+.portfolio-item h1{
+  font-weight: lighter;
+  font-size: 16px;
+  text-transform: uppercase;
+  
+}
+.portfolio-item h2{
+  text-align: right;
+  font-family: "MrsEavesItalic";
+  font-weight: normal;
+  text-transform: lowercase;
+}

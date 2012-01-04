@@ -64,10 +64,11 @@
 					<li><a href="http://www.etsy.com/shop/mufninc"><div class="shopping-cart"></div></a></li>
 				</ul> 
 			</div>
-			<a href="/my-work/"><div class="see-my-work"></div></a>
+			<a href="/all-work/"><div class="see-my-work primary-template"></div></a>
+			<a href="/"><div class="see-my-work portfolio-template"></div></a>
 			<a href="http://www.etsy.com/shop/mufninc"><div class="shop-badge"></div></a>
 		</div>
-		<div id="top-links">
+		<div class="top-links primary-template">
 			<ul>
 				<li id="about-me"><a href="/about-me">about me</a></li>
 				<li id="contact"><a href="/contact">contact</a></li>

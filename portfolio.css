@@ -1,0 +1,58 @@
+/* Custom Muffin Stylee */
+a, a:visited {
+  color: #75726c;
+}
+a:hover {
+  color: #00a87e;
+}
+.current-page {
+  color: #00a87e;
+}
+.primary-template {
+  display: none;
+}
+.portfolio-template {
+  display: block;
+}
+.top-links.portfolio-template {
+  padding: 10px 90px;
+}
+.portfolio-post {
+  padding: 0px;
+  border-bottom: none;
+  width: 1012px;
+  padding-bottom: 50px;
+}
+.portfolio-entry {
+  width: 1012px;
+}
+.portfolio-row {
+  width: 100%;
+  border-bottom: 1px dotted #75726c;
+  overflow: hidden;
+  padding: 25px 0px;
+}
+.portfolio-item {
+  float: left;
+  margin: 0 8px;
+}
+.portfolio-item img {
+  border: 1px dotted #75726c;
+  padding: 5px;
+}
+.portfolio-item h1, .portfolio-item h2 {
+  text-align: right;
+  margin-right: 10px;
+  margin-bottom: 0px;
+}
+.portfolio-item h1 {
+  font-weight: lighter;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.portfolio-item h2 {
+  text-align: right;
+  font-family: "MrsEavesItalic";
+  font-weight: normal;
+  text-transform: lowercase;
+}
