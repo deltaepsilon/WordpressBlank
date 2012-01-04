@@ -56,7 +56,7 @@
 			<div id="social-buttons">
 				<div class="find-me-here"></div>
 				<ul>
-					<li><a href="http://www.facebook.com/profile.php?id=508841918"><div class="facebook"></div></a></li>
+					<li><a href="http://www.facebook.com/pages/Sweet-Muffin-Suite/333375883357936"><div class="facebook"></div></a></li>
 					<li><a href="http://twitter.com/mufninc"><div class="twitter"></div></a></li>
 					<li><a href="http://pinterest.com/sweetmuffin/"><div class="pinterest"></div></a></li>
 					<li><a href="<?php bloginfo('rss2_url'); ?>"><div class="rss"></div></a></li>
