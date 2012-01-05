@@ -8,6 +8,17 @@ Template Name: Portfolio
 	<div class="top-links portfolio-template">
 		<ul>
 			<?php
+			/*
+			 * Pauline, this is where you can edit your page names. This is a PHP array... but it's not 
+			 * complicated, I swear.  Each entry in the array has two parts, a "key" and a "value".  The
+			 * key is the actual link that you want to link to.  The value is what you want to show on the
+			 * page.  For example, sweetmuffinsuite.com/all-work will bring you to the "All Work" page.  
+			 * I want it to show as "all work" on the page.  I don't wan't the hyphen, so I didn't include
+			 * it in the second part.  All entries have a comma after them.  If you add or subtract a lot of
+			 * pages from the nav bar, you may need to change the css file.  The setting is in portfolio.css.
+			 * The line is ".top-links.portfolio-template {padding: 10px 90px;}".  Change the 90px up or 
+			 * down to add or subtract space.
+			 */
 				$pageNames = array(
 									'all-work' => 'all work',
 									'new' => 'new',
