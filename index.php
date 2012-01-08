@@ -13,9 +13,19 @@
 			</div>
 
 			<div class="postmetadata">
-				<?php the_tags('Tags: ', ', ', '<br />'); ?>
-				Posted in <?php the_category(', ') ?> | 
-				<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
+				<div class="comment-count"><?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?></div>
+				<div class="post-category">Posted in <?php the_category(', ') ?></div>
+				<div class="tags"><?php the_tags('Tags: ', ', ', '<br />'); ?></div>
+				<div class="twitter-share">
+					<a href="https://twitter.com/intent/tweet?button_hashtag=thebridalrecipe&text=<?php the_title(); ?>">TWITTER</a>
+					<!-- <a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php the_permalink() ?>" data-via="thebridalrecipe" data-count="none">Twitter</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> -->
+				</div>
+				<div class="facebook-share">
+					<a name="fb_share" type="icon_link" share_url="<?php the_permalink() ?>"></a> 
+					<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+				</div>
+				
 			</div>
 
 		</div>

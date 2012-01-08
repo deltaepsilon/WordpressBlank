@@ -186,3 +186,253 @@ Version: 1.0
   }
 }
 /* END print media */
+/*	The Bridal Recipe	*/
+/*	Colors	*/
+/*	Vars	*/
+/*	General	*/
+body {
+  font-family: Helvetica, Arial;
+  font-weight: lighter;
+  background-image: url(/wp-content/themes/bridal/images/repeatbackground.png);
+  background-color: #666254;
+  color: #666254;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: lighter;
+}
+a, a:visited, a:hover {
+  text-decoration: none;
+  color: #f1c7b2;
+}
+a:hover {
+  color: #7da7b5;
+}
+#page-wrap {
+  position: relative;
+  width: 1005px;
+  background-color: #ffffff;
+  overflow: hidden;
+  margin: 0 auto 20px;
+  padding-top: 25px;
+}
+#header {
+  width: 1005px;
+}
+.post, #navigation {
+  width: 600px;
+  float: left;
+  padding: 0 0 25px 25px;
+}
+#sidebar {
+  width: 300px;
+  margin-left: 680px;
+}
+.navigation {
+  float: left;
+  width: 100%;
+}
+#footer {
+  float: left;
+  padding: 25px;
+  width: 1005px;
+}
+/*	Elements	*/
+#header-transparency {
+  height: 76px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 218px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+#header {
+  margin-bottom: 75px;
+}
+#nav-bar {
+  height: 20px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 220px;
+  padding: 13px 25px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #cce9e9;
+}
+#nav-bar a, #nav-bar a:visited, #nav-bar a:hover {
+  color: #666254;
+}
+#nav-bar li {
+  list-style: none;
+  display: block;
+  float: left;
+  margin-right: 20px;
+}
+#sidebar h2 {
+  font-size: 12px;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+#sidebar ul {
+  padding: 2px 10px;
+  font-size: 13px;
+}
+#sidebar li {
+  list-style: none;
+}
+#searchform {
+  position: relative;
+  height: 50px;
+}
+.widget {
+  margin-bottom: 20px;
+  text-transform: lowercase;
+}
+.widget, .widget a {
+  color: #666254;
+  text-decoration: none;
+}
+#s {
+  border: 1px solid #7da7b5;
+  bottom: 0;
+  height: 32px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+#searchsubmit {
+  background-color: #ffffff;
+  border: none;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 0;
+}
+#social div {
+  margin: 10px 0;
+}
+/*	Post	*/
+.post h2 a, .post h2 {
+  text-transform: uppercase;
+  color: #666254;
+  margin-bottom: 0px;
+}
+.meta {
+  text-transform: uppercase;
+  color: #f1c7b2;
+  margin: -5px 0 15px;
+  font-size: 12px;
+}
+.entry {
+  font-size: 12px;
+  text-align: justify;
+}
+.entry ul, .entry ol {
+  padding-left: 25px;
+}
+.entry li {
+  margin-bottom: 3px;
+}
+.postmetadata {
+  position: relative;
+  height: 50px;
+}
+.postmetadata {
+  background: #7da7b5;
+  color: #ffffff;
+  padding: 10px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.postmetadata a {
+  color: #ffffff;
+}
+.postmetadata div {
+  position: absolute;
+}
+.comment-count {
+  top: 12px;
+}
+.post-category {
+  top: 30px;
+}
+.post-tags {
+  top: 40px;
+}
+.twitter-share {
+  right: 100px;
+  top: 20px;
+}
+.facebook-share {
+  top: 20px;
+  right: 0px;
+}
+/*.facebook-share span {
+	background: none !important;
+}*/
+/*	Sprites	*/
+#header,
+#searchsubmit,
+.pantry,
+.twitter,
+.facebook,
+.email,
+.submit {
+  background-image: url(/wp-content/themes/bridal/images/spritesheet.png);
+}
+#header {
+  background-position: -8px -14px;
+  width: 1005px;
+  height: 200px;
+}
+#searchsubmit {
+  background-position: -11px -246px;
+  width: 18px;
+  height: 24px;
+}
+.pantry {
+  background-position: -51px -232px;
+  width: 301px;
+  height: 337px;
+}
+.twitter {
+  background-position: -365px -234px;
+  width: 301px;
+  height: 35px;
+}
+.facebook {
+  background-position: -365px -279px;
+  width: 301px;
+  height: 59px;
+}
+.email {
+  background-position: -365px -354px;
+  width: 301px;
+  height: 45px;
+}
+.submit {
+  background-position: -365px -410px;
+  width: 301px;
+  height: 62px;
+}
+/*	Wordpress Styles	*/
+.aligncenter, div.aligncenter img {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.alignright {
+  display: inline !important;
+  float: right !important;
+  margin: 0 0 15px 30px !important;
+}
+.alignleft {
+  display: inline !important;
+  float: left !important;
+  margin: 0 30px 15px 0 !important;
+}
