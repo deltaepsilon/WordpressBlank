@@ -364,11 +364,13 @@ ol.commentlist,
 }
 .post-banner {
   margin: 14px 0 14px 0;
+  position: relative;
+  left: -25px;
 }
 .post-banner h2 {
   font-size: 13pt;
   letter-spacing: 2px;
-  padding: 10px 0 0 10px;
+  padding: 10px 0 0 25px;
   text-transform: uppercase;
 }
 .entry {
