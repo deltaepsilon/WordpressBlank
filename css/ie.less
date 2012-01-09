@@ -177,7 +177,7 @@ a:hover {
 #header {
 	width: @widthAll;
 }
-.post, #navigation {
+.post, #navigation, ol.commentlist, #respond, #comments {
 	width: @widthContent;
 	float: left;
 	padding: 0 0 @outerPadding @outerPadding;
@@ -188,8 +188,19 @@ a:hover {
 }
 .navigation {
 	float: left;
-    width: 100%;
+    width: @widthContent;
+    padding: @outerPadding;
 }
+.next-posts {
+	float: left;
+}
+.prev-posts {
+	float: right;
+}
+.single div#page-wrap div.navigation {
+	display: none;
+}
+ol.commentlist li.pingback { border-bottom: 1px dotted #666; padding: 10px; }
 #footer {
     float: left;
     padding: 25px;
@@ -296,7 +307,8 @@ a:hover {
 }
 .postmetadata {
 	position: relative;
-	height: 50px;
+/*	height: 50px;*/
+	height: 68px;
 }
 .postmetadata {
 	background: @blue;
@@ -317,16 +329,22 @@ a:hover {
 .post-category {
 	top: 30px;
 }
+.tags {
+	top: 48px;
+}
 .post-tags {
 	top: 40px;
 }
-.twitter-share {
-	right: 100px;
-    top: 20px;
+.share-buttons {
+	right: 10px;
 }
-.facebook-share {
-	top: 20px;
-	right: 0px;
+.facebook_like {
+    position: absolute;
+    right: 30px;
+    top: 0;
+}
+.addtoany_list {
+	display: none;
 }
 /*.facebook-share span {
 	background: none !important;
