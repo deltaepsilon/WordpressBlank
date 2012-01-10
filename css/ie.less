@@ -31,7 +31,7 @@ a:hover { }
 blockquote { }
 blockquote p { }
 
-ul, ol { margin: 0 0 10px 0; }
+ul, ol { margin: 0 20px 10px; }
 
 .post { }
 
@@ -141,7 +141,7 @@ a { text-decoration: none; color: black; }
 
 @white: hsla(0, 0%, 100%, 1);
 @gray: hsla(40, 4%, 44%, 1);
-@turquoise: hsla(165, 100%, 33%, 1);
+@turquoise: hsla(179, 41%, 75%, 1);
 
 @dashedLine: 1px dotted @gray;
 
@@ -167,6 +167,10 @@ a { text-decoration: none; color: black; }
 	display: none;
 }
 
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
 body {
 	background: repeat url(/wp-content/themes/muffin/images/muffin-background.png);
 	font-family: FuturaStdBold, Helvetica, Arial, sans-serif;
@@ -175,6 +179,7 @@ body {
 	margin-bottom: 10px;
 	color: @gray;
 	min-width: 1250px;
+	min-height: 2238px;
 }
 a, a:visited {
 	text-decoration: none;
@@ -208,6 +213,7 @@ a, a:visited {
     -moz-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.58);
     -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.58);
     position: relative;
+    min-height: 2232px;
 }
 #social-buttons {
 	position: absolute;
@@ -288,6 +294,18 @@ li#my-work {
     height: 25px;
     width: 261px;
     vertical-align: bottom;
+}
+.show-the-love {
+	margin-left: 35px;
+}
+.sweet-muffin-small {
+	margin: 30px 0px;
+}
+.link-text {
+	border: 2px solid @turquoise;
+	margin-top: 20px;
+    padding: 10px;
+    width: 286px;
 }
 .widget_archive h2 { 
 	background-position: -309px -160px; 

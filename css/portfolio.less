@@ -13,6 +13,12 @@
 
 @dashedLine: 1px dotted @gray;
 
+body {
+	min-height: 0;
+}
+#page-wrap {
+	min-height: 0;
+}
 a, a:visited {
 	color: @gray;
 }
@@ -83,4 +89,35 @@ a:hover {
   font-family: "MrsEavesItalic";
   font-weight: normal;
   text-transform: lowercase;
+}
+
+/*	Calendar Pages	*/
+.right-images {
+	float: right;
+	padding: 14px 0 19px 36px;
+    width: 270px;
+/*	border-left: @dashedLine;*/
+}
+.right-images img {
+	float: left;
+	border: @dashedLine;
+	margin: 5px;
+}
+.left-images {
+	float: right;
+	width: 670px;
+	border-right: @dashedLine;
+}
+.left-images img {
+	float: left;
+	border: @dashedLine;
+	margin: 20px 35px;
+}
+.left-images hr {
+	width: 670px;
+	float: left;
+	border-top: @dashedLine;
+	border-bottom: none;
+	border-left: none;
+	border-right: none;
 }
