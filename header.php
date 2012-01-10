@@ -50,6 +50,8 @@
 		
 		<a href="<?php echo get_option('home'); ?>">
 			<div id="header">
+				<div class="spatula"></div>
+				<div class="flourish"></div>
 			<!-- <h1><<?php bloginfo('name'); ?> -->
 			<!-- <div class="description"><?php bloginfo('description'); ?></div> -->
 			</div>
