@@ -1,0 +1,70 @@
+/* Custom Muffin Stylee */
+body {
+  min-height: 0;
+}
+#page-wrap {
+  min-height: 0;
+}
+.primary-template {
+  display: none;
+}
+.portfolio-template {
+  display: block;
+}
+.see-my-work.primary-template {
+  display: none;
+}
+.see-my-work.portfolio-template {
+  display: block;
+  background-position: -863px -739px;
+  width: 121px;
+  height: 121px;
+}
+.stripe-right {
+  top: -633px;
+}
+.stripe-left {
+  top: 350px;
+}
+.landing {
+  width: 978px;
+  margin: auto;
+  overflow: hidden;
+}
+.landing img {
+  border: 1px dotted #75726c;
+  float: left;
+  margin: 0 2px;
+  padding: 2px;
+}
+.landing .landing-item {
+  float: left;
+}
+.landing .landing-item div {
+  display: inline-block;
+  position: relative;
+}
+.landing span {
+  position: absolute;
+  bottom: 25px;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  /*		height: 50px;*/
+
+  text-transform: uppercase;
+  font-size: 20px;
+  text-align: right;
+  padding: 10px 50px;
+  color: #75726c;
+  margin: 0 4px;
+}
+.landing a, .landing a:visited {
+  color: #75726c;
+}
+.post {
+  margin: 0px;
+  width: 1060px;
+  overflow: hidden;
+  border: none;
+}

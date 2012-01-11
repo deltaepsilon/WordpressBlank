@@ -6,7 +6,6 @@ Template Name: Portfolio
 <?php get_header(); ?>
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/portfolio.css" type="text/css" />
 	<div class="top-links portfolio-template">
-		<ul>
 			<?php
 			/*
 			 * Pauline, this is where you can edit your page names. This is a PHP array... but it's not 
@@ -29,15 +28,16 @@ Template Name: Portfolio
 									'packaging' => 'packaging',
 								);
 				$currentPage = $post->post_name;
+				echo "<table><tr>";
 				foreach ($pageNames as $link => $name) {
 					if ($currentPage == $link) {
-						echo "<li id=\"$link\" class=\"portfolio-nav current-page\">$name</li>";
+						echo "<td id=\"$link\" class=\"portfolio-nav current-page\">$name</td>";
 					} else {
-						echo "<li id=\"$link\" class=\"portfolio-nav\"><a href=\"/$link\">$name</a></li>";
+						echo "<td id=\"$link\" class=\"portfolio-nav\"><a href=\"/$link\">$name</a></td>";
 					}
 				}
+				echo "</tr></table>";
 			?>
-		</ul>
 	</div>
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>

@@ -203,6 +203,10 @@ a, a:visited {
     right: -65px;
     top: 95px;
 }
+#footer {
+	text-align: right;
+	padding: 5px 70px;
+}
 #page-wrap {
 	margin: 0px auto;
 	padding: 40px 0 0 0;
@@ -234,16 +238,24 @@ a, a:visited {
 	border-bottom: @dashedLine;
     border-top: @dashedLine;
     overflow: hidden;
-    padding: 10px 115px;
+    padding: 10px 0px;
     text-transform: uppercase;
     margin: 0 @sidePadding;
+    width: 1010px;
 }
-.top-links ul li{
+.top-links table {
+	width: 1000px;
+}
+.top-links td {
+	text-align: center;
+	width: 100px;
+}
+/*.top-links ul li{
 	display: inline;
 	list-style-type: none;
 	padding-right: 50px;
 	float: left;
-}
+}*/
 li#my-work {
 	padding-right: 60px;
 }
@@ -252,7 +264,7 @@ li#my-work {
     border-left: @dashedLine;
     width: 250;
 	right: 49px;
-    top: 457px;
+    top: 462px;
     bottom: 0px;
 }
 .sidebar-banner {

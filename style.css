@@ -240,6 +240,10 @@ a, a:visited {
   right: -65px;
   top: 95px;
 }
+#footer {
+  text-align: right;
+  padding: 5px 70px;
+}
 #page-wrap {
   margin: 0px auto;
   padding: 40px 0 0 0;
@@ -272,16 +276,24 @@ a, a:visited {
   border-bottom: 1px dotted #75726c;
   border-top: 1px dotted #75726c;
   overflow: hidden;
-  padding: 10px 115px;
+  padding: 10px 0px;
   text-transform: uppercase;
   margin: 0 50px;
+  width: 1010px;
 }
-.top-links ul li {
-  display: inline;
-  list-style-type: none;
-  padding-right: 50px;
-  float: left;
+.top-links table {
+  width: 1000px;
 }
+.top-links td {
+  text-align: center;
+  width: 100px;
+}
+/*.top-links ul li{
+	display: inline;
+	list-style-type: none;
+	padding-right: 50px;
+	float: left;
+}*/
 li#my-work {
   padding-right: 60px;
 }
@@ -290,7 +302,7 @@ li#my-work {
   border-left: 1px dotted #75726c;
   width: 250;
   right: 49px;
-  top: 457px;
+  top: 462px;
   bottom: 0px;
 }
 .sidebar-banner {

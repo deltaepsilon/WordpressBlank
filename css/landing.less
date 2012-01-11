@@ -1,0 +1,85 @@
+/* Custom Muffin Stylee */
+@pageWidth: 1110px;
+@marginTop: 20px;
+@sidePadding: 50px;
+@sidebarBannerMargin: 0 auto 20px;
+@postWidth: 609px;
+@postMargin: 0 0 0 50px;
+@postPadding: 25px;
+
+@white: hsla(0, 0%, 100%, 1);
+@transparent: hsla(0, 0%, 100%, .7);
+@gray: hsla(40, 4%, 44%, 1);
+@turquoise: hsla(165, 100%, 33%, 1);
+
+@dashedLine: 1px dotted @gray;
+
+body {
+	min-height: 0;
+}
+#page-wrap {
+	min-height: 0;
+}
+.primary-template {
+	display: none;
+}
+.portfolio-template {
+	display: block;
+}
+.see-my-work.primary-template {
+	display: none;
+}
+.see-my-work.portfolio-template {
+	display: block;
+	background-position: -863px -739px; 
+	width: 121px; 
+	height: 121px;
+}
+.stripe-right {
+	top: -633px;
+}
+.stripe-left {
+	top: 350px;
+}
+
+.landing {
+	width: 978px;
+	margin: auto;
+	overflow: hidden;
+	img {
+		border: @dashedLine;
+		float: left;
+		margin: 0 2px;
+		padding: 2px;
+	}
+	.landing-item {
+		float: left;
+	}
+	.landing-item div {
+		display: inline-block;
+		position: relative;
+	}
+	span {
+		position: absolute;
+		bottom: 25px;
+		left: 0;
+		right: 0;
+		background-color: @transparent;
+/*		height: 50px;*/
+		text-transform: uppercase;
+		font-size: 20px;
+		text-align: right;
+		padding: 10px 50px;
+		color: @gray;
+		margin: 0 4px;
+	}
+	a, a:visited {
+		color: @gray;
+	}
+}
+.post {
+	margin: 0px;
+	width: 1060px;
+	overflow: hidden;
+	border: none;
+}

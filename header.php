@@ -65,17 +65,17 @@
 				</ul> 
 			</div>
 			<a href="/all-work/"><div class="see-my-work primary-template"></div></a>
-			<a href="/"><div class="see-my-work portfolio-template"></div></a>
+			<a href="/posts"><div class="see-my-work portfolio-template"></div></a>
 			<a href="http://www.etsy.com/shop/mufninc"><div class="shop-badge"></div></a>
 		</div>
-		<div class="top-links primary-template">
-			<ul>
-				<li id="about-me"><a href="/about-me">about me</a></li>
-				<li id="contact"><a href="/contact">contact</a></li>
-				<li id="my-work"><a href="/my-work">my work</a></li>
-				<li id="freebies"><a href="/freebies">freebies</a></li>
-				<li id="tutorial"><a href="tutorial">tutorials</a></li>
-				<li id="books"><a href="/books">books</a></li>
-				<li id="shop"><a href="/shop">shop</a></li>
-			</ul>
-		</div>
+		<table class="top-links primary-template">
+			<tr>
+				<td id="about-me"><a href="/about-me">about me</a></td>
+				<td id="contact"><a href="/contact">contact</a></td>
+				<td id="my-work"><a href="/my-work">my work</a></td>
+				<td id="freebies"><a href="/freebies">freebies</a></td>
+				<td id="tutorial"><a href="tutorial">tutorials</a></td>
+				<td id="books"><a href="/books">books</a></td>
+				<td id="shop"><a href="/shop">shop</a></td>
+			</tr>
+		</table>
