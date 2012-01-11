@@ -21,12 +21,6 @@ Template Name: Posts
 				 	the_content();				
 				 }
 				 else {
-				 	if ($counter == $featuredPostCount) {
-					 	echo '<div id="month-archives-title"><a href="'.get_month_link('', '').'">archives: ';
-					 	the_time('F');
-					 	echo '</a></div>';
-					 }
-					
 				 	$contents =	$post->post_content;
 					preg_match('/<img.+?>/', $contents, $images);
 					preg_match('/http:.+?\.(jpg|jpeg|gif|png)/', $images[0], $link);
@@ -101,7 +95,13 @@ Template Name: Posts
 				 // }
 			?>
 		</div>
-
+		<?php
+			if ($counter == $featuredPostCount + 1) {
+			 	echo '<div id="month-archives-title"><a href="'.get_month_link('', '').'">archives: ';
+			 	the_time('F');
+			 	echo '</a></div>';
+			 }
+		?>
 	<?php endwhile; ?>
 
 	<?php include (TEMPLATEPATH . '/inc/nav.php' ); ?>
