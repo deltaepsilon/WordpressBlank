@@ -397,6 +397,9 @@ ol.commentlist,
   /*overflow: hidden;*/
 
 }
+.post {
+  min-height: 260px;
+}
 .entry a, ol.commentlist a {
   color: #a5d9d9;
   font-weight: lighter;

@@ -33,12 +33,23 @@
 			
 				<div <?php post_class() ?>>
 				
-						<h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+						<div class="post-banner"><h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2></div>
 					
 						<?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
 
 						<div class="entry">
-							<?php the_content(); ?>
+							<?php 
+								//the_content();
+								$contents =	$post->post_content;
+					preg_match('/<img.+?>/', $contents, $images);
+					preg_match('/http:.+?\.(jpg|jpeg|gif|png)/', $images[0], $link);
+					$firstImagePath = $link[0];
+					$truncatedText = substr(preg_replace('/<.+?>/', '', $contents), 0, $truncateLength);
+					if(!empty($firstImagePath)) {
+						echo "<div class=\"first-image\" style=\"background-image: url($firstImagePath);\"></div>";
+					}
+								the_excerpt(); 
+							?>
 						</div>
 
 				</div>
