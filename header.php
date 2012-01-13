@@ -46,7 +46,7 @@
 
 <body <?php body_class(); ?>>
 	<div id="header-transparency"></div>
-	<div id="page-wrap">
+	<div id="page-wrap" class="clearfix">
 		
 		<a href="<?php echo get_option('home'); ?>">
 			<div id="header">
