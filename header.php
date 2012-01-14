@@ -68,7 +68,7 @@
 				</ul> 
 			</div>
 			<a href="/all-work/"><div class="see-my-work primary-template"></div></a>
-			<a href="/posts"><div class="see-my-work portfolio-template"></div></a>
+			<a href="/blog"><div class="see-my-work portfolio-template"></div></a>
 			<a href="http://www.etsy.com/shop/mufninc"><div class="shop-badge"></div></a>
 		</div>
 		<table class="top-links primary-template">

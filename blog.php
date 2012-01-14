@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Posts
+Template Name: Blog
 */ 
 	get_header(); 
 	$counter = 0;

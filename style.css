@@ -243,6 +243,7 @@ a, a:visited {
 #footer {
   text-align: right;
   padding: 5px 70px;
+  display: none;
 }
 #page-wrap {
   margin: 0px auto;
