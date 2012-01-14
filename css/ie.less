@@ -142,6 +142,7 @@ a { text-decoration: none; color: black; }
 @white: hsla(0, 0%, 100%, 1);
 @gray: hsla(40, 4%, 44%, 1);
 @turquoise: hsla(179, 41%, 75%, 1);
+@yellow: hsla(60, 85%, 54%, 1);
 
 @dashedLine: 1px dotted @gray;
 
@@ -368,8 +369,10 @@ li#my-work {
 .post-banner h2 {
 	font-size: 13pt;
     letter-spacing: 2px;
-    padding: 10px 0 0 25px;
+    padding: 10px 0 10px 25px;
     text-transform: uppercase;
+    background-color: @yellow;
+    margin: 1px 0 0 0;
 }
 .entry {
 	padding: 5px 0;
@@ -495,7 +498,7 @@ li#my-work {
 .post-banner, #month-archives-title {
 	border-width: 0 16px 11px 0;
     border-image:url("/wp-content/themes/muffin/images/muffin-title.png") 0 20 10 0 repeat stretch;
-    -webkit-border-image:url("/wp-content/themes/muffin/images/muffin-title.png") 0 20 10 0 stretch stretch;
+    -webkit-border-image:url("/wp-content/themes/muffin/images/muffin-title.png") 0 20 10 0 repeat stretch; /*Was stretch stretch*/
     -moz-border-image:url("/wp-content/themes/muffin/images/muffin-title.png") 0 20 10 0 repeat stretch;
     border-top:0px;
 	border-right: 25px;
