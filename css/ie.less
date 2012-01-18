@@ -407,8 +407,16 @@ li#my-work {
 .addtoany_list, .comment-count {
 	float: left;
 }
-.read-more-image {
+.read-more-image, .more-link {
 	float: right;
+}
+.more-link {
+	display: block;
+	font-size: 0px;
+	margin: 15px;
+	background-position: -209px -9px;
+	height: 22px;
+	width: 600px;
 }
 .posted-in {
 	float: left;
@@ -531,7 +539,7 @@ li#my-work {
 }
 
 /*	Sprites		*/
-#searchsubmit, .widget_archive h2, .facebook, .twitter, .pinterest, .rss, .email, .shopping-cart, .find-me-here, /*.post-banner,*/ .read-more, .go-button, .see-my-work, .shop-badge, .sponsors-banner, .categories-banner, .archives-banner, .copyright-banner, .sweet-muffin-small, .sponsor-me-large, .sponsor-me-small, .show-the-love, .sweet-muffin-large {
+#searchsubmit, .widget_archive h2, .facebook, .twitter, .pinterest, .rss, .email, .shopping-cart, .find-me-here, /*.post-banner,*/ .read-more, .more-link, .go-button, .see-my-work, .shop-badge, .sponsors-banner, .categories-banner, .archives-banner, .copyright-banner, .sweet-muffin-small, .sponsor-me-large, .sponsor-me-small, .show-the-love, .sweet-muffin-large {
 	background-image: url(/wp-content/themes/muffin/images/muffin-sprites.png);
 }
 .facebook { background-position: -7px -37px; width: 31px; height: 32px; }
@@ -558,6 +566,11 @@ li#my-work {
 .show-the-love { background-position: -52px -391px; width: 236px; height: 23px; }
 .sweet-muffin-large { background-position: -15px -442px; width: 953px; height: 252px; }
 
+.profile-pic {
+	background-image: url(/wp-content/themes/muffin/images/profile.jpg);
+	width: 299px;
+	height: 349px;
+}
 
 
 /*	Wordpress Styles	*/

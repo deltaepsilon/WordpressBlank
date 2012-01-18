@@ -448,8 +448,16 @@ ol.commentlist,
 .addtoany_list, .comment-count {
   float: left;
 }
-.read-more-image {
+.read-more-image, .more-link {
   float: right;
+}
+.more-link {
+  display: block;
+  font-size: 0px;
+  margin: 15px;
+  background-position: -209px -9px;
+  height: 22px;
+  width: 600px;
 }
 .posted-in {
   float: left;
@@ -583,6 +591,7 @@ ol.commentlist,
 .shopping-cart,
 .find-me-here,
 .read-more,
+.more-link,
 .go-button,
 .see-my-work,
 .shop-badge,
@@ -699,6 +708,11 @@ ol.commentlist,
   background-position: -15px -442px;
   width: 953px;
   height: 252px;
+}
+.profile-pic {
+  background-image: url(/wp-content/themes/muffin/images/profile.jpg);
+  width: 299px;
+  height: 349px;
 }
 /*	Wordpress Styles	*/
 .aligncenter, div.aligncenter img {

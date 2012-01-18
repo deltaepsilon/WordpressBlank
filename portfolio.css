@@ -9,10 +9,10 @@ a, a:visited {
   color: #75726c;
 }
 a:hover {
-  color: #00a87e;
+  color: #a5d9d9;
 }
 .current-page {
-  color: #00a87e;
+  color: #a5d9d9;
 }
 .primary-template {
   display: none;
@@ -64,14 +64,16 @@ a:hover {
 }
 .portfolio-item h1 {
   font-weight: lighter;
-  font-size: 16px;
+  font-size: 25px;
   text-transform: uppercase;
+  font-family: 'MrsEavesItalic';
 }
 .portfolio-item h2 {
   text-align: right;
-  font-family: "MrsEavesItalic";
+  font-family: "FuturaStdBold";
   font-weight: normal;
   text-transform: lowercase;
+  font-size: 16px;
 }
 /*	Calendar Pages	*/
 .right-images {
@@ -85,11 +87,13 @@ a:hover {
   float: left;
   border: 1px dotted #75726c;
   margin: 5px;
+  padding: 2px;
 }
 .left-images {
   float: right;
   width: 670px;
   border-right: 1px dotted #75726c;
+  padding-top: 14px;
 }
 .left-images img {
   float: left;

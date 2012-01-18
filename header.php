@@ -76,9 +76,9 @@
 				<td id="about-me"><a href="/about-me">about me</a></td>
 				<td id="contact"><a href="/contact">contact</a></td>
 				<td id="my-work"><a href="/my-work">my work</a></td>
-				<td id="freebies"><a href="/freebies">freebies</a></td>
-				<td id="tutorial"><a href="tutorial">tutorials</a></td>
-				<td id="books"><a href="/books">books</a></td>
+				<td id="freebies"><a href="/category/freebies">freebies</a></td>
+				<td id="tutorial"><a href="/category/tutorial">tutorials</a></td>
+				<td id="books"><a href="/category/books">books</a></td>
 				<td id="shop"><a href="/shop">shop</a></td>
 			</tr>
 		</table>

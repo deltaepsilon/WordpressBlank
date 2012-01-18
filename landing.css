@@ -38,7 +38,7 @@ body {
   overflow: hidden;
 }
 .landing img {
-  border: 1px dotted #75726c;
+  border: none;
   float: left;
   margin: 0 2px;
   padding: 2px;
