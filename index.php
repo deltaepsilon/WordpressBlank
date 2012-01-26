@@ -2,7 +2,7 @@
 	get_header(); 
 	$counter = 0;
 	$featuredPostCount = 6;
-	$truncateLength = 400;
+	$truncateLength = 400; //In characters
 ?>
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<?php $counter ++; ?>
@@ -15,9 +15,14 @@
 				<?php
   				// Show full post until featuredPostCount
 				 if ($counter <= $featuredPostCount) {
-				 	the_content();				
+				 	$showGallery = FALSE;
+					the_content();
+					if (strlen($post->post_excerpt) > 0) {
+						$showGallery = TRUE;
+					} 				
 				 }
 				 else {
+				 	$showGallery = TRUE;
 				 	$contents =	$post->post_content;
 					preg_match('/<img.+?>/', $contents, $images);
 					preg_match('/http:.+?\.(jpg|jpeg|gif|png)/', $images[0], $link);
@@ -27,16 +32,15 @@
 						echo "<div class=\"first-image\" style=\"background-image: url($firstImagePath);\"></div>";
 					}
 					if(!empty($truncatedText)) {
-						echo $truncatedText.'...';
+						echo '<div class="truncated-text">'.$truncatedText.'...</div>';
 					}
-					 
 				 }
-				 /* 
+				 if ($showGallery == TRUE) {
+				 	/* 
 					 * 	Gallery Begin
 					 * 	Tweak maxImages and image tags to control output
 					 */
 					$contents =	$post->post_content;
-					// var_dump($contents);
 					preg_match_all('/<img.+?>/', $contents, $images);
 					$maxImages = 12;
 					$gallery = array();
@@ -56,7 +60,8 @@
 					
 					/*
 					 * Gallery End
-					 */
+					 */				 	
+				 }
 				 ?>
 			</div>
 
@@ -74,9 +79,13 @@
 							echo '<li class="comment-count">';
 							comments_popup_link('No Comments', '1 Comment', '% Comments');
 							echo '</li>';
+						 } else {
+						 	echo  '<li class="read-more-image"><a href="';
+						 	the_permalink();
+						 	echo '"><div class="read-more"></div></a></li>';
 						 }
 					?>
-					<li class="read-more-image"><a href="<?php the_permalink() ?>"><div class="read-more"></div></a></li>
+					
 				</ul>
 				<span></span>
 				<!-- <?php the_tags('Tags: ', ', ', '<br />'); ?> -->

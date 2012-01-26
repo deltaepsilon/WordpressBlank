@@ -23,7 +23,7 @@ Template Name: Portfolio
 									'new' => 'new',
 									'calendars' => 'calendars',
 									'patterns' => 'patterns',
-									'cards' => 'cards',
+									'cards-2' => 'cards',
 									'illustrations' => 'illustrations',
 									'packaging' => 'packaging',
 								);

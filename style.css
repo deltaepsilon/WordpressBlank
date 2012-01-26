@@ -218,6 +218,10 @@ body {
   min-width: 1250px;
   min-height: 2238px;
 }
+img {
+  border: 1px dotted #75726c;
+  padding: 5px;
+}
 a, a:visited {
   text-decoration: none;
   color: #75726c;
@@ -492,6 +496,9 @@ ol.commentlist,
   margin-right: 25px;
   width: 250px;
   background-repeat: no-repeat;
+}
+.truncated-text {
+  min-height: 190px;
 }
 .index-gallery {
   width: 609px;

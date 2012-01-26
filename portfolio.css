@@ -51,7 +51,7 @@ a:hover {
 }
 .portfolio-item {
   float: left;
-  margin: 0 8px;
+  margin: 0 4px;
 }
 .portfolio-item img {
   border: 1px dotted #75726c;
