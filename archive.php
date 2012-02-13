@@ -48,9 +48,13 @@
 					if(!empty($firstImagePath)) {
 						echo "<div class=\"first-image\" style=\"background-image: url($firstImagePath);\"></div>";
 					}
-								the_excerpt(); 
+								the_excerpt();
+                echo  '<a href="';
+              the_permalink();
+              echo '"><div class="read-more"></div></a>'; 
 							?>
 						</div>
+						
 
 				</div>
 

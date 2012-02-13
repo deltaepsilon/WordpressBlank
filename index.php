@@ -5,12 +5,20 @@
 	$truncateLength = 400; //In characters
 ?>
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		<?php $counter ++; ?>
+		<?php 
+			$counter ++; 
+			if ($counter == $featuredPostCount + 1) {
+			 	echo '<div id="month-archives-title"><a href="'.get_month_link('', '').'">archives: ';
+			 	the_time('F');
+			 	echo '</a></div>';
+			 }
+		?>
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			
 			<?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
 			
 			<div class="post-banner"><h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2></div>
+			
 			<div class="entry">
 				<?php
   				// Show full post until featuredPostCount
@@ -22,6 +30,8 @@
 					} 				
 				 }
 				 else {
+				 
+					
 				 	$showGallery = TRUE;
 				 	$contents =	$post->post_content;
 					preg_match('/<img.+?>/', $contents, $images);
@@ -35,7 +45,8 @@
 						echo '<div class="truncated-text">'.$truncatedText.'...</div>';
 					}
 				 }
-				 if ($showGallery == TRUE) {
+				 // if ($showGallery == TRUE) {
+				 if (1 === 2) {
 				 	/* 
 					 * 	Gallery Begin
 					 * 	Tweak maxImages and image tags to control output
@@ -93,21 +104,7 @@
 					Posted in: <?php the_category(', ') ?>
 				</div>
 			</div>
-			<?php
-				// if ($counter == $featuredPostCount) {
-				 	// echo '<div id="month-archives-title"><a href="'.get_month_link('', '').'">archives: ';
-				 	// the_time('F');
-				 	// echo '</a></div>';
-				 // }
-			?>
 		</div>
-		<?php
-			if ($counter == $featuredPostCount + 1) {
-			 	echo '<div id="month-archives-title"><a href="'.get_month_link('', '').'">archives: ';
-			 	the_time('F');
-			 	echo '</a></div>';
-			 }
-		?>
 	<?php endwhile; ?>
 
 	<?php include (TEMPLATEPATH . '/inc/nav.php' ); ?>

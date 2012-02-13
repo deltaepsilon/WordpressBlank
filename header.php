@@ -62,7 +62,7 @@
 <!-- 					Activate the next line if you'd prefer the native wordpress feed	-->
 <!-- 					<li><a href="<?php bloginfo('rss2_url'); ?>"><div class="rss"></div></a></li> -->
 <!-- 					Edit the next line to change your feed linke	-->
-					<li><a href="http://feeds.feedburner.com/SweetMuffinSuite-testgit "><div class="rss"></div></a></li>
+					<li><a href="http://feeds.feedburner.com/SweetMuffinSuite-test"><div class="rss"></div></a></li>
 					<li><a href="mailto:sweetmuffinsuite@gmail.com?subject=Hello Muffin."><div class="email"></div></a></li>
 					<li><a href="http://www.etsy.com/shop/mufninc"><div class="shopping-cart"></div></a></li>
 				</ul> 
@@ -77,7 +77,7 @@
 				<td id="contact"><a href="/contact">contact</a></td>
 				<td id="my-work"><a href="/my-work">my work</a></td>
 				<td id="freebies"><a href="/category/freebies">freebies</a></td>
-				<td id="tutorial"><a href="/category/tutorial">tutorials</a></td>
+				<td id="tutorial"><a href="/category/tutorials">tutorials</a></td>
 				<td id="books"><a href="/category/books">books</a></td>
 				<td id="shop"><a href="/shop">shop</a></td>
 			</tr>
