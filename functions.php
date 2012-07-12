@@ -30,4 +30,11 @@
     	));
     }
 
+	function register_my_menus() {
+		register_nav_menus(array(
+			'header-links' => __('Header Links')
+		));
+	}
+	add_action( 'init', 'register_my_menus');
+
 ?>
