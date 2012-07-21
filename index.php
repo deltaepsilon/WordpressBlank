@@ -4,7 +4,7 @@
 
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 
-			<h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+			<a class="title-link" href="<?php the_permalink() ?>"><h2 class="title"><?php the_title(); ?></h2></a>
 
 			<?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
 
@@ -13,9 +13,17 @@
 			</div>
 
 			<div class="postmetadata">
-				<?php the_tags('Tags: ', ', ', '<br />'); ?>
-				Posted in <?php the_category(', ') ?> | 
-				<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
+				<div class="add-a-comment">
+					<?php comments_popup_link('add a comment', 'add a comment', 'add a comment'); ?>
+				</div>
+				<div class="posted-in">
+					posted in:
+					<div class="posted-in-links">
+						<?php the_category(', ') ?>
+						<br />
+						<?php the_tags('Tags: ', ', ', '<br />'); ?>
+					</div>
+				</div>
 			</div>
 
 		</div>
