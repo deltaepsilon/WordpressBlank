@@ -32,8 +32,8 @@
 			<?php while (have_posts()) : the_post(); ?>
 			
 				<div <?php post_class() ?>>
-				
-						<h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+
+					<a class="title-link" href="<?php the_permalink() ?>"><h2 class="title" id="post-<?php the_ID(); ?>"><?php the_title(); ?></h2></a>
 					
 						<?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
 

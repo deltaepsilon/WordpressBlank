@@ -52,7 +52,7 @@
 	<div id="page-wrap">
 
 		<div id="header">
-			<h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
+			<a href="<?php echo get_option('home'); ?>/"><h1><?php bloginfo('name'); ?></h1></a>
 			<div class="description"><?php bloginfo('description'); ?></div>
 			<?php wp_nav_menu( array( 'theme_location' => 'header-links' ) ); ?>
 		</div>

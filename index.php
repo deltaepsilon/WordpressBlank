@@ -19,7 +19,7 @@
 				<div class="posted-in">
 					posted in:
 					<div class="posted-in-links">
-						<?php the_category(', ') ?>
+						<?php the_category(', ', 'single') ?>
 						<br />
 						<?php the_tags('Tags: ', ', ', '<br />'); ?>
 					</div>

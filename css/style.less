@@ -60,22 +60,22 @@ ol.commentlist li.alt { }
 ol.commentlist li.bypostauthor { }
 ol.commentlist li.byuser { }
 ol.commentlist li.comment-author-admin { }
-ol.commentlist li.comment { border-bottom: 1px dotted #666; padding: 10px; }
+//ol.commentlist li.comment { border-bottom: 1px dotted #666; padding: 10px; }
 ol.commentlist li.comment div.comment-author { }
 ol.commentlist li.comment div.vcard { }
 ol.commentlist li.comment div.vcard cite.fn { font-style: normal; }
 ol.commentlist li.comment div.vcard cite.fn a.url { }
-ol.commentlist li.comment div.vcard img.avatar { float:right; margin: 0 0 10px 10px; }
+//ol.commentlist li.comment div.vcard img.avatar { float:right; margin: 0 0 10px 10px; }
 ol.commentlist li.comment div.vcard img.avatar-32 { }
 ol.commentlist li.comment div.vcard img.photo { }
 ol.commentlist li.comment div.vcard span.says { }
 ol.commentlist li.comment div.commentmetadata { }
-ol.commentlist li.comment div.comment-meta { font-size: 10px; }
-ol.commentlist li.comment div.comment-meta a { color: #ccc; }
+//ol.commentlist li.comment div.comment-meta { font-size: 10px; }
+//ol.commentlist li.comment div.comment-meta a { color: #ccc; }
 ol.commentlist li.comment p { }
 ol.commentlist li.comment ul { }
-ol.commentlist li.comment div.reply { font-size: 11px; }
-ol.commentlist li.comment div.reply a { font-weight: bold; }
+//ol.commentlist li.comment div.reply { font-size: 11px; }
+//ol.commentlist li.comment div.reply a { font-weight: bold; }
 ol.commentlist li.comment ul.children { list-style: none; margin: 10px 0 0; }
 ol.commentlist li.comment ul.children li { }
 ol.commentlist li.comment ul.children li.alt { }
@@ -89,7 +89,7 @@ ol.commentlist li.comment ul.children li.depth-4 { border-left: 5px solid #bbb; 
 ol.commentlist li.comment ul.children li.depth-5 { }
 ol.commentlist li.comment ul.children li.odd { }
 ol.commentlist li.even { background: #fff; }
-ol.commentlist li.odd { background: #f6f6f6; }
+//ol.commentlist li.odd { background: #f6f6f6; }
 ol.commentlist li.parent { border-left: 5px solid #111; }
 ol.commentlist li.thread-alt { }
 ol.commentlist li.thread-even { }
@@ -295,6 +295,12 @@ a {
 	margin-left: -458px;
 	width: 915px;
 	padding-bottom: 50px;
+
+	h2 {
+		text-transform: uppercase;
+		font-weight: lighter;
+		margin: 10px 0 20px;
+	}
 }
 .post {
 	width: 600px;
@@ -385,6 +391,14 @@ a {
 		}
 	}
 }
+.single {
+	.post .postmetadata {
+		margin-bottom: 0px;
+	}
+	#comments {
+		top: -50px;
+	}
+}
 .navigation {
 	width: 600px;
 	position: absolute;
@@ -392,25 +406,104 @@ a {
 	bottom: 30px;
 	font-size: 0;
 
-	.next-posts {
-		.newer;
-		float: right;
-	}
 	.prev-posts {
-		.older;
+		float: right;
+
+		a {
+			.newer;
+			display: block;
+		}
+	}
+	.next-posts {
 		float: left;
+		a {
+			.older;
+			display: block;
+		}
 	}
 }
 #comments {
 	float: left;
-	width: 600px;
+	width: 320px;
+	font-size: 15px;
+	font-weight: lighter;
+	left: 25px;
+	letter-spacing: 3px;
+	position: relative;
+	text-transform: uppercase;
+	top: -100px;
+	margin-bottom: -21px;
+	height: 17px;
+
 }
 .commentlist {
 	float: left;
 	width: 600px;
+
+	li.odd {
+		border-color: @gray;
+	}
+	li {
+		border-left: 10px solid @pink;
+		padding: 10px;
+
+		.vcard {
+			.avatar {
+				float: left;
+				margin: -10px 22px 10px 5px;
+			}
+			.fn {
+				text-transform: uppercase;
+				font-size: 16px;
+				position: relative;
+				top: -9px;
+				letter-spacing: 2px;
+			}
+			.says {
+				display: none;
+			}
+		}
+		.comment-meta {
+			font-size: 12px;
+			letter-spacing: 1px;
+			margin: -11px 0 20px;
+			a, a:visited {
+				color: @brown;
+			}
+		}
+		p {
+			margin: 0 0 0 5px;
+		}
+		.reply {
+			font-size: 12px;
+			font-weight: lighter;
+			letter-spacing: 2px;
+			text-align: right;
+			text-transform: uppercase;
+			a, a:visited {
+				color: @brown;
+			}
+		}
+	}
 }
 #respond {
 	float: left;
+	margin-bottom: 50px;
+
+	h2 {
+		display: none;
+	}
+	#comment {
+		border: 1px solid @gray;
+		width: 600px;
+	}
+	#submit {
+		.submit;
+		float: right;
+		border: none;
+		font-size: 0;
+		margin-top: 5px;
+	}
 }
 #sidebar {
 	position: absolute;
