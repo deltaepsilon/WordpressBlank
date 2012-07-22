@@ -204,6 +204,7 @@ a { text-decoration: none; color: black; }
 	/*  Colors  */
 @white: #ffffff;
 @black: #000000;
+@whiteTransparent: hsla(0, 0%, 100%, 0.95);
 
 @gray: #eae9e1;
 @brown: #533b35;
@@ -249,10 +250,17 @@ a {
 
 /*	Elements	*/
 #header {
+	position: fixed;
+	top: 20px;
+	background-color: @whiteTransparent;
+	margin-left: -5px;
+	width: 100%;
+	z-index: 100;
+
 	.menu-header-links-container {
 		position: absolute;
 		top: 7px;
-		left: 210px;
+		left: 215px;
 		border-bottom: 2px solid @taupe;
 		width: 1191px;
 	}
@@ -261,7 +269,7 @@ a {
 	}
 	h1 {
 		.headline;
-		left: -485px;
+		left: -480px;
 		position: relative;
 		top: 8px;
 		width: 704px;
@@ -279,19 +287,22 @@ a {
 	a {
 		display: block;
 		font-size: 15px;
-		padding: 20px;
-		padding: 19px 17px;
+		padding: 24px 17px 14px;
 		letter-spacing: 1px;
 	}
 	a, a:visited {
 		color: @brown;
 	}
-	a:hover {
+	a:hover, li.current-menu-item a {
 		background-color: @gray;
+	}
+	li.current-menu-item a {
+		cursor: default;
 	}
 }
 #page-wrap {
 	position: absolute;
+	top: 117px;
 	left: 50%;
 	margin-left: -458px;
 	width: 915px;
@@ -465,11 +476,17 @@ a {
 	li {
 		border-left: 10px solid @pink;
 		padding: 10px;
+		padding-bottom: 0;
+		margin-bottom: 10px;
 
 		.vcard {
 			.avatar {
 				float: left;
 				margin: -10px 22px 10px 5px;
+			}
+			.avatar[src*="blank.gif"] {
+				.face;
+				display: block;
 			}
 			.fn {
 				text-transform: uppercase;
@@ -527,7 +544,7 @@ a {
 #sidebar {
 	position: absolute;
 	right: 0;
-	top: 96px;
+	top: -3px;
 	width: 256px;
 }
 #footer {
@@ -599,8 +616,9 @@ a {
 		[type="text"] {
 			height: 29px;
 			margin-top: 5px;
-			width: 249px !important;
-			border: 1px solid @gray;
+			width: 243px !important;
+			border: 1px solid @brown;
+			padding: 0 3px;
 		}
 	}
 	.featured-designer {
