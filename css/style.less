@@ -130,7 +130,7 @@ a { text-decoration: none; color: black; }
 } /* END print media */
 
 /*	Sprites	*/
-@spritesheet: url('/wp-content/themes/mm/images/spritesheet.png');
+@spritesheet: url('/wp-content/themes/mn/images/spritesheet.png');
 .headline, .pink-swirl, .gray-swirl, .read-more, .becoming, .subscribe, .face, .bloglovin, .shop-patterns, .rss, .instagram, .pinterest, .email, .facebook, .twitter, .submit, .older, .newer {
 	background-image: @spritesheet;
 }
@@ -189,13 +189,13 @@ a { text-decoration: none; color: black; }
 	background-position: -139px -723px; width: 76px; height: 22px;
 }
 
-@featured-designer: url('/wp-content/themes/mm/images/featured-designer.png');
+@featured-designer: url('/wp-content/themes/mn/images/featured-designer.png');
 .featured-designer {
 	background-image: @featured-designer;
 	background-position: 0 0; width: 251px; height: 180px;
 }
 
-@button-up: url('/wp-content/themes/mm/images/button-up.png');
+@button-up: url('/wp-content/themes/mn/images/button-up.png');
 .button-up{
 	background-image: @button-up;
 	background-position: 0 0; width: 224px; height: 158px;
@@ -330,6 +330,8 @@ a {
 	}
 	.title {
 		.pink-swirl;
+		background-position: -6px -121px;
+		padding-bottom: 16px;
 		width: 599px;
 		text-align: right;
 		font-size: 19px;
@@ -339,6 +341,15 @@ a {
 		letter-spacing: 4px;
 		word-spacing: 5px;
 		text-transform: uppercase;
+		position: relative;
+
+		span {
+			bottom: 17px;
+			position: absolute;
+			right: 0;
+			vertical-align: bottom;
+			max-width: 530px;
+		}
 	}
 	.meta {
 		font-size: 11px;
@@ -395,11 +406,12 @@ a {
 			right: 21px;
 			text-align: right;
 			text-transform: uppercase;
-			top: 13px;
+			top: 4px;
 			.posted-in-links {
 				margin-top: 2px;
 				text-transform: lowercase;
 				font-size: 11px;
+				max-width: 380px;
 
 				span {
 					left: 21px;

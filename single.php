@@ -4,7 +4,7 @@
 
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			
-			<h2 class="title"><?php the_title(); ?></h2>
+			<h2 class="title"><span><?php the_title(); ?></span></h2>
 			
 			<?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
 

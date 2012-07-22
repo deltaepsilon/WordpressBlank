@@ -10,7 +10,7 @@
 
 			<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 
-				<h2><?php the_title(); ?></h2>
+				<a class="title-link" href="<?php the_permalink() ?>"><h2 class="title"><span><?php the_title(); ?></span></h2></a>
 
 				<?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
 

@@ -33,7 +33,7 @@
 			
 				<div <?php post_class() ?>>
 
-					<a class="title-link" href="<?php the_permalink() ?>"><h2 class="title" id="post-<?php the_ID(); ?>"><?php the_title(); ?></h2></a>
+					<a class="title-link" href="<?php the_permalink() ?>"><h2 class="title" id="post-<?php the_ID(); ?>"><span><?php the_title(); ?></span></h2></a>
 					
 						<?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
 
