@@ -206,7 +206,7 @@ a { text-decoration: none; color: black; }
 @black: #000000;
 
 @gray: #eae9e1;
-@brown: #523b36;
+@brown: #533b35;
 @pink: #f8dbd4;
 @orange: #ef7c67;
 @taupe: #d1b391;
@@ -252,7 +252,7 @@ a {
 	.menu-header-links-container {
 		position: absolute;
 		top: 7px;
-		left: 208px;
+		left: 210px;
 		border-bottom: 2px solid @taupe;
 		width: 1191px;
 	}
@@ -278,9 +278,10 @@ a {
 	}
 	a {
 		display: block;
-		font-size: 16px;
-		margin: 0 1px;
+		font-size: 15px;
+		padding: 20px;
 		padding: 19px 17px;
+		letter-spacing: 1px;
 	}
 	a, a:visited {
 		color: @brown;
@@ -333,7 +334,7 @@ a {
 		padding-right: 8px;
 		position: relative;
 		text-align: right;
-		top: -12px;
+		top: -22px;
 		letter-spacing: 2px;
 		text-transform: capitalize;
 	}
@@ -387,14 +388,32 @@ a {
 				margin-top: 2px;
 				text-transform: lowercase;
 				font-size: 11px;
+
+				span {
+					left: -377px;
+					position: relative;
+					top: 30px;
+				}
 			}
 		}
 	}
 }
 .single {
-	.post .postmetadata {
-		margin-bottom: 0px;
+	#page-wrap .post > h2 {
+		margin-top: 19px;
+		margin-left: -3px;
 	}
+	.post {
+		.entry {
+			margin-top: 7px;
+		}
+		.meta {
+			top: -31px;
+		}
+		.postmetadata {
+			margin-bottom: 0px;
+		}
+	}fir
 	#comments {
 		top: -50px;
 	}
@@ -525,6 +544,7 @@ a {
 #sidebar {
 	#social {
 		list-style: none;
+		padding: 0;
 		li {
 			float: left;
 			margin-left: 13px;
@@ -557,6 +577,7 @@ a {
 			width: 90px;
 			position: relative;
 			top: 2px;
+			text-transform: uppercase;
 		}
 	}
 	.shop-patterns {
@@ -627,4 +648,7 @@ a {
   display: inline !important;
   float: left !important;
   margin: 0 30px 15px 0 !important;
+}
+ul {
+	padding-left: 20px;
 }

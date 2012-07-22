@@ -24,7 +24,10 @@
 					<div class="posted-in-links">
 						<?php the_category(', ', 'single') ?>
 						<br />
-						<?php the_tags('Tags: ', ', ', '<br />'); ?>
+						<span class="tags">
+							<?php the_tags('Tags: ', ', ', '<br />'); ?>
+						</span>
+
 					</div>
 				</div>
 			</div>
