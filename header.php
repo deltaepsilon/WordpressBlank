@@ -31,6 +31,8 @@
 		         echo ' - page '. $paged; }
 		   ?>
 	</title>
+
+
 	
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 	
@@ -41,20 +43,22 @@
 	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 
 	<?php wp_head(); ?>
-	
+
+    <script type="text/javascript" src="<?php bloginfo("template_url");?>/script.js"></script>
 </head>
 
 <body <?php body_class(); ?>>
 
 
 	<div id="page-wrap">
+        <div id="header">
+			<?php wp_nav_menu( array( 'sort_column' => 'menu_order','container_class' => 'header-links' ) ); ?>
+        </div>
 		<div id="left-panel">
 			<?php get_sidebar(); ?>
 		</div>
 
 		<div id="right-panel">
 
-			<div id="header">
-				<?php wp_nav_menu( array( 'sort_column' => 'menu_order','container_class' => 'header-links' ) ); ?>
-			</div>
+
 
