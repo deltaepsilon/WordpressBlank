@@ -45,11 +45,16 @@
 </head>
 
 <body <?php body_class(); ?>>
-	
-	<div id="page-wrap">
 
-		<div id="header">
-			<h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
-			<div class="description"><?php bloginfo('description'); ?></div>
+
+	<div id="page-wrap">
+		<div id="left-panel">
+			<?php get_sidebar(); ?>
 		</div>
+
+		<div id="right-panel">
+
+			<div id="header">
+				<?php wp_nav_menu( array( 'sort_column' => 'menu_order','container_class' => 'header-links' ) ); ?>
+			</div>
 

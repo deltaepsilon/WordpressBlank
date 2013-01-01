@@ -1,14 +1,17 @@
 <?php
 	
 	// Add RSS links to <head> section
-	automatic_feed_links();
+	add_theme_support('automatic-feed-links');
 	
 	// Load jQuery
 	if ( !is_admin() ) {
-	   wp_deregister_script('jquery');
-	   wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"), false);
-	   wp_enqueue_script('jquery');
+		add_action('wp_enqueue_scripts', 'islyAddJQuery');
 	}
+
+	function islyAddJQuery() {
+		wp_enqueue_script('jquery');
+	}
+
 	
 	// Clean up the <head>
 	function removeHeadLinks() {

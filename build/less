@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-cd "$( dirname "$0" )"
-for f in ../css/style.less
-do
-  echo "Processing $f file..."
-  lessc $f > ../style.css
-done
