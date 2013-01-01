@@ -51,6 +51,13 @@
 
 
 	<div id="page-wrap">
+		<form id="isly-contact" method="post">
+			<input type="text" id="isly-contact-name" placeholder="NAME"/>
+            <input type="email" id="isly-contact-email" placeholder="EMAIL"/>
+            <input type="text" id="isly-contact-subject" placeholder="SUBJECT"/>
+			<textarea id="isly-contact-message" placeholder="TYPE YOUR MESSAGE HERE ..."></textarea>
+			<button id="isly-contact-submit">SUBMIT</button>
+		</form>
         <div id="header">
 			<?php wp_nav_menu( array( 'sort_column' => 'menu_order','container_class' => 'header-links' ) ); ?>
         </div>
