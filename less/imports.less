@@ -1,0 +1,148 @@
+.absLayout(@top: 0, @right: 0, @bottom: 0, @left: 0) {
+  bottom: @bottom;
+  left: @left;
+  position: absolute;
+  right: @right;
+  top: @top;
+}
+
+//cross browser
+.backgroundClip() {
+  background-clip: padding-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+}
+
+.backgroundNone() {
+  background:transparent;
+  filter: e('progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)');
+  -ms-filter: e("progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)");
+}
+
+.borderNone() {
+  border: 0 none;
+}
+
+.borderRadiusNone() {
+  .borderRadius(0);
+}
+
+.css3Reset() {
+  .backgroundNone;
+  .borderNone;
+  .boxShadowNone;
+  .textShadowNone;
+}
+
+//linear gradients
+.linearGradient(@color1: #000000, @color2: #FFFFFF) {
+  .linearGradientNoIE(@color1, @color2);
+  .linearGradientIE(@color1, @color2);
+}
+
+.linearGradientIE(@color1: #000000, @color2: #FFFFFF) {
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d')", @color1, @color2));
+  -ms-filter: %("progid:DXImageTransform.Microsoft.gradient(startColorstr=%d, endColorstr=%d)", @color1, @color2);
+  *zoom: 1;
+}
+
+.filterNone() {
+  filter:none;
+}
+
+.linearGradientNoIE(@color1: #000000, @color2: #FFFFFF) {
+  .backgroundClip;
+  .medianBackgroundColor(@color1, @color2);
+
+  background-image: -moz-linear-gradient(@color1, @color2); //FF 3.6-15
+  background-image: -ms-linear-gradient(@color1, @color2); //IE 10
+  background-image: -webkit-linear-gradient(@color1, @color2); //Safari 5.1 and Chrome 10+
+  background-image: -o-linear-gradient(@color1, @color2); //Opera 11.10 +
+  background-image: linear-gradient(@color1, @color2); //Standard
+}
+
+
+.linearGradientHNoIE(@color1: #000000, @color2: #FFFFFF) {
+  .backgroundClip;
+  .medianBackgroundColor(@color1, @color2);
+
+  background-image: -moz-linear-gradient(0deg,@color1, @color2);
+  background-image: -webkit-linear-gradient(0deg,@color1, @color2);
+  background-image: linear-gradient(0deg,@color1, @color2);
+}
+
+.linearGradientHIE(@color1: #000000, @color2: #FFFFFF) {
+  filter: e(%('progid:DXImageTransform.Microsoft.gradient(startColorstr=%d, endColorstr=%d, GradientType=1)', @color1, @color2));
+  -ms-filter: %("progid:DXImageTransform.Microsoft.gradient(startColorstr=%d, endColorstr=%d, GradientType=1)", @color1, @color2);
+}
+
+.linearGradientH(@color1: #000000, @color2: #FFFFFF) {
+  .linearGradientHNoIE(@collor1, @color2);
+  .linearGradientHIE(@collor1, @color2);
+}
+
+.linearGradientColorStop-1NoIE(@color1: #000000, @color2: #FFFFFF, @stop: 50%, @color3) {
+  .backgroundClip;
+  .medianBackgroundColor(@color1, @color2);
+
+  background-image: -moz-linear-gradient(top, @color1 0%, @color2 @stop, @color3 100%); //FF 3.6-15
+  background-image: -ms-linear-gradient(top, @color1 0%, @color2 @stop, @color3 100%); //IE 10
+  background-image: -webkit-linear-gradient(top, @color1 0%, @color2 @stop, @color3 100%); //Safari 5.1 and Chrome 10+
+  background-image: -o-linear-gradient(top, @color1 0%, @color2 @stop, @color3 100%); //Opera 11.10 +
+  background-image: linear-gradient(top, @color1 0%, @color2 @stop, @color3 100%); //Standard
+}
+
+.linearGradientColorStop-1(@color1: #000000, @color2: #FFFFFF, @stop: 50%, @color3) {
+  .linearGradientColorStop-1NoIE(@color1, @color2, @stop, @color3);
+  .linearGradientIE(@color1, @color2);
+}
+
+.linearGradientColorStop-2NoIE(@color1, @color2, @stop1, @color3, @stop2, @color4) {
+  .backgroundClip;
+  .medianBackgroundColor(@color1, @color4);
+
+  background-image: -moz-linear-gradient(top, @color1 0%, @color2 @stop1, @color3 @stop2, @color4 100%); //FF 3.6-15
+  background-image: -ms-linear-gradient(top, @color1 0%, @color2 @stop1, @color3 @stop2, @color4 100%); //IE 10
+  background-image: -webkit-linear-gradient(top, @color1 0%, @color2 @stop1, @color3 @stop2, @color4 100%); //Safari 5.1 and Chrome 10+
+  background-image: -o-linear-gradient(top, @color1 0%, @color2 @stop1, @color3 @stop2, @color4 100%); //Opera 11.10 +
+  background-image: linear-gradient(top, @color1 0%, @color2 @stop1, @color3 @stop2, @color4 100%); //Standard
+}
+
+.linearGradientColorStop-2(@color1, @color2, @stop1, @color3, @stop2, @color4) {
+  .linearGradientColorStop-2NoIE(@color1, @color2, @stop1, @color3, @stop2, @color4);
+  .linearGradientIE(@color1, @color4);
+}
+
+.linearGradientColorStop-3(@color1, @color2, @stop2, @color3, @stop3, @color4, @stop4, @color5, @stop5, @color6) {
+  .backgroundClip;
+  .medianBackgroundColor(@color2, @color5);
+
+  background-image: -moz-linear-gradient(top, @color1 0%, @color1 @stop2, @color2 @stop2, @color3 @stop3, @color4 @stop4, @color5 @stop5, @color6 @stop5, @color6 100%); //FF 3.6-15
+  background-image: -ms-linear-gradient(top, @color1 0%, @color1 @stop2, @color2 @stop2, @color3 @stop3, @color4 @stop4, @color5 @stop5, @color6 @stop5, @color6 100%); //IE 10
+  background-image: -webkit-linear-gradient(top, @color1 0%, @color1 @stop2, @color2 @stop2, @color3 @stop3, @color4 @stop4, @color5 @stop5, @color6 @stop5, @color6 100%); //Safari 5.1 and Chrome 10+
+  background-image: -o-linear-gradient(top, @color1 0%, @color1 @stop2, @color2 @stop2, @color3 @stop3, @color4 @stop4, @color5 @stop5, @color6 @stop5, @color6 100%); //Opera 11.10 +
+  background-image: linear-gradient(top, @color1 0%, @color1 @stop2, @color2 @stop2, @color3 @stop3, @color4 @stop4, @color5 @stop5, @color6 @stop5, @color6 100%); //Standard
+  .linearGradientIE(@color1, @color4);
+}
+
+.linearGradientHColorStop-1(@color1: #000000, @color2: #FFFFFF, @stop: 50%, @color3) {
+  .linearGradientHColorStop-1NoIE(@color1, @color2, @stop, @color3);
+  .linearGradientHIE(@color1, @color2);
+}
+
+.linearGradientHColorStop-1NoIE(@color1: #000000, @color2: #FFFFFF, @stop: 50%, @color3) {
+  .backgroundClip;
+  .medianBackgroundColor(@color1, @color2);
+
+  background-image: -moz-linear-gradient(left, @color1 0%, @color2 @stop, @color3 100%); //FF 3.6-15
+  background-image: -ms-linear-gradient(left, @color1 0%, @color2 @stop, @color3 100%); //IE 10
+  background-image: -webkit-linear-gradient(left, @color1 0%, @color2 @stop, @color3 100%); //Safari 5.1 and Chrome 10+
+  background-image: -o-linear-gradient(left, @color1 0%, @color2 @stop, @color3 100%); //Opera 11.10 +
+  background-image: linear-gradient(left, @color1 0%, @color2 @stop, @color3 100%); //Standard
+}
+
+.medianBackgroundColor(@color1, @color2) {
+// This should find the median between @color1 and @color2.
+// NOTE: This will only work if the colors are of the same general hue.
+  background-color: hsl((hue(@color1) + hue(@color2)) / 2,(saturation(@color1) + saturation(@color2)) / 2, (lightness(@color1) + lightness(@color2)) / 2);
+}
