@@ -12,7 +12,8 @@
 .triangle-up-white, .triangle-right-white, .triangle-down-white, .triangle-left-white,
 .triangle-up-black, .triangle-right-black, .triangle-down-black, .triangle-left-black,
 .share-with-love,
-.isly-click-below, .thank-you-image, .bow-ties-image {
+.isly-click-below, .thank-you-image, .bow-ties-image,
+.isly-looped-border {
   background-image: @spritesheet;
 }
 
@@ -120,6 +121,12 @@
   background-position: -837px -111px;
   width: 146px;
   height: 81px;
+}
+
+.isly-looped-border {
+  background-position: -23px -227px;
+  width: 301px;
+  height: 323px;
 }
 
 /*  Fonts */
@@ -439,6 +446,8 @@ a, a:visited {
   padding-right: 7px;
 }
 
+// Logo
+
 #isly-logo-wrapper {
   text-align: center;
   padding-top: 10px;
@@ -460,6 +469,7 @@ a, a:visited {
   width: 360px;
 }
 
+//  Search
 #s {
   .textInput;
   width: 200px;
@@ -477,6 +487,7 @@ a, a:visited {
   .button;
 }
 
+//  Social
 #isly-social {
   @width: 31px;
   .social-barbells;
@@ -543,6 +554,7 @@ a, a:visited {
   }
 }
 
+//  Ads
 #isly-ads {
   padding-left: 30px;
   margin-bottom: 20px;
@@ -552,6 +564,7 @@ a, a:visited {
   }
 }
 
+//  Press & Advertising
 .isly-sidebar-title {
   background-image: @background1;
   color: @white;
@@ -562,6 +575,7 @@ a, a:visited {
   text-transform: uppercase;
   width: 290px;
   margin: 0 30px;
+  display: inline-block;
 }
 
 .isly-sidebar-title-text {
@@ -578,6 +592,7 @@ a, a:visited {
   }
 }
 
+//  Share with Love
 .share-with-love {
   margin: 27px 0 0 28px;
 
@@ -585,11 +600,18 @@ a, a:visited {
     padding: 54px 0 0 95px;
     font-size: 11px;
   }
+
+  li {
+    margin-bottom: 5px;
+  }
 }
 
-.isly-click-below-wrapper {
+
+//  Click Below
+#isly-click-below-wrapper {
   height: 141px;
-  margin: 27px 0px 0 30px;
+  margin: 27px 0px 44px 30px;
+  position: relative;
 }
 
 .isly-click-below {
@@ -610,3 +632,131 @@ a, a:visited {
   margin-top: 34px;
 }
 
+.click-below-actions {
+  position: absolute;
+  right: 211px;
+  bottom: -13px;
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 13px;
+  letter-spacing: 2px;
+
+  &:first-line {
+    font-size: 13px;
+  }
+}
+#all-printables {
+  right: 211px;
+  text-align: right;
+}
+
+#all-tutorials {
+  left: 191px;
+  text-align: left;
+}
+
+//  Categories and Archives
+.widget_categories, .widget_archive {
+  @width: 112px;
+  width: @width;
+  float: left;
+  position: relative;
+  margin-bottom: 45px;
+
+  h2 {
+    .isly-sidebar-title;
+    margin: 0;
+    width: @width;
+    padding-left: 28px;
+    padding-right: 6px;
+    position: relative;
+
+    &:before {
+      .before(13px, inherit, inherit, 17px);
+      .triangle-down-white;
+    }
+  }
+  
+  select {
+    display: none;
+  }
+}
+
+.widget_categories {
+  margin: 0 43px 0 29px;
+}
+
+.widget_archive {
+  z-index: 1;
+
+}
+
+//  Custom Drop Down
+.drop-down {
+  border: 1px solid @lineGrayHEX;
+  border-top: 0;
+  position: relative;
+  width: 144px;
+  height: 130px;
+  overflow: hidden;
+}
+.drop-down-list {
+  list-style-type: none;
+  text-overflow: ellipsis;
+  text-align: center;
+  margin: 0 10px 0 0;
+  position: relative;
+  top: 0;
+}
+
+.sliding {
+  &:before {
+    .before(0, 0, 0, 0);
+    z-index: 1;
+  }
+}
+
+.dropDownItem {
+  padding: 2px 0px 2px 3px;
+
+  &:hover, &.selected {
+    background-color: @lineGrayHEX;
+    color: @white;
+  }
+}
+
+.dropDownItemLink {
+
+}
+
+.drop-down-slider {
+  .absLayout(0, 0, 0, inherit);
+  border-left: 1px solid @lineGrayHEX;
+  width: 9px;
+  z-index: 10;
+}
+
+.drop-down-slider-bar {
+  background-color: @lineGrayHEX;
+  position: relative;
+  top: 0;
+}
+
+//  Copyright
+#isly-copyright {
+  .isly-looped-border {
+    background-position: -23px -434px;
+    width: 301px;
+    height: 117px;
+    margin: -1px 0 0 29px;
+  }
+}
+
+#copyright {
+  padding: 17px 30px;
+  display: inline-block;
+  text-align: center;
+  font-size: 11px;
+}
