@@ -4,38 +4,38 @@ module.exports = function(grunt) {
             app: {
                 options: {
                   // yuicompress: true, //Use for production
-                    paths: ['less']
+                    paths: ['styles/less']
                 },
                 files: {
-                    'css/header.css': 'less/header.less',
-                    'css/reset.css': 'less/reset.less',
-                    'css/style.css': 'less/style.less'
+                    'styles/css/header.css': 'styles/less/header.less',
+                    'styles/css/reset.css': 'styles/less/reset.less',
+                    'styles/css/style.css': 'styles/less/style.less'
                 }
             }
         },
         coffee: {
             app: {
-                src: ['coffee/script.coffee'],
-                dest: 'js'
+                src: ['scripts/coffee/script.coffee'],
+                dest: 'scripts/js'
             }
         },
         concat: {
             css: {
-                src: ['css/*.css'],
+                src: ['styles/css/*.css'],
                 dest: 'style.css'
             },
             js: {
-                src: ['js/*.js'],
-                dest: 'script.js'
+                src: ['scripts/js/*.js'],
+                dest: 'scripts/main.js'
             }
         },
         watch: {
             less: {
-                files: ['less/*'],
+                files: ['styles/less/*'],
                 tasks:'less concat'
             },
             js: {
-                files: ['coffee/*'],
+                files: ['scripts/coffee/*'],
                 tasks:'coffee concat'
             }
         }

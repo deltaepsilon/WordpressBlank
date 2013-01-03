@@ -44,25 +44,27 @@
 
 	<?php wp_head(); ?>
 
-    <script type="text/javascript" src="<?php bloginfo("template_url");?>/script.js"></script>
-    <script type="text/javascript" src="<?php bloginfo("template_url");?>/libraries/modernizr.custom.36318.js"></script>
+    <script type="text/javascript" src="<?php bloginfo("template_url");?>/scripts/modernizr.custom.36318.js"></script>
+    <script type="text/javascript" data-main="<?php bloginfo("template_url");?>/scripts/main.js" src="<?php bloginfo("template_url");?>/scripts/require.js"></script>
 </head>
 
 <body <?php body_class(); ?>>
 
-
+	<form id="isly-contact" action="<?php bloginfo("template_url");?>/contactForm.php">
+		<ul id="notifications">
+			<li class="notification"></li>
+		</ul>
+		<div id="isly-contact-left-wrapper">
+			<input type="text" id="isly-contact-name" class="isly-contact-input isly-contact-left" placeholder="NAME" name="name" required/>
+			<input type="text" id="isly-contact-email" class="isly-contact-input isly-contact-left" placeholder="EMAIL" name="email" required/>
+			<input type="text" id="isly-contact-subject" class="isly-contact-input isly-contact-left" placeholder="SUBJECT" name="subject"/>
+		</div>
+		<div id="isly-contact-message-wrapper">
+			<textarea id="isly-contact-message" class="isly-contact-input" placeholder="TYPE YOUR MESSAGE HERE ..." name="body" required></textarea>
+		</div>
+		<button id="isly-contact-submit" class="isly-contact-input">SUBMIT</button>
+	</form>
 	<div id="page-wrap">
-		<form id="isly-contact" action="<?php bloginfo("template_url");?>/contactForm.php">
-			<div id="isly-contact-left-wrapper">
-                <input type="text" id="isly-contact-name" class="isly-contact-input isly-contact-left" placeholder="NAME" name="name" required/>
-                <input type="email" id="isly-contact-email" class="isly-contact-input isly-contact-left" placeholder="EMAIL" name="email" required/>
-                <input type="text" id="isly-contact-subject" class="isly-contact-input isly-contact-left" placeholder="SUBJECT" name="subject"/>
-			</div>
-			<div id="isly-contact-message-wrapper">
-                <textarea id="isly-contact-message" class="isly-contact-input" placeholder="TYPE YOUR MESSAGE HERE ..." name="body" required></textarea>
-			</div>
-			<button id="isly-contact-submit" class="isly-contact-input">SUBMIT</button>
-		</form>
 
 		<div id="left-panel">
 			<?php get_sidebar(); ?>

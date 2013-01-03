@@ -13,17 +13,17 @@ $body = $_POST['body'];
 $errors = array();
 
 if (empty($name)) {
-	$errors[] = array('error' => 'Sender name is empty.');
+	$errors[] = array('notification' => 'Sender name is empty.');
 }
 
 if (empty($email)) {
-	$errors[] = array('error' => 'Sender email is empty.');
+	$errors[] = array('notification' => 'Sender email is empty.');
 } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-	$errors[] = array('error' => 'Sender email is invalid.');
+	$errors[] = array('notification' => 'Sender email is invalid.');
 }
 
 if (empty($body)) {
-	$errors[] = array('error' => 'Sender body is empty.');
+	$errors[] = array('notification' => 'Sender body is empty.');
 }
 
 if (count($errors) == 0) {
@@ -33,10 +33,10 @@ if (count($errors) == 0) {
 	$headers .= "Content-Type: text/html\r\n";
 	$result = mail('christopheresplin@gmail.com', $subject, $body, $headers);
 	if ($result) {
-		echo json_encode(array('success' => 'Email sent'));
+		echo json_encode(array( 'type' => 'success', 'notifications' => array(array('notification' => 'Email sent'))));
+		return;
 	} else {
-		echo json_encode(array('error' => "Email was not sent due to server error.  This mail function uses php's native mail() function, so make sure that the server is configured correctly to send mail from PHP."));
+		$errors[] = array('notification' => "Email was not sent due to server error.  This mail function uses php's native mail() function, so make sure that the server is configured correctly to send mail from PHP.");
 	}
-} else {
-	echo json_encode(array('errors' => $errors));
 }
+echo json_encode(array('type' => 'error', 'notifications' => $errors));

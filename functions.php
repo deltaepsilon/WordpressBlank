@@ -33,4 +33,9 @@
     	));
     }
 
+	add_shortcode('divider', 'shortcodeInsertDivider');
+	function shortcodeInsertDivider() {
+		return '<div class="isly-divider"></div>';
+	}
+
 ?>

@@ -1,9 +1,18 @@
+//  General
 .absLayout(@top: 0, @right: 0, @bottom: 0, @left: 0) {
   bottom: @bottom;
   left: @left;
   position: absolute;
   right: @right;
   top: @top;
+}
+
+.transform(@degrees: rotate(90deg)) {
+  -webkit-transform: @degrees;
+  -moz-transform: @degrees;
+  -o-transform: @degrees;
+  -ms-transform: @degrees;
+  transform: @degrees;
 }
 
 //cross browser
