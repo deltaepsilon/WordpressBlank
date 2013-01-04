@@ -15,7 +15,7 @@ module.exports = function(grunt) {
         },
         coffee: {
             app: {
-                src: ['scripts/coffee/script.coffee'],
+                src: ['scripts/coffee/*.coffee'],
                 dest: 'scripts/js'
             }
         },

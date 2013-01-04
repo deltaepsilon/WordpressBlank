@@ -167,6 +167,7 @@
 @pantoneGreen: hsla(163, 63%, 31%, 1);
 @pantoneGreenLight: hsla(163, 63%, 31%, .9);
 @white: hsla(0, 0%, 100%, 1);
+@whiteTransparent: hsla(0, 0%, 100%, .9);
 @gray: hsla(240, 2%, 23%, 1);
 @errorRed: hsla(358, 96%, 75%, 1);
 
@@ -182,7 +183,7 @@
 @errorRedHEX: #FD8487;
 
 /*  Mixins */
-.before (@top: inherit, @bottom: inherit, @right: inherit, @left: inherit, @content: "", @position: absolute) {
+.before (@top: inherit, @right: inherit , @bottom: inherit, @left: inherit, @content: "", @position: absolute) {
   content: @content;
   top: @top;
   bottom: @bottom;
@@ -213,6 +214,13 @@
   display: inline;
 }
 
+.fixedTop {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+@grayBorder: 1px solid @lineGrayHEX;
 
 
 /*	General	*/
@@ -229,10 +237,23 @@ a, a:visited {
 }
 
 #page-wrap {
-  width: 970px;
-  margin: 0 auto;
+  @outlineOffset: 13px;
+
   background-color: @white;
-  overflow: hidden;
+  left: 50%;
+  margin-top: -1px;
+  margin-left: -486px;
+  position: absolute;
+  width: 970px;
+  border: @grayBorder;
+  border-width: 1px 1px 0 1px;
+
+  &:before {
+    .before(-1000px, -@outlineOffset, 0, -@outlineOffset);
+    border: @grayBorder;
+    border-width: 0 1px;
+    z-index: -1;
+  }
 }
 
 .button {
@@ -305,7 +326,7 @@ a, a:visited {
   background-image: @background2;
   padding: 34px 28px 54px;
 
-  width: 914px;
+  width: 916px;
   margin: 0 auto;
 
   &:before {
@@ -370,6 +391,15 @@ a, a:visited {
 }
 
 //  Header
+#header {
+  width: 611px;
+  margin-left: -1px;
+
+  &.fixed {
+    .fixedTop;
+  }
+}
+
 .header-links {
   a, a:visited, a:hover {
     color: @white;
@@ -401,7 +431,8 @@ a, a:visited {
 //  Right Panel
 #right-panel {
   float: left;
-  width: 610px;
+  width: 609px;
+  padding-top: 40px;
 }
 
 //  Posts
@@ -444,6 +475,14 @@ a, a:visited {
   float: left;
   width: 353px;
   padding-right: 7px;
+
+  border: @grayBorder;
+  border-width: 0 1px 0 0;
+}
+
+//  Sidebar
+#sidebar {
+  padding-top: 143px;
 }
 
 // Logo
@@ -451,6 +490,11 @@ a, a:visited {
 #isly-logo-wrapper {
   text-align: center;
   padding-top: 10px;
+  background-color: @whiteHEX;
+
+  &.fixed {
+    .fixedTop;
+  }
 }
 
 #isly-logo {
@@ -665,19 +709,34 @@ a, a:visited {
   position: relative;
   margin-bottom: 45px;
 
+  &.open {
+    h2:before {
+      .triangle-down-white;
+      top: 13px;
+    }
+
+    .drop-down {
+      display: block;
+    }
+  }
+
   h2 {
     .isly-sidebar-title;
+    cursor: pointer;
     margin: 0;
-    width: @width;
     padding-left: 28px;
     padding-right: 6px;
     position: relative;
+    width: @width;
+
 
     &:before {
-      .before(13px, inherit, inherit, 17px);
-      .triangle-down-white;
+      .before(10px, inherit, inherit, 17px);
+      .triangle-right-white;
     }
   }
+
+
   
   select {
     display: none;
@@ -697,6 +756,7 @@ a, a:visited {
 .drop-down {
   border: 1px solid @lineGrayHEX;
   border-top: 0;
+  display: none;
   position: relative;
   width: 144px;
   height: 130px;
