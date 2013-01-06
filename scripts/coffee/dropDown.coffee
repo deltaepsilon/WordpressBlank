@@ -12,7 +12,6 @@ window.require ['jquery', 'transparency'], ($, Transparency) ->
       @options = @getOptions()
 
       @instantiated = false
-      console.log 'registering'
       @register()
 
 
@@ -58,8 +57,8 @@ window.require ['jquery', 'transparency'], ($, Transparency) ->
              <a class="dropDownItemLink"></a>
              </li>
              </ul>
-             <div class="drop-down-slider">
-             <div class="drop-down-slider-bar"></div>
+             <div class="drop-down-slider slider">
+             <div class="drop-down-slider-bar slider-bar"></div>
              </div>
              </div>
              """
@@ -75,14 +74,16 @@ window.require ['jquery', 'transparency'], ($, Transparency) ->
 
   class slider
     constructor: (axis = "y", slider, sliderBox, box, target) ->
+      console.log arguments
       @axis = axis
       @slider = $(slider)
       @sliderBox = sliderBox
       @box = $(box)
       @target = $(target)
       @build()
-      if @slider.height() > 0
-        @register()
+      @register()
+#      if @slider.height() > 0
+#        @register()
 
     build: ->
       @targetHeight = @target.height()
@@ -91,11 +92,15 @@ window.require ['jquery', 'transparency'], ($, Transparency) ->
       @sliderHeight = @boxHeight * (@boxHeight/@targetHeight)
       @scrollThreshhold = 100
       @scrollRatio = (-1 * @minOffset) / (@boxHeight - @sliderHeight)
+      console.log @targetHeight, @boxHeight, @sliderHeight
       if @targetHeight > @boxHeight
         @slider.height(@sliderHeight)
 
     register: ->
       that = this
+
+      @box.on 'rebuildSlider', ->
+        that.build()
 
       @box.on 'mousewheel', (e) ->
         e.preventDefault()
@@ -167,3 +172,11 @@ window.require ['jquery', 'transparency'], ($, Transparency) ->
       return '/?cat=' + value
     new customDropDown '.widget_archive', '.widget_archive h2', 'archive-drop-down', (value) ->
       return value
+
+    commentBoxes = $('.comment-list-wrapper')
+    i = commentBoxes.length
+    commentBox = null;
+    while i--
+      commentBox = $(commentBoxes[i])
+      new slider 'y', commentBox.find('.slider-bar'), commentBox.find('.slider'), commentBox, commentBox.find('.commentlist')
+#    (axis = "y", slider, sliderBox, box, target)

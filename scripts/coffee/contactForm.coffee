@@ -4,6 +4,7 @@ window.require ['jquery', 'transparency'], ($, Transparency) ->
 
   class contactForm
     constructor: () ->
+      @window = $(window)
       @form = $('#isly-contact')
       @notifications = $('#notifications')
       @contactButton = $('#menu-header-links').find('[title="contact"]')
@@ -14,8 +15,6 @@ window.require ['jquery', 'transparency'], ($, Transparency) ->
       that = this
       @contactButton.on 'click', @toggle
 
-      @contactButtons.on 'click', @toggle
-
       @form.on 'submit', (e) ->
         form = $(this)
         that.notifications.hide()
@@ -23,6 +22,7 @@ window.require ['jquery', 'transparency'], ($, Transparency) ->
           new notification(JSON.parse result)
         return false
     toggle: (e) =>
+      $(document).trigger 'contactFormClick'
       @form.slideToggle()
       @contactButton.toggleClass('selected')
 

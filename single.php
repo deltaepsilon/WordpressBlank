@@ -2,7 +2,7 @@
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
+		<div <?php post_class() ?> id="post-<?php the_ID(); ?>" data-id="<?php the_ID(); ?>">
 			
 			<h2 class="post-title"><?php the_title(); ?></h2>
 			
@@ -19,10 +19,9 @@
 			</div>
 			
 			<?php edit_post_link('Edit this entry','','.'); ?>
-			
-		</div>
 
-	<?php comments_template(); ?>
+			<?php comments_template(); ?>
+		</div>
 
 	<?php endwhile; endif; ?>
 	

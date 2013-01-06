@@ -13,7 +13,8 @@
 .triangle-up-black, .triangle-right-black, .triangle-down-black, .triangle-left-black,
 .share-with-love,
 .isly-click-below, .thank-you-image, .bow-ties-image,
-.isly-looped-border {
+.isly-looped-border,
+.facebook-white, .twitter-white {
   background-image: @spritesheet;
 }
 
@@ -99,6 +100,34 @@
   display: inline-block;
 }
 
+.triangle-up-black {
+  background-position: -486px -101px;
+  width: 11px;
+  height: 6px;
+  display: inline-block;
+}
+
+.triangle-right-black {
+  background-position: -528px -98px;
+  width: 6px;
+  height: 12px;
+  display: inline-block;
+}
+
+.triangle-down-black {
+  background-position: -466px -101px;
+  width: 11px;
+  height: 6px;
+  display: inline-block;
+}
+
+.triangle-left-black {
+  background-position: -508px -98px;
+  width: 6px;
+  height: 11px;
+  display: inline-block;
+}
+
 .share-with-love {
   background-position: -355px -250px;
   width: 302px;
@@ -127,6 +156,18 @@
   background-position: -23px -227px;
   width: 301px;
   height: 323px;
+}
+
+.facebook-white {
+  background-position: -759px -59px;
+  width: 9px;
+  height: 17px;
+}
+
+.twitter-white {
+  background-position: -782px -59px;
+  width: 12px;
+  height: 17px;
 }
 
 /*  Fonts */
@@ -222,6 +263,23 @@
 
 @grayBorder: 1px solid @lineGrayHEX;
 
+@postPadding: 30px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*	General	*/
 body {
@@ -239,14 +297,13 @@ a, a:visited {
 #page-wrap {
   @outlineOffset: 13px;
 
-  background-color: @white;
+  background-color: @whiteHEX;
   left: 50%;
-  margin-top: -1px;
   margin-left: -486px;
   position: absolute;
   width: 970px;
   border: @grayBorder;
-  border-width: 1px 1px 0 1px;
+  border-width: 0px 1px 0 1px;
 
   &:before {
     .before(-1000px, -@outlineOffset, 0, -@outlineOffset);
@@ -254,13 +311,31 @@ a, a:visited {
     border-width: 0 1px;
     z-index: -1;
   }
+
+  &.fixed {
+    #header {
+      .fixedTop;
+    }
+    #isly-logo-wrapper {
+      .fixedTop
+    }
+    #isly-logo {
+      left: -3px;
+    }
+    #sidebar {
+      padding-top: 143px;
+    }
+    #right-panel {
+      padding-top: 40px;
+    }
+  }
 }
 
 .button {
   padding: 5px 11px;
   background: @background1;
   border: none;
-  color: @white;
+  color: @whiteHEX;
   font-size: 9px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -275,6 +350,13 @@ a, a:visited {
   border: 1px solid @grayHEX;
   background: transparent;
 }
+
+.isly-input {
+  z-index: 1;
+  letter-spacing: 1px;
+  .primaryFont;
+}
+
 
 .stretch {
   display: inline-block !important;
@@ -325,6 +407,7 @@ a, a:visited {
   position: relative;
   background-image: @background2;
   padding: 34px 28px 54px;
+  border-bottom: @grayBorder;
 
   width: 916px;
   margin: 0 auto;
@@ -337,9 +420,7 @@ a, a:visited {
 }
 
 .isly-contact-input {
-  z-index: 1;
-  letter-spacing: 1px;
-  .primaryFont;
+  .isly-input;
 }
 
 #isly-contact-left-wrapper {
@@ -362,7 +443,7 @@ a, a:visited {
   &:before {
     @offset: 5px;
     .before(-1 * @offset, @offset, @offset, -1 * @offset);
-    background-color: @white;
+    background-color: @whiteHEX;
   }
 }
 
@@ -394,15 +475,11 @@ a, a:visited {
 #header {
   width: 611px;
   margin-left: -1px;
-
-  &.fixed {
-    .fixedTop;
-  }
 }
 
 .header-links {
   a, a:visited, a:hover {
-    color: @white;
+    color: @whiteHEX;
   }
 
   .menu {
@@ -428,11 +505,16 @@ a, a:visited {
   }
 }
 
+.mozilla {
+  .header-links a {
+    padding: 7px 35.75px;
+  }
+}
+
 //  Right Panel
 #right-panel {
   float: left;
   width: 609px;
-  padding-top: 40px;
 }
 
 //  Posts
@@ -443,7 +525,7 @@ a, a:visited {
   text-align: center;
   margin-bottom: 0;
   border-bottom: 1px solid @lineGrayHEX;
-  padding-bottom: 3px;
+  padding-bottom: 4px;
 }
 
 .post {
@@ -453,6 +535,7 @@ a, a:visited {
 .meta {
   text-align: center;
   margin: -3px 0 10px;
+  position: relative;
 }
 .post-date {
   text-align: center;
@@ -461,14 +544,396 @@ a, a:visited {
 }
 
 .entry {
-  margin: 0 10px;
+  margin: 0 @postPadding;
   font-size: 11px;
 }
 
 .isly-divider {
-  .isly-dot;
-  margin: 10px auto;
+  height: 1px;
+  border-top: 1px solid @lineGrayHEX;
+  position: relative;
 }
+
+.isly-divider-ball {
+  background-color: @grayHEX;
+  height: 10px;
+  width: 10px;
+  border-radius: 10px;
+  position: absolute;
+  top: -5px;
+
+}
+
+.left-ball {
+  left: 0px
+}
+
+.right-ball {
+  right: 0px;
+}
+
+//  Comment Pill
+@pillWidth: 60px;
+.post-interaction-pill {
+  text-align: center;
+  letter-spacing: 1px;
+  position: absolute;
+  right: -90px;
+  top: -34px;
+
+  &:before {
+    .before(36px, inherit, inherit, -28px);
+    border-top: @grayBorder;
+    height: 1px;
+    width: 89px;
+    z-index: 2;
+  }
+
+  &.pill-open {
+    .pill-bottom {
+      height: 102px;
+    }
+  }
+}
+
+.pill-top {
+  background: @whiteHEX;
+  border: @grayBorder;
+  border-radius: @pillWidth;
+  font-size: 7px;
+  height: @pillWidth;
+  position: relative;
+  text-transform: uppercase;
+  width: @pillWidth;
+  z-index: 1;
+}
+
+.first-line {
+  display: inline-block;
+  line-height: 18px;
+  font-size: 13px;
+  width: 100%;
+  margin-top: 6px;
+}
+
+.pill-link-overlay {
+  .before(0, 0, 24px, 0);
+  border-radius: 65px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  z-index: 1;
+}
+
+.pill-share {
+  position: relative;
+  padding: 3px 0 14px;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  margin-top: 2px;
+
+  &:before {
+    .before(15px, inherit, inherit, 25px);
+    .triangle-down-black;
+  }
+}
+
+.pill-toggle {
+  cursor: pointer;
+}
+
+.pill-bottom {
+  background-image: @background1;
+  border-radius: @pillWidth;
+  height: 68px;
+  margin-bottom: -59px;
+  position: relative;
+  top: -60px;
+  width: @pillWidth + 2;
+
+  .transition(height, 300ms, ease, 0ms);
+}
+
+.facebook-white {
+  bottom: 23px;
+  display: block;
+  position: absolute;
+  left: 13px;
+
+}
+
+.twitter-white {
+  bottom: 23px;
+  display: block;
+  position: absolute;
+  right: 13px;
+}
+
+.pill-bottom-triangle {
+  .triangle-up-white;
+  position: absolute;
+  bottom: 9px;
+  left: 26px;
+
+  &:before {
+    .before(0px, -7px, -8px, -10px);
+    border-radius: 10px;
+  }
+}
+
+
+//  Comments List
+.comments-header {
+  background-image: @background1;
+  color: @whiteHEX;
+  margin: 0 @postPadding;
+  padding: 9px 14px;
+  font-weight: lighter;
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  min-height: 12px;
+
+  li {
+    .horizontalList;
+    letter-spacing: 2px;
+  }
+}
+
+.comment-view-button {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  padding: 9px 16px;
+  left: 0;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.categories-list {
+  display: inline-block;
+  width: 70%;
+  float: right;
+}
+
+.categories {
+  float: left;
+  text-align: right;
+  width: 100%;
+
+  &:after {
+    content: ":";
+  }
+
+  ul {
+    float: right;
+    font-style: italic;
+    font-size: 8px;
+    margin-left: 2px;
+  }
+
+  li {
+    float: left;
+    line-height: 12px;
+    margin-right: 4px;
+    letter-spacing: 0px;
+
+    &:last-child {
+      &:after {
+        content: "";
+      }
+    }
+
+    &:after {
+      content: ",";
+    }
+  }
+}
+
+.categories {
+  text-transform: uppercase;
+  float: right;
+}
+
+.commentlist {
+  margin-right: 10px;
+  position: relative;
+
+  li.odd {
+    background-color: @dotGrayHEX !important;
+  }
+}
+
+.comment {
+  border-bottom: @grayBorder !important;
+}
+
+.comment-body {
+  padding: 2px 3px;
+  p {
+    font-size: 10px;
+    line-height: 13px;
+  }
+}
+
+.comment-author {
+  color: @pantoneGreenHEX;
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
+.fn {
+  text-transform: uppercase;
+}
+
+.says {
+  display: none;
+}
+
+.comment-meta {
+  font-size: 10px;
+  line-height: 7px;
+  margin-left: -1px;
+  margin-top: 2px;
+  margin-bottom: 13px;
+
+  a {
+    color: @pantoneGreenHEX !important;
+    font-style: italic;
+    letter-spacing: 1px;
+  }
+}
+
+.reply {
+  text-align: right;
+}
+
+.comment-reply-link {
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  font-weight: lighter !important;
+  font-size: 13px;
+  letter-spacing: 1px;
+
+  &:before {
+    .before(3px, inherit, inherit, -10px);
+    .triangle-right-black;
+  }
+}
+
+.comment-list-wrapper {
+  margin: 0 @postPadding;
+  border: @grayBorder;
+  border-width: 0 1px 1px 1px;
+  max-height: 478px;
+  width: 547px;
+  top: -1px;
+  position: relative;
+  margin: 0 30px;
+  overflow: hidden;
+
+  &.no-comments {
+    visibility: hidden;
+    margin-bottom: -31px;
+  }
+}
+
+
+.home {
+  .comment-list-wrapper, .respond {
+    display: none;
+  }
+}
+.respond {
+  background-color: @whiteHEX;
+  border: @grayBorder;
+  margin: -1px 30px 0;
+  border-width: 0 1px 1px 1px;
+
+  .author, .email, .url, .comment {
+    .textInput;
+  }
+
+  .commentform {
+    padding: 27px 29px;
+  }
+
+  .isly-input {
+    margin-bottom: 9px;
+  }
+}
+
+.comment-form-left {
+  width: 180px;
+  float: left;
+
+  .isly-input {
+    width: 157px;
+  }
+}
+
+.comment-form-right {
+  width: 500px;
+  padding-bottom: 33px;
+
+
+  .comment {
+    width: 272px;
+    min-height: 102px;
+    margin: 1px 0 0 15px;
+
+    .placeholder(@pantoneGreenHEX, lighter);
+  }
+
+  .isly-submit {
+    .button;
+    float: right;
+    margin: 10px 10px 0;
+  }
+
+  .cancel-comment-reply {
+    float: right;
+    margin: -17px 155px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 9px;
+  }
+}
+
+.comment {
+  .respond {
+    margin: 0;
+    border: none;
+  }
+
+  .commentform {
+    padding: 27px 12px;
+  }
+}
+
+.email-will-not-be-published {
+  display: block;
+  font-size: 9px;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+//  Tags
+.postmetadata {
+  text-align: center;
+  font-size: 10px;
+  padding-top: 3px;
+
+  .isly-tags {
+    display: inline-block;
+  }
+
+  .italic {
+    font-style: italic;
+  }
+}
+
 
 //  Left Panel
 #left-panel {
@@ -480,21 +945,24 @@ a, a:visited {
   border-width: 0 1px 0 0;
 }
 
-//  Sidebar
-#sidebar {
-  padding-top: 143px;
-}
+
+
+
+
+
+
+
+
+
+
+
 
 // Logo
 
 #isly-logo-wrapper {
   text-align: center;
-  padding-top: 10px;
+  padding-top: 11px;
   background-color: @whiteHEX;
-
-  &.fixed {
-    .fixedTop;
-  }
 }
 
 #isly-logo {
@@ -544,10 +1012,11 @@ a, a:visited {
 
   li {
     .horizontalList;
+    display: inline-block;
     position: relative;
 
     &:before {
-      .before(-23px);
+      .before(-4px);
       .transform(rotate(45deg));
       background-image: @background1;
       height: @width;
@@ -560,17 +1029,14 @@ a, a:visited {
   a {
     display: inline-block;
     position: relative;
-
-
     width: 1.1 * @width;
     height: 1.1 * @width;
-
-
     display: inline-block;
     position: relative;
     left: -2px;
     top: -6px;
     border-radius: 20px;
+    z-index: 1;
   }
 
   .rss {
@@ -611,7 +1077,7 @@ a, a:visited {
 //  Press & Advertising
 .isly-sidebar-title {
   background-image: @background1;
-  color: @white;
+  color: @whiteHEX;
   font-size: 13px;
   letter-spacing: 2px;
   padding: 7px 5px 5px;
@@ -737,14 +1203,14 @@ a, a:visited {
   }
 
 
-  
+
   select {
     display: none;
   }
 }
 
 .widget_categories {
-  margin: 0 43px 0 29px;
+  margin: 0 43px 45px 29px;
 }
 
 .widget_archive {
@@ -783,7 +1249,7 @@ a, a:visited {
 
   &:hover, &.selected {
     background-color: @lineGrayHEX;
-    color: @white;
+    color: @whiteHEX;
   }
 }
 
@@ -791,14 +1257,14 @@ a, a:visited {
 
 }
 
-.drop-down-slider {
+.slider {
   .absLayout(0, 0, 0, inherit);
   border-left: 1px solid @lineGrayHEX;
   width: 9px;
   z-index: 10;
 }
 
-.drop-down-slider-bar {
+.slider-bar {
   background-color: @lineGrayHEX;
   position: relative;
   top: 0;

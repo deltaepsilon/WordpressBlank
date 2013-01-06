@@ -15,6 +15,33 @@
   transform: @degrees;
 }
 
+.transition(@property: all, @duration: 300ms, @timing: ease, @delay: 0ms) {
+  -webkit-transition-property: @property;
+  -webkit-transition-duration: @duration;
+  -webkit-transition-timing-function: @timing;
+  -webkit-transition-delay: @delay;
+
+  -moz-transition-property: @property;
+  -moz-transition-duration: @duration;
+  -moz-transition-timing-function: @timing;
+  -moz-transition-delay: @delay;
+
+  -ms-transition-property: @property;
+  -ms-transition-duration: @duration;
+  -ms-transition-timing-function: @timing;
+  -ms-transition-delay: @delay;
+
+  -o-transition-property: @property;
+  -o-transition-duration: @duration;
+  -o-transition-timing-function: @timing;
+  -o-transition-delay: @delay;
+
+  transition-property: @property;
+  transition-duration: @duration;
+  transition-timing-function: @timing;
+  transition-delay: @delay;
+}
+
 //cross browser
 .backgroundClip() {
   background-clip: padding-box;

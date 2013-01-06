@@ -10,51 +10,44 @@
 	}
 ?>
 
-<?php if ( have_comments() ) : ?>
+<?php //if ( have_comments() ) : ?>
 	
-	<h2 id="comments"><?php comments_number('No Responses', 'One Response', '% Responses' );?></h2>
+	<div id="comments-<?php the_ID(); ?>" class="comments-header" data-id="<?php the_ID(); ?>">
+		<span class="comment-view-button">view or add a comment</span>
+		<div class="categories-list">
+			<?php wp_list_categories(); ?>
+		</div>
+
+	</div>
 
 	<div class="navigation">
 		<div class="next-posts"><?php previous_comments_link() ?></div>
 		<div class="prev-posts"><?php next_comments_link() ?></div>
 	</div>
 
-	<ol class="commentlist">
-		<?php wp_list_comments(); ?>
-	</ol>
+	<div class="comment-list-wrapper <?php if (!have_comments()) { echo "no-comments"; } ?>">
+        <ol class="commentlist">
+			<?php wp_list_comments(); ?>
+        </ol>
+
+        <div class="slider">
+            <div class="slider-bar"></div>
+        </div>
+	</div>
 
 	<div class="navigation">
 		<div class="next-posts"><?php previous_comments_link() ?></div>
 		<div class="prev-posts"><?php next_comments_link() ?></div>
 	</div>
-	
- <?php else : // this is displayed if there are no comments so far ?>
-
-	<?php if ( comments_open() ) : ?>
-		<!-- If comments are open, but there are no comments. -->
-
-	 <?php else : // comments are closed ?>
-		<p>Comments are closed.</p>
-
-	<?php endif; ?>
-	
-<?php endif; ?>
 
 <?php if ( comments_open() ) : ?>
 
-<div id="respond">
-
-	<h2><?php comment_form_title( 'Leave a Reply', 'Leave a Reply to %s' ); ?></h2>
-
-	<div class="cancel-comment-reply">
-		<?php cancel_comment_reply_link(); ?>
-	</div>
-
+<div id="respond-<?php the_ID(); ?>" class="respond">
 	<?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
 		<p>You must be <a href="<?php echo wp_login_url( get_permalink() ); ?>">logged in</a> to post a comment.</p>
 	<?php else : ?>
 
-	<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
+	<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" class="commentform">
 
 		<?php if ( is_user_logged_in() ) : ?>
 
@@ -62,31 +55,33 @@
 
 		<?php else : ?>
 
-			<div>
-				<input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
-				<label for="author">Name <?php if ($req) echo "(required)"; ?></label>
-			</div>
 
-			<div>
-				<input type="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
-				<label for="email">Mail (will not be published) <?php if ($req) echo "(required)"; ?></label>
-			</div>
+		<div class="comment-form-left">
+			<input type="text" name="author" class="author isly-input" value="<?php echo esc_attr($comment_author); ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> placeholder="NAME" <?php if ($req) echo "required"; ?> />
 
-			<div>
-				<input type="text" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" size="22" tabindex="3" />
-				<label for="url">Website</label>
-			</div>
+
+			<input type="text" name="email" class="email isly-input" value="<?php echo esc_attr($comment_author_email); ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> placeholder="EMAIL*" <?php if ($req) echo "required"; ?> />
+
+
+
+			<input type="text" name="url" class="url isly-input" value="<?php echo esc_attr($comment_author_url); ?>" size="22" tabindex="3" placeholder="URL (OPTIONAL)"/>
+
+
+			<span class="email-will-not-be-published">*Your email will not be published.</span>
+        </div>
 
 		<?php endif; ?>
 
 		<!--<p>You can use these tags: <code><?php echo allowed_tags(); ?></code></p>-->
 
-		<div>
-			<textarea name="comment" id="comment" cols="58" rows="10" tabindex="4"></textarea>
-		</div>
+		<div class="comment-form-right">
+			<textarea name="comment" class="comment isly-input" tabindex="4" placeholder="TYPE YOUR MESSAGE HERE..."></textarea>
 
-		<div>
-			<input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
+
+			<input name="submit" type="submit" class="submit  isly-submit" tabindex="5" value="Submit Comment" />
+			<span class="cancel-comment-reply">
+				<?php cancel_comment_reply_link('cancel'); ?>
+            </span>
 			<?php comment_id_fields(); ?>
 		</div>
 		

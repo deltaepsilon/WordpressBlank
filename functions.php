@@ -35,7 +35,7 @@
 
 	add_shortcode('divider', 'shortcodeInsertDivider');
 	function shortcodeInsertDivider() {
-		return '<div class="isly-divider"></div>';
+		return '<div class="isly-divider"><div class="isly-divider-ball left-ball"></div><div class="isly-divider-ball right-ball"></div></div>';
 	}
 
 ?>
