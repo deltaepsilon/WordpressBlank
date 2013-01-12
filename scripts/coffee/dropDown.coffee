@@ -19,13 +19,13 @@ window.require ['jquery', 'transparency'], ($, Transparency) ->
       that = this
 
       @toggle.on 'click', =>
-        console.log 'clicked'
         @target.toggleClass('open')
         if !@instantiated
           @instantiated = true
           @template = @insertTemplate()
           @renderTemplate(@template)
-          new slider 'y', @target.find('.drop-down-slider-bar'), @target.find('.drop-down-slider'), @target.find('#' + @id), @target.find('.drop-down-list')
+#         Disable Sliders
+#          new slider 'y', @target.find('.drop-down-slider-bar'), @target.find('.drop-down-slider'), @target.find('#' + @id), @target.find('.drop-down-list')
 
     getOptions: ->
       options = @select.find 'option'
@@ -74,7 +74,6 @@ window.require ['jquery', 'transparency'], ($, Transparency) ->
 
   class slider
     constructor: (axis = "y", slider, sliderBox, box, target) ->
-      console.log arguments
       @axis = axis
       @slider = $(slider)
       @sliderBox = sliderBox
@@ -92,7 +91,6 @@ window.require ['jquery', 'transparency'], ($, Transparency) ->
       @sliderHeight = @boxHeight * (@boxHeight/@targetHeight)
       @scrollThreshhold = 100
       @scrollRatio = (-1 * @minOffset) / (@boxHeight - @sliderHeight)
-      console.log @targetHeight, @boxHeight, @sliderHeight
       if @targetHeight > @boxHeight
         @slider.height(@sliderHeight)
 
@@ -176,7 +174,7 @@ window.require ['jquery', 'transparency'], ($, Transparency) ->
     commentBoxes = $('.comment-list-wrapper')
     i = commentBoxes.length
     commentBox = null;
-    while i--
-      commentBox = $(commentBoxes[i])
-      new slider 'y', commentBox.find('.slider-bar'), commentBox.find('.slider'), commentBox, commentBox.find('.commentlist')
-#    (axis = "y", slider, sliderBox, box, target)
+#    Disable Sliders
+#    while i--
+#      commentBox = $(commentBoxes[i])
+#      new slider 'y', commentBox.find('.slider-bar'), commentBox.find('.slider'), commentBox, commentBox.find('.commentlist')

@@ -14,7 +14,8 @@
 .share-with-love,
 .isly-click-below, .thank-you-image, .bow-ties-image,
 .isly-looped-border,
-.facebook-white, .twitter-white {
+.facebook-white, .twitter-white,
+.comment-barbells {
   background-image: @spritesheet;
 }
 
@@ -168,6 +169,12 @@
   background-position: -782px -59px;
   width: 12px;
   height: 17px;
+}
+
+.comment-barbells {
+  background-position: -789px -120px;
+  width: 9px;
+  height: 74px;
 }
 
 /*  Fonts */
@@ -515,6 +522,7 @@ a, a:visited {
 #right-panel {
   float: left;
   width: 609px;
+  border-left: @grayBorder;
 }
 
 //  Posts
@@ -756,16 +764,17 @@ a, a:visited {
 }
 
 .commentlist {
-  margin-right: 10px;
+//  margin-right: 10px; //Disable sliders
+
   position: relative;
 
   li.odd {
-    background-color: @dotGrayHEX !important;
+    background-color: @dotGrayHEX;
   }
 }
 
 .comment {
-  border-bottom: @grayBorder !important;
+  border-bottom: @grayBorder;
 }
 
 .comment-body {
@@ -831,11 +840,125 @@ a, a:visited {
   top: -1px;
   position: relative;
   margin: 0 30px;
-  overflow: hidden;
+//  overflow: hidden; // Disable Sliders
+  overflow: auto;
 
   &.no-comments {
     visibility: hidden;
     margin-bottom: -31px;
+  }
+
+  .parent {
+    border-width: 0 !important;
+  }
+
+  .children {
+    margin: 0;
+    width: 547px;
+    list-style-type: none;
+    position: relative;
+
+    li {
+      padding-top: 10px;
+    }
+  }
+
+  .depth-2, .depth-3, .depth-4, .depth-5 {
+    &:before {
+      .before();
+      .comment-barbells;
+      //TODO set up before
+    }
+  }
+
+  @commentLeftPad: 45px;
+  @commentBeforeLeft: 29px;
+  .depth-2 {
+    @depth: 1;
+    .children {
+//      left: -1 * @commentLeftPad * @depth;
+      li {
+        &.even {
+          background-color: @white;
+        }
+        &.odd {
+          background-color: @dotGrayHEX;
+        }
+      }
+
+    }
+    .comment-body {
+      padding-left: @commentLeftPad * @depth;
+    }
+    &:before {
+      left: @commentBeforeLeft * @depth;
+    }
+  }
+  .depth-3 {
+    @depth: 2;
+    .children {
+    //      left: -1 * @commentLeftPad * @depth;
+      li {
+        &.even {
+          background-color: @white;
+        }
+        &.odd {
+          background-color: @dotGrayHEX;
+        }
+      }
+
+    }
+    .comment-body {
+      padding-left: @commentLeftPad * @depth;
+    }
+    &:before {
+      left: @commentBeforeLeft * @depth;
+    }
+  }
+
+  .depth-4 {
+    @depth: 3;
+    .children {
+    //      left: -1 * @commentLeftPad * @depth;
+      li {
+        &.even {
+          background-color: @white;
+        }
+        &.odd {
+          background-color: @dotGrayHEX;
+        }
+      }
+
+    }
+    .comment-body {
+      padding-left: @commentLeftPad * @depth;
+    }
+    &:before {
+      left: @commentBeforeLeft * @depth;
+    }
+  }
+
+  .depth-5 {
+    @depth: 4;
+    .children {
+    //      left: -1 * @commentLeftPad * @depth;
+      li {
+        &.even {
+          background-color: @dotGrayHEX;
+        }
+        &.odd {
+
+          background-color: @white;
+        }
+      }
+
+    }
+    .comment-body {
+      padding-left: @commentLeftPad * @depth;
+    }
+    &:before {
+      left: @commentBeforeLeft * @depth;
+    }
   }
 }
 
@@ -940,9 +1063,6 @@ a, a:visited {
   float: left;
   width: 353px;
   padding-right: 7px;
-
-  border: @grayBorder;
-  border-width: 0 1px 0 0;
 }
 
 
@@ -1226,13 +1346,15 @@ a, a:visited {
   position: relative;
   width: 144px;
   height: 130px;
-  overflow: hidden;
+//  overflow: hidden; //Disable sliders
+  overflow: auto; //Disable sliders
 }
 .drop-down-list {
   list-style-type: none;
   text-overflow: ellipsis;
   text-align: center;
-  margin: 0 10px 0 0;
+//  margin: 0 10px 0 0; //Disable sliders
+  margin: 0;
   position: relative;
   top: 0;
 }
@@ -1262,6 +1384,7 @@ a, a:visited {
   border-left: 1px solid @lineGrayHEX;
   width: 9px;
   z-index: 10;
+  display: none;
 }
 
 .slider-bar {

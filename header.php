@@ -46,6 +46,15 @@
 
     <script type="text/javascript" src="<?php bloginfo("template_url");?>/scripts/modernizr.custom.36318.js"></script>
     <script type="text/javascript" data-main="<?php bloginfo("template_url");?>/scripts/main.js" src="<?php bloginfo("template_url");?>/scripts/require.js"></script>
+<!--	<script>-->
+<!--		var now = Date.now();-->
+<!--		document.addEventListener('DOMContentLoaded', function() {-->
+<!--			console.log(Date.now() - now);-->
+<!--		});-->
+<!--        window.onload = function() {-->
+<!--            console.log(Date.now() - now);-->
+<!--        };-->
+<!--	</script>-->
 </head>
 
 <body <?php body_class(); ?>>

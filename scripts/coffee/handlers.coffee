@@ -1,4 +1,4 @@
-window.require ['jquery', '../../../../wp-includes/js/comment-reply.js'], ($, commentReply) ->
+window.require ['jquery', 'js/comment-reply'], ($, commentReply) ->
 
   class floatTop
     constructor: (element) ->
@@ -31,8 +31,6 @@ window.require ['jquery', '../../../../wp-includes/js/comment-reply.js'], ($, co
     constructor: ->
       browser = $.browser
 
-      console.log $.browser
-
       body = $('body')
       test = ['opera', 'webkit', 'msie', 'mozilla']
       i = test.length
@@ -59,18 +57,24 @@ window.require ['jquery', '../../../../wp-includes/js/comment-reply.js'], ($, co
         e.preventDefault()
         e.stopPropagation()
         target = $(e.target)
-        postID = target.parents('.post').attr 'data-id'
-        commentID = target.parents('.comment-body').attr('id').match(/\d+/)[0]
+        post = target.parents('.post').first()
+        postID = post.attr 'data-id'
+        commentParent = post.find('#comment_parent')
+        comment = target.parents('.comment-body')
+        commentID = comment.attr('id').match(/\d+/)[0]
 
-        console.log 'adding comment', target.parents('.comment-body').attr('id'), commentID, 'respond-' + postID, postID
-        window.addComment.moveForm target.parents('.comment-body').attr('id'), commentID, 'respond-' + postID, postID
+        cancel = post.find('#cancel-comment-reply-link')
+
+#        console.log 'adding comment', target.parents('.comment-body').attr('id'), commentID, 'respond-' + postID, postID
+        window.addComment.moveForm target.parents('.comment-body').attr('id'), commentID, 'respond-' + postID, postID, post[0], cancel[0], commentParent[0]
         target.trigger 'rebuildSlider';
 
 
-      @commentLists.on 'click', (e) ->
-        target = $(e.target)
-        if target.attr('id') == 'cancel-comment-reply-link' # Had to do this because jQuery can't filter on IDs, and I have no control over the link that gets read out... or at least I don't want to mess with it.
-          target.trigger 'rebuildSlider';
+#      Disable Sliders
+#      @commentLists.on 'click', (e) ->
+#        target = $(e.target)
+#        if target.attr('id') == 'cancel-comment-reply-link' # Had to do this because jQuery can't filter on IDs, and I have no control over the link that gets read out... or at least I don't want to mess with it.
+#          target.trigger 'rebuildSlider';
 
 
   class commentShowHide

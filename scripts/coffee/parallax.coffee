@@ -18,8 +18,7 @@ window.require ['jquery'], ($) ->
 
 
   $(document).ready ->
-    console.log 'ready to parallax'
-    if (!$.browser.webkit)
+    if (!$.browser.chrome)
       new parallax (scroll)->
         $('body').css('background-position', -.1 * scroll + 'px ' + 0  + 'px')
 #    new parallax (scroll)->

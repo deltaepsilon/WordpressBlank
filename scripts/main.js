@@ -1,3 +1,54 @@
+var addComment;
+
+addComment = {
+  moveForm: function(commId, parentId, respondId, postId, post, cancel, parent) {
+    var comm, div, respond, t;
+    t = this;
+    div = void 0;
+    comm = t.I(commId);
+    respond = t.I(respondId);
+    if (!comm || !respond || !cancel || !parent) {
+      return;
+    }
+    t.respondId = respondId;
+    postId = postId || false;
+    if (!t.I("wp-temp-form-div")) {
+      div = document.createElement("div");
+      div.id = "wp-temp-form-div";
+      div.style.display = "none";
+      respond.parentNode.insertBefore(div, respond);
+    }
+    comm.parentNode.insertBefore(respond, comm.nextSibling);
+    if (post && postId) {
+      post.value = postId;
+    }
+    parent.value = parentId;
+    cancel.style.display = "";
+    cancel.onclick = function() {
+      var temp;
+      t = addComment;
+      temp = t.I("wp-temp-form-div");
+      respond = t.I(t.respondId);
+      if (!temp || !respond) {
+        return;
+      }
+      t.I("comment_parent").value = "0";
+      temp.parentNode.insertBefore(respond, temp);
+      temp.parentNode.removeChild(temp);
+      this.style.display = "none";
+      this.onclick = null;
+      return false;
+    };
+    try {
+      t.I("comment").focus();
+    } catch (_error) {}
+    return false;
+  },
+  I: function(e) {
+    return document.getElementById(e);
+  }
+};
+
 var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
 window.require(['jquery', 'transparency'], function($, Transparency) {
@@ -95,13 +146,11 @@ window.require(['jquery', 'transparency'], function($, Transparency) {
         _this = this;
       that = this;
       return this.toggle.on('click', function() {
-        console.log('clicked');
         _this.target.toggleClass('open');
         if (!_this.instantiated) {
           _this.instantiated = true;
           _this.template = _this.insertTemplate();
-          _this.renderTemplate(_this.template);
-          return new slider('y', _this.target.find('.drop-down-slider-bar'), _this.target.find('.drop-down-slider'), _this.target.find('#' + _this.id), _this.target.find('.drop-down-list'));
+          return _this.renderTemplate(_this.template);
         }
       });
     };
@@ -165,7 +214,6 @@ window.require(['jquery', 'transparency'], function($, Transparency) {
       if (axis == null) {
         axis = "y";
       }
-      console.log(arguments);
       this.axis = axis;
       this.slider = $(slider);
       this.sliderBox = sliderBox;
@@ -182,7 +230,6 @@ window.require(['jquery', 'transparency'], function($, Transparency) {
       this.sliderHeight = this.boxHeight * (this.boxHeight / this.targetHeight);
       this.scrollThreshhold = 100;
       this.scrollRatio = (-1 * this.minOffset) / (this.boxHeight - this.sliderHeight);
-      console.log(this.targetHeight, this.boxHeight, this.sliderHeight);
       if (this.targetHeight > this.boxHeight) {
         return this.slider.height(this.sliderHeight);
       }
@@ -273,7 +320,7 @@ window.require(['jquery', 'transparency'], function($, Transparency) {
 
   })();
   return $(document).ready(function() {
-    var commentBox, commentBoxes, i, _results;
+    var commentBox, commentBoxes, i;
     new customDropDown('.widget_categories', '.widget_categories h2', 'category-drop-down', function(value) {
       return '/?cat=' + value;
     });
@@ -282,18 +329,12 @@ window.require(['jquery', 'transparency'], function($, Transparency) {
     });
     commentBoxes = $('.comment-list-wrapper');
     i = commentBoxes.length;
-    commentBox = null;
-    _results = [];
-    while (i--) {
-      commentBox = $(commentBoxes[i]);
-      _results.push(new slider('y', commentBox.find('.slider-bar'), commentBox.find('.slider'), commentBox, commentBox.find('.commentlist')));
-    }
-    return _results;
+    return commentBox = null;
   });
 });
 
 
-window.require(['jquery', '../../../../wp-includes/js/comment-reply.js'], function($, commentReply) {
+window.require(['jquery', 'js/comment-reply'], function($, commentReply) {
   var browserClasses, commentShowHide, floatTop, interactionPill, replyLinkBlocker;
   floatTop = (function() {
 
@@ -336,7 +377,6 @@ window.require(['jquery', '../../../../wp-includes/js/comment-reply.js'], functi
     function browserClasses() {
       var body, browser, i, test;
       browser = $.browser;
-      console.log($.browser);
       body = $('body');
       test = ['opera', 'webkit', 'msie', 'mozilla'];
       i = test.length;
@@ -374,23 +414,19 @@ window.require(['jquery', '../../../../wp-includes/js/comment-reply.js'], functi
     }
 
     replyLinkBlocker.prototype.register = function() {
-      this.commentLists.on('click', '.comment-reply-link', function(e) {
-        var commentID, postID, target;
+      return this.commentLists.on('click', '.comment-reply-link', function(e) {
+        var cancel, comment, commentID, commentParent, post, postID, target;
         e.preventDefault();
         e.stopPropagation();
         target = $(e.target);
-        postID = target.parents('.post').attr('data-id');
-        commentID = target.parents('.comment-body').attr('id').match(/\d+/)[0];
-        console.log('adding comment', target.parents('.comment-body').attr('id'), commentID, 'respond-' + postID, postID);
-        window.addComment.moveForm(target.parents('.comment-body').attr('id'), commentID, 'respond-' + postID, postID);
+        post = target.parents('.post').first();
+        postID = post.attr('data-id');
+        commentParent = post.find('#comment_parent');
+        comment = target.parents('.comment-body');
+        commentID = comment.attr('id').match(/\d+/)[0];
+        cancel = post.find('#cancel-comment-reply-link');
+        window.addComment.moveForm(target.parents('.comment-body').attr('id'), commentID, 'respond-' + postID, postID, post[0], cancel[0], commentParent[0]);
         return target.trigger('rebuildSlider');
-      });
-      return this.commentLists.on('click', function(e) {
-        var target;
-        target = $(e.target);
-        if (target.attr('id') === 'cancel-comment-reply-link') {
-          return target.trigger('rebuildSlider');
-        }
       });
     };
 
@@ -461,8 +497,7 @@ window.require(['jquery'], function($) {
 
   })();
   return $(document).ready(function() {
-    console.log('ready to parallax');
-    if (!$.browser.webkit) {
+    if (!$.browser.chrome) {
       return new parallax(function(scroll) {
         return $('body').css('background-position', -.1 * scroll + 'px ' + 0 + 'px');
       });
