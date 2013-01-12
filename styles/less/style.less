@@ -15,7 +15,10 @@
 .isly-click-below, .thank-you-image, .bow-ties-image,
 .isly-looped-border,
 .facebook-white, .twitter-white,
-.comment-barbells {
+.comment-barbells,
+.arrow-left, .arrow-right, .shuffle,
+.right-triangle-green
+{
   background-image: @spritesheet;
 }
 
@@ -175,6 +178,30 @@
   background-position: -789px -120px;
   width: 9px;
   height: 74px;
+}
+
+.arrow-left {
+  background-position: -396px -19px;
+  width: 87px;
+  height: 14px;
+}
+
+.arrow-right {
+  background-position: -551px -19px;
+  width: 94px;
+  height: 14px;
+}
+
+.shuffle {
+  background-position: -501px -15px;
+  width: 35px;
+  height: 22px;
+}
+
+.right-triangle-green {
+  background-position: -398px -60px;
+  width: 30px;
+  height: 60px;
 }
 
 /*  Fonts */
@@ -501,7 +528,7 @@ a, a:visited {
   }
 
   a {
-    padding: 8px 36px 7px;
+    padding: 8px 23px 7px;
     letter-spacing: 2px;
     font-size: 11px;
     display: inline-block;
@@ -514,7 +541,7 @@ a, a:visited {
 
 .mozilla {
   .header-links a {
-    padding: 7px 35.75px;
+    padding: 7px 22.75px;
   }
 }
 
@@ -721,7 +748,7 @@ a, a:visited {
 .categories-list {
   display: inline-block;
   width: 70%;
-  float: right;
+  margin-left: 150px;
 }
 
 .categories {
@@ -738,6 +765,7 @@ a, a:visited {
     font-style: italic;
     font-size: 8px;
     margin-left: 2px;
+    width: 190px;
   }
 
   li {
@@ -860,6 +888,7 @@ a, a:visited {
 
     li {
       padding-top: 10px;
+      min-height: 85px;
     }
   }
 
@@ -867,7 +896,6 @@ a, a:visited {
     &:before {
       .before();
       .comment-barbells;
-      //TODO set up before
     }
   }
 
@@ -879,7 +907,7 @@ a, a:visited {
 //      left: -1 * @commentLeftPad * @depth;
       li {
         &.even {
-          background-color: @white;
+          background-color: @whiteHEX;
         }
         &.odd {
           background-color: @dotGrayHEX;
@@ -900,7 +928,7 @@ a, a:visited {
     //      left: -1 * @commentLeftPad * @depth;
       li {
         &.even {
-          background-color: @white;
+          background-color: @whiteHEX;
         }
         &.odd {
           background-color: @dotGrayHEX;
@@ -922,7 +950,7 @@ a, a:visited {
     //      left: -1 * @commentLeftPad * @depth;
       li {
         &.even {
-          background-color: @white;
+          background-color: @whiteHEX;
         }
         &.odd {
           background-color: @dotGrayHEX;
@@ -948,7 +976,7 @@ a, a:visited {
         }
         &.odd {
 
-          background-color: @white;
+          background-color: @whiteHEX;
         }
       }
 
@@ -1024,7 +1052,7 @@ a, a:visited {
   }
 }
 
-.comment {
+.comment, .pingback {
   .respond {
     margin: 0;
     border: none;
@@ -1040,6 +1068,11 @@ a, a:visited {
   font-size: 9px;
   margin-top: 5px;
   font-style: italic;
+}
+
+.post-edit-link {
+  text-transform: uppercase;
+  margin: 30px;
 }
 
 //  Tags
@@ -1064,6 +1097,144 @@ a, a:visited {
   width: 353px;
   padding-right: 7px;
 }
+
+#navigation {
+  height: 45px;
+  background: @background1;
+  margin-top: 50px;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  position: relative;
+
+
+  a {
+    display: block;
+    color: @whiteHEX;
+  }
+}
+
+#prev-posts a {
+  width: 192px;
+  float: right;
+  padding: 14px 0;
+  position: relative;
+  text-align: left;
+  &:after {
+    .before(17px, 29px, inherit, inherit);
+    .arrow-right;
+  }
+}
+#next-posts a {
+  width: 192px;
+  float: left;
+  padding: 14px 0;
+  position: relative;
+  text-align: right;
+  &:before {
+    .before(17px, inherit, inherit, 29px);
+    .arrow-left;
+  }
+
+}
+#shuffle {
+  .absLayout(0, inherit, 0, 50%);
+  display: inline-block;
+  font-size: 8px;
+  margin-left: -34px;
+  padding-top: 29px;
+  text-align: center;
+  width: 68px;
+
+  &:before {
+    .before(0, 0, 0, 0);
+    .shuffle;
+    background-position: -484px -7px;
+    height: 45px;
+    width: 68px;
+  }
+
+}
+
+
+.logged-in {
+  .comment-form-right {
+    .comment {
+      width: 467px;
+    }
+  }
+
+  .logged-in-as {
+    text-transform: uppercase;
+  }
+}
+
+//TODO figure out footer
+#footer {
+  border-top: @grayBorder;
+  float: left;
+  letter-spacing: 2px;
+  position: relative;
+  text-transform: uppercase;
+  top: -1px;
+  width: 100%;
+  height: 181px;
+
+  .right-triangle-green {
+    left: 55px;
+    position: relative;
+    top: 5px;
+    z-index: 1;
+
+    &:after {
+      .before(29px, -800px, inherit, 29px);
+      border-top: 1px solid @pantoneGreenLightHEX;
+      height: 1px;
+    }
+  }
+}
+
+#you-might-like {
+  .rotate(-90deg, 3);
+  color: @pantoneGreenHEX;
+  display: inline-block;
+  position: relative;
+  left: -46px;
+  top: 86px;
+}
+
+#teaser {
+  margin-left: 85px;
+  position: relative;
+  text-align: center;
+  top: -17px;
+  z-index: 2;
+}
+
+.teaser-item {
+  .horizontalList;
+  display: inline-block;
+  font-size: 9px;
+  margin: 0 8px;
+  width: 124px;
+  position: relative;
+  top: 84px;
+  vertical-align: top;
+
+  .attachment-thumbnail {
+    background-color: @whiteHEX;
+    left: 6px;
+    max-width: 105px;
+    max-height: 105px;
+    outline: 1px solid @pantoneGreenLightHEX;
+    border: 4px solid @whiteHEX;
+    position: absolute;
+    top: -121px;
+  }
+}
+
+
+
 
 
 
@@ -1137,7 +1308,7 @@ a, a:visited {
 
     &:before {
       .before(-4px);
-      .transform(rotate(45deg));
+//      .transform(rotate(45deg));
       background-image: @background1;
       height: @width;
       width: @width;
@@ -1353,6 +1524,7 @@ a, a:visited {
   list-style-type: none;
   text-overflow: ellipsis;
   text-align: center;
+  text-transform: uppercase;
 //  margin: 0 10px 0 0; //Disable sliders
   margin: 0;
   position: relative;

@@ -15,6 +15,14 @@
   transform: @degrees;
 }
 
+.rotate(@degrees: -90deg, @ieStop: 3) {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=@ieStop);
+  -webkit-transform: rotate(@degrees);
+  -moz-transform: rotate(@degrees);
+  -ms-transform: rotate(@degrees);
+  -o-transform: rotate(@degrees);
+}
+
 .transition(@property: all, @duration: 300ms, @timing: ease, @delay: 0ms) {
   -webkit-transition-property: @property;
   -webkit-transition-duration: @duration;

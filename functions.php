@@ -2,6 +2,9 @@
 	
 	// Add RSS links to <head> section
 	add_theme_support('automatic-feed-links');
+
+	// Add featured image thumbnails
+	add_theme_support('post-thumbnails');
 	
 	// Load jQuery
 	if ( !is_admin() ) {

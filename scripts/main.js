@@ -415,7 +415,7 @@ window.require(['jquery', 'js/comment-reply'], function($, commentReply) {
 
     replyLinkBlocker.prototype.register = function() {
       return this.commentLists.on('click', '.comment-reply-link', function(e) {
-        var cancel, comment, commentID, commentParent, post, postID, target;
+        var cancel, comment, commentID, commentIDString, commentParent, post, postID, respondID, target;
         e.preventDefault();
         e.stopPropagation();
         target = $(e.target);
@@ -423,9 +423,12 @@ window.require(['jquery', 'js/comment-reply'], function($, commentReply) {
         postID = post.attr('data-id');
         commentParent = post.find('#comment_parent');
         comment = target.parents('.comment-body');
-        commentID = comment.attr('id').match(/\d+/)[0];
+        commentIDString = comment.attr('id');
+        commentID = commentIDString.match(/\d+/)[0];
         cancel = post.find('#cancel-comment-reply-link');
-        window.addComment.moveForm(target.parents('.comment-body').attr('id'), commentID, 'respond-' + postID, postID, post[0], cancel[0], commentParent[0]);
+        respondID = 'respond-' + postID;
+        window.addComment.moveForm(target.parents('.comment-body').attr('id'), commentID, respondID, postID, post[0], cancel[0], commentParent[0]);
+        location.hash = comment.attr('id');
         return target.trigger('rebuildSlider');
       });
     };

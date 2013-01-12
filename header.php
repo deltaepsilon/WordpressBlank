@@ -73,7 +73,7 @@
 		</div>
 		<button id="isly-contact-submit" class="isly-contact-input">SUBMIT</button>
 	</form>
-	<div id="page-wrap">
+	<div id="page-wrap" class="<?php if ( is_user_logged_in() ) echo "logged-in"; ?>">
 
 		<div id="left-panel">
 			<?php get_sidebar(); ?>

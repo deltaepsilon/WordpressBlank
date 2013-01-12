@@ -61,14 +61,15 @@ window.require ['jquery', 'js/comment-reply'], ($, commentReply) ->
         postID = post.attr 'data-id'
         commentParent = post.find('#comment_parent')
         comment = target.parents('.comment-body')
-        commentID = comment.attr('id').match(/\d+/)[0]
+        commentIDString = comment.attr('id');
+        commentID = commentIDString.match(/\d+/)[0]
 
         cancel = post.find('#cancel-comment-reply-link')
+        respondID = 'respond-' + postID;
 
-#        console.log 'adding comment', target.parents('.comment-body').attr('id'), commentID, 'respond-' + postID, postID
-        window.addComment.moveForm target.parents('.comment-body').attr('id'), commentID, 'respond-' + postID, postID, post[0], cancel[0], commentParent[0]
+        window.addComment.moveForm target.parents('.comment-body').attr('id'), commentID, respondID, postID, post[0], cancel[0], commentParent[0]
+        location.hash = comment.attr 'id'
         target.trigger 'rebuildSlider';
-
 
 #      Disable Sliders
 #      @commentLists.on 'click', (e) ->

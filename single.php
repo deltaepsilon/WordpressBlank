@@ -13,14 +13,14 @@
 				<?php the_content(); ?>
 
 				<?php wp_link_pages(array('before' => 'Pages: ', 'next_or_number' => 'number')); ?>
-				
-				<?php the_tags( 'Tags: ', ', ', ''); ?>
 
 			</div>
 			
-			<?php edit_post_link('Edit this entry','','.'); ?>
+			<?php edit_post_link('Edit this entry','',''); ?>
 
 			<?php comments_template(); ?>
+
+            <div class="postmetadata"><span class="isly-tags"><?php the_tags('TAGS: <span class="italic">', ', ', '</span>'); ?></span></div>
 		</div>
 
 	<?php endwhile; endif; ?>
