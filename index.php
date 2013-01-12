@@ -10,7 +10,30 @@
 			<?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
 
 			<div class="entry">
-				<?php the_content(); ?>
+				<?php
+//					the_content();
+					$content = get_the_content();
+					$content = apply_filters('the_content', $content);
+					$content = str_replace(']]>', ']]&gt;', $content);
+					$hasMoreLink = preg_match("/class=\"more-link\"/", $content);
+
+					if ($hasMoreLink == 0) {
+						echo $content;
+					} else { //Deal with truncated posts
+						$title = get_the_title();
+						$permalink = get_permalink();
+						$thumbnail = get_the_post_thumbnail($post->ID, 'medium');
+						$excerptWords = explode(' ', get_the_excerpt());
+						$remainder = array_splice($excerptWords, 35);
+						if (count($remainder) > 0) {
+							$excerptWords[] = '...';
+						}
+						$excerpt = implode(' ', $excerptWords);
+						echo "<div class='truncated-post'><div class='truncated-excerpt'><p class='excerpt'>$excerpt</p></div><div class='thumbnail-wrapper'>$thumbnail</div><a class='read-more' href='$permalink'></a></div>";
+					}
+
+
+				?>
 			</div>
 
 			<?php comments_template(); ?>

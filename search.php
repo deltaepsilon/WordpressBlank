@@ -2,9 +2,9 @@
 
 	<?php if (have_posts()) : ?>
 
-		<h2>Search Results</h2>
+		<h2 class="page-title">Search Results</h2>
 
-		<?php include (TEMPLATEPATH . '/inc/nav.php' ); ?>
+<!--		--><?php //include (TEMPLATEPATH . '/inc/nav.php' ); ?>
 
 		<?php while (have_posts()) : the_post(); ?>
 
