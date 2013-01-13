@@ -102,3 +102,4 @@ window.require ['jquery', 'js/comment-reply'], ($, commentReply) ->
     new interactionPill()
     new replyLinkBlocker()
     new commentShowHide()
+    new floatTop $('#page-wrap')

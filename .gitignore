@@ -4,6 +4,7 @@
 .project
 node_modules/*
 js
+scripts/main.js
 css
 script.js
 style.css
