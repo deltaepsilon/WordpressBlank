@@ -16,16 +16,6 @@
 				),
 			));
 			foreach ($posts as $post) {
-//				ob_start();
-//				the_permalink();
-//				$permalink = ob_get_clean();
-//				the_title();
-//				$title = ob_get_clean();
-//				the_post_thumbnail('thumbnail');
-//				$image = ob_get_clean();
-//				ob_get_flush();
-////				var_dump($permalink, $title, $image);
-
 				echo "<li class=\"teaser-item\"><a href=\"";
 				the_permalink();
 				echo "\" title=\"";
