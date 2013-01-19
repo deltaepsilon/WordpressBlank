@@ -7,54 +7,62 @@
 	
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 	
-	<?php if (is_search()) { ?>
-	   <meta name="robots" content="noindex, nofollow" /> 
-	<?php } ?>
+	<?php
+		//Mobile detection
+		$GLOBALS['mobile'] = preg_match("/^m\./", $_SERVER['HTTP_HOST']);
+		if (is_search()) {
+			echo "<meta name='robots' content='noindex, nofollow' />";
+		}
+	?>
 
 	<title>
-		   <?php
-		      if (function_exists('is_tag') && is_tag()) {
-		         single_tag_title("Tag Archive for &quot;"); echo '&quot; - '; }
-		      elseif (is_archive()) {
-		         wp_title(''); echo ' Archive - '; }
-		      elseif (is_search()) {
-		         echo 'Search for &quot;'.esc_html($s).'&quot; - '; }
-		      elseif (!(is_404()) && (is_single()) || (is_page())) {
-		         wp_title(''); echo ' - '; }
-		      elseif (is_404()) {
-		         echo 'Not Found - '; }
-		      if (is_home()) {
-		         bloginfo('name'); echo ' - '; bloginfo('description'); }
-		      else {
-		          bloginfo('name'); }
-		      if ($paged>1) {
-		         echo ' - page '. $paged; }
-		   ?>
+		<?php
+			if ($GLOBALS['mobile']) {
+				echo 'Mobile: ';
+			}
+			if (function_exists('is_tag') && is_tag()) {
+				single_tag_title("Tag Archive for &quot;"); echo '&quot; - '; }
+			elseif (is_archive()) {
+			wp_title(''); echo ' Archive - '; }
+			elseif (is_search()) {
+				echo 'Search for &quot;'.esc_html($s).'&quot; - '; }
+			elseif (!(is_404()) && (is_single()) || (is_page())) {
+				wp_title(''); echo ' - '; }
+			elseif (is_404()) {
+				echo 'Not Found - '; }
+			if (is_home()) {
+				bloginfo('name'); echo ' - '; bloginfo('description'); }
+			else {
+				bloginfo('name'); }
+			if ($paged>1) {
+				echo ' - page '. $paged; }
+		?>
 	</title>
 
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+    <script type="text/javascript" src="/wp-content/themes/isly-2013/scripts/modernizr.custom.36318.js"></script>
 
-	
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-	
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
-	
-	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+	<?php
 
-	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
+		if($GLOBALS['mobile']) {
+			add_filter('home_url', 'mobilizeSiteUrl');
+			echo "<meta name='viewport' content='width=640, initial-scale=1.0, user-scalable=yes'/>";
+			echo "<script>window.CDE = window.CDE || {};window.CDE.mobile = true;</script>";
+			echo "<link rel='stylesheet' href='/wp-content/themes/isly-2013/mobile-style.css' type='text/css'>";
+			echo "<script type='text/javascript' data-main='/wp-content/themes/isly-2013/scripts/mobile.js' src='/wp-content/themes/isly-2013/scripts/require.js'></script>";
+		} else {
+			echo "<meta name='viewport' content='width=970, initial-scale=1.0, user-scalable=yes'/>";
+			echo "<link rel='stylesheet' href='/wp-content/themes/isly-2013/style.css' type='text/css'>";
+			echo "<script type='text/javascript' data-main='/wp-content/themes/isly-2013/scripts/main.js' src='/wp-content/themes/isly-2013/scripts/require.js'></script>";
+		}
+	?>
 
-	<?php wp_head(); ?>
+	<?php
+		if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
+		wp_head();
+	?>
 
-    <script type="text/javascript" src="<?php bloginfo("template_url");?>/scripts/modernizr.custom.36318.js"></script>
-    <script type="text/javascript" data-main="<?php bloginfo("template_url");?>/scripts/main.js" src="<?php bloginfo("template_url");?>/scripts/require.js"></script>
-<!--	<script>-->
-<!--		var now = Date.now();-->
-<!--		document.addEventListener('DOMContentLoaded', function() {-->
-<!--			console.log(Date.now() - now);-->
-<!--		});-->
-<!--        window.onload = function() {-->
-<!--            console.log(Date.now() - now);-->
-<!--        };-->
-<!--	</script>-->
 </head>
 
 <body <?php body_class(); ?>>

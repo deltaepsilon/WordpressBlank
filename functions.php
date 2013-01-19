@@ -41,4 +41,8 @@
 		return '<div class="isly-divider"><div class="isly-divider-ball left-ball"></div><div class="isly-divider-ball right-ball"></div></div>';
 	}
 
+	function mobilizeSiteUrl($url, $regex = '/http:\/\//', $new = 'http://m.') {
+		return preg_replace($regex, $new, $url);
+	}
+
 ?>

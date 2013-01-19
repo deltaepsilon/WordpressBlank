@@ -29,6 +29,16 @@
 			?>
         </ul>
     </div>
+	<?php
+		$host = $_SERVER['HTTP_HOST'];
+		if ($GLOBALS['mobile']) {
+			$link = preg_replace("/m\./", '', $host);
+			echo "<a  class='site-switch-link' href='http://$link'>full site</a>";
+		} else {
+			echo "<a  class='site-switch-link' href='http://m.$host'>mobile site</a>";
+		}
+	?>
+
 
 	<?php wp_footer(); ?>
 	<!-- Don't forget analytics -->

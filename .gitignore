@@ -5,6 +5,9 @@
 node_modules/*
 js
 scripts/main.js
+scripts/mobile/main.js
 css
 script.js
+mobile.js
 style.css
+mobile-style.css

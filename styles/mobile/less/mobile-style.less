@@ -846,7 +846,6 @@ a, a:visited {
 
 .commentlist {
 //  margin-right: 10px; //Disable sliders
-  list-style-type: none;
 
   position: relative;
 
@@ -913,21 +912,17 @@ a, a:visited {
   }
 }
 
-.home .comment-list-wrapper {
-  max-height: 478px;
-  overflow: auto;
-}
-
 .comment-list-wrapper {
   margin: 0 @postPadding;
   border: @grayBorder;
   border-width: 0 1px 1px 1px;
+  max-height: 478px;
   width: 547px;
   top: -1px;
   position: relative;
   margin: 0 30px;
 //  overflow: hidden; // Disable Sliders
-
+  overflow: auto;
 
   &.no-comments {
     visibility: hidden;
@@ -1362,25 +1357,6 @@ a, a:visited {
     background: @whiteHEX;
     position: relative;
   }
-}
-
-.notification {
-  bottom: 0;
-  background: @pantoneGreenHEX;
-  color: @whiteHEX;
-  display: none;
-  font-size: 24px;
-  padding: 50px 0;
-  position: fixed;
-  width: 100%;
-  text-align: center;
-  text-transform: uppercase;
-  z-index: 2;
-}
-
-.mobile-prompt-message {
-  display: inline-block;
-  width: 100%;
 }
 
 .site-switch-link {

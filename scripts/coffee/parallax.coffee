@@ -1,9 +1,8 @@
-window.require ['jquery'], ($) ->
-
+define('parallax', ['jquery'], ($) ->
   class parallax
     constructor: (positioner) ->
       @scrollTarget = $(window)
-
+      console.log 'ready to parallax'
 
       @positioner = positioner
       @positioner()
@@ -12,15 +11,7 @@ window.require ['jquery'], ($) ->
       that = this
       @scrollTarget.on 'scroll', ->
         that.positioner(that.scrollTarget.scrollTop())
+  return parallax
+)
 
-
-
-
-
-  $(document).ready ->
-    if (!$.browser.chrome)
-      new parallax (scroll)->
-        $('body').css('background-position', -.1 * scroll + 'px ' + 0  + 'px')
-#    new parallax (scroll)->
-#      $('#left-panel').css('padding-top', .5 * scroll)
 

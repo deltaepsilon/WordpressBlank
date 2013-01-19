@@ -1,4 +1,4 @@
-window.require ['jquery', 'transparency'], ($, Transparency) ->
+define('contactForm', ['jquery', 'transparency'], ($, Transparency) ->
 
   Transparency.register $
 
@@ -41,16 +41,5 @@ window.require ['jquery', 'transparency'], ($, Transparency) ->
       @template.slideToggle()
       if type == 'success'
         @form.delay(3000).slideUp()
-
-
-  $(document).ready ->
-    new contactForm 'isly-contact'
-#    Testing
-
-#    new notification
-#      type: 'success'
-#      notifications: [
-#        notification: 'this is sad'
-#      ,
-#        notification: 'this is sadder'
-#      ]
+  return contactForm
+)

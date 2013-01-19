@@ -1,4 +1,4 @@
-window.require ['jquery', 'transparency'], ($, Transparency) ->
+define('customDropDown', ['jquery', 'transparency'], ($, Transparency) ->
 
   Transparency.register $
 
@@ -163,18 +163,6 @@ window.require ['jquery', 'transparency'], ($, Transparency) ->
       px = movement * @scrollRatio
 
       @scroll px
+  return customDropDown
+)
 
-
-  $(document).ready ->
-    new customDropDown '.widget_categories', '.widget_categories h2', 'category-drop-down', (value) ->
-      return '/?cat=' + value
-    new customDropDown '.widget_archive', '.widget_archive h2', 'archive-drop-down', (value) ->
-      return value
-
-    commentBoxes = $('.comment-list-wrapper')
-    i = commentBoxes.length
-    commentBox = null;
-#    Disable Sliders
-#    while i--
-#      commentBox = $(commentBoxes[i])
-#      new slider 'y', commentBox.find('.slider-bar'), commentBox.find('.slider'), commentBox, commentBox.find('.commentlist')

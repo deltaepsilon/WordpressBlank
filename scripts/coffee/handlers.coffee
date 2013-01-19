@@ -1,4 +1,4 @@
-window.require ['jquery', 'js/comment-reply'], ($, commentReply) ->
+define('handlers', ['jquery', 'js/comment-reply'], ($, commentReply) ->
 
   class floatTop
     constructor: (element) ->
@@ -96,10 +96,11 @@ window.require ['jquery', 'js/comment-reply'], ($, commentReply) ->
         if !post.find('.respond:visible').length
           post.find('.respond').slideToggle()
 
-
-  $(document).ready ->
-    new browserClasses()
-    new interactionPill()
-    new replyLinkBlocker()
-    new commentShowHide()
-    new floatTop $('#page-wrap')
+  handlers =
+    floatTop: floatTop
+    browserClasses: browserClasses
+    interactionPill: interactionPill
+    replyLinkBlocker: replyLinkBlocker
+    commentShowHide: commentShowHide
+  return handlers
+)

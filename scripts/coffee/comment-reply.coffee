@@ -1,3 +1,4 @@
+# This function doesn't act as a regular module. Instead, it adds crap to window, because that's what dirty Wordpress does.
 addComment =
   moveForm: (commId, parentId, respondId, postId, post, cancel, parent) ->
     t = this
