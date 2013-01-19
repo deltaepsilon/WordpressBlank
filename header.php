@@ -84,10 +84,16 @@
 	<div id="page-wrap" class="<?php if ( is_user_logged_in() ) echo "logged-in"; ?>">
 
 		<div id="left-panel">
-			<?php get_sidebar(); ?>
+			<?php
+				if ($GLOBALS['mobile']) {
+					echo "<div id='left-panel-tab'></div>";
+				}
+				get_sidebar();
+			?>
 		</div>
 
 		<div id="right-panel">
             <div id="header">
 				<?php wp_nav_menu( array( 'sort_column' => 'menu_order','container_class' => 'header-links' ) ); ?>
             </div>
+			<a href="/" id="isly-mobile-logo" class="isly-logo"></a>

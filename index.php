@@ -37,7 +37,11 @@
 				?>
 			</div>
 
-			<?php comments_template(); ?>
+			<?php
+				if (!$GLOBALS['mobile']) {
+					comments_template();
+				}
+			?>
 
             <div class="postmetadata"><span class="isly-tags"><?php the_tags('TAGS: <span class="italic">', ', ', '</span>'); ?></span></div>
 

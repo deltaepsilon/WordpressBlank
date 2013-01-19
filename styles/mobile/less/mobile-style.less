@@ -17,7 +17,7 @@
 .facebook-white, .twitter-white,
 .comment-barbells,
 .arrow-left, .arrow-right, .shuffle,
-.right-triangle-green,
+.right-triangle-green, .right-triangle-green-small, .left-triangle-green-small,
 .click-to-read-more, .green-background
 {
   background-image: @spritesheet;
@@ -205,6 +205,18 @@
   height: 60px;
 }
 
+.right-triangle-green-small {
+  background-position: -515px -177px;
+  width: 13px;
+  height: 25px;
+}
+
+.left-triangle-green-small {
+  background-position: -483px -177px;
+  width: 13px;
+  height: 25px;
+}
+
 .click-to-read-more {
   background-position: -678px -248px;
   width: 300px;
@@ -312,6 +324,8 @@
 
 @postPadding: 30px;
 
+@mobileWidth: 640px;
+
 
 
 
@@ -332,6 +346,7 @@
 body {
   background-image: @background2 !important;
   color: @grayHEX;
+  margin: 0;
   .primaryFont;
 //  font-weight: lighter;
 }
@@ -360,11 +375,12 @@ a, a:visited {
 
   background-color: @whiteHEX;
   left: 50%;
-  margin-left: -486px;
+  margin-left: -0.5 * @mobileWidth;
   position: absolute;
-  width: 970px;
+  width: @mobileWidth;
   border: @grayBorder;
   border-width: 0px 1px 0 1px;
+  overflow: hidden;
 
   &:before {
     .before(-1000px, -@outlineOffset, 0, -@outlineOffset);
@@ -488,7 +504,7 @@ a, a:visited {
   padding: 34px 28px 54px;
   border-bottom: @grayBorder;
 
-  width: 916px;
+  width: 585px;
   margin: 0 auto;
 
   &:before {
@@ -527,7 +543,7 @@ a, a:visited {
 }
 
 #isly-contact-message {
-  @width: 651px;
+  @width: 317px;
   @height: 108px;
   background: transparent;
   border: 1px solid @grayHEX;
@@ -552,8 +568,8 @@ a, a:visited {
 
 //  Header
 #header {
-  width: 611px;
-  margin-left: -1px;
+  width: @mobileWidth;
+  margin-top: -16px;
 }
 
 .header-links {
@@ -566,6 +582,7 @@ a, a:visited {
     background-image: @background1;
     text-align: justify;
     text-transform: uppercase;
+    padding: 0;
   }
 
   .menu-item {
@@ -573,7 +590,7 @@ a, a:visited {
   }
 
   a {
-    padding: 8px 23px 7px;
+    padding: 8px 25px 7px;
     letter-spacing: 2px;
     font-size: 11px;
     display: inline-block;
@@ -593,8 +610,7 @@ a, a:visited {
 //  Right Panel
 #right-panel {
   float: left;
-  width: 609px;
-  border-left: @grayBorder;
+  width: @mobileWidth;
 }
 
 //  Posts
@@ -848,6 +864,9 @@ a, a:visited {
 //  margin-right: 10px; //Disable sliders
 
   position: relative;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 
   li.odd {
     background-color: @dotGrayHEX;
@@ -917,7 +936,7 @@ a, a:visited {
   border: @grayBorder;
   border-width: 0 1px 1px 1px;
   max-height: 478px;
-  width: 547px;
+  width: 578px;
   top: -1px;
   position: relative;
   margin: 0 30px;
@@ -1145,13 +1164,38 @@ a, a:visited {
 
 
 //  Left Panel
+body.sidebar-open {
+  #left-panel {
+    left: -1px;
+  }
+  #left-panel-tab {
+    background-position: -467px -159px;
+  }
+}
+//TODO mobilize left panel
 #left-panel {
-  float: left;
   width: 353px;
   padding: 0 7px 50px 0;
   border: @grayBorder;
   border-width: 0 1px 0 0;
-  margin-right: -1px;
+  position: absolute;
+  left: -362px;
+  background: @dotGrayHEX;
+  z-index: 1000;
+
+  .transition(left, @duration: 300ms, @timing: ease, @delay: 0ms);
+}
+
+#left-panel-tab {
+  .absLayout(23px, -45px, initial, initial);
+  .right-triangle-green-small;
+  background-position: -499px -159px;
+  height: 62px;
+  width: 45px;
+  background-color: @dotGrayHEX;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  cursor: pointer;
 }
 
 #navigation {
@@ -1218,6 +1262,9 @@ a, a:visited {
 
   }
 }
+.screen-reader-text {
+  font-size: 0;
+}
 
 .page-title {
   text-transform: uppercase;
@@ -1238,14 +1285,13 @@ a, a:visited {
 
 
 #footer {
-  border-top: @grayBorder;
   float: left;
   letter-spacing: 2px;
   position: relative;
   text-transform: uppercase;
   top: -1px;
   width: 100%;
-  height: 181px;
+  height: 350px;
 
   .right-triangle-green {
     left: 55px;
@@ -1254,7 +1300,7 @@ a, a:visited {
     z-index: 1;
 
     &:after {
-      .before(29px, -800px, inherit, 29px);
+      .before(29px, -450px, inherit, 29px);
       border-top: 1px solid @pantoneGreenLightHEX;
       height: 1px;
     }
@@ -1271,10 +1317,10 @@ a, a:visited {
 }
 
 #teaser {
-  margin-left: 85px;
+  margin-left: 60px;
   position: relative;
   text-align: center;
-  top: -17px;
+  top: -43px;
   z-index: 2;
 }
 
@@ -1282,7 +1328,7 @@ a, a:visited {
   .horizontalList;
   display: inline-block;
   font-size: 9px;
-  margin: 0 8px;
+  margin: 0 8px 150px;
   width: 124px;
   position: relative;
   top: 84px;
@@ -1394,18 +1440,35 @@ a, a:visited {
 // Logo
 
 #isly-logo-wrapper {
-  text-align: center;
-  padding-top: 11px;
-  background-color: @whiteHEX;
-  margin-left: 2px;
+  display: none;
 }
 
-#isly-logo {
+#isly-mobile-logo {
   .isly-logo;
-  display: inline-block;
   background-color: @whiteHEX;
+  background-size: 260%;
+  background-position: -5px -5px;
+  display: inline-block;
+  height: 94px;
+  margin-bottom: 39px;
+  right: -408px;
   position: relative;
+  top: 20px;
   z-index: 1;
+
+  &:before {
+    .before(48px, inherit, inherit, -408px);
+    border-top: @grayBorder;
+    height: 1px;
+    width: 408px;
+  }
+
+  &:after {
+    .before(48px, 40px, inherit, inherit);
+    border-top: @grayBorder;
+    height: 1px;
+    width: 40px;
+  }
 }
 
 #isly-logo-line {
@@ -1419,6 +1482,7 @@ a, a:visited {
 //  Search
 #s {
   .textInput;
+  background-color: @whiteHEX;
   width: 200px;
   height: 15px;
   position: relative;

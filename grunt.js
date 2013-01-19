@@ -46,7 +46,7 @@ module.exports = function(grunt) {
                 dest: 'mobile-style.css'
             },
             mobile_js: {
-                src: ['scripts/js/contactForm.js', 'scripts/mobile/js/*.js'],
+                src: ['scripts/js/contactForm.js', 'scripts/js/handlers.js', 'scripts/mobile/js/*.js'],
                 dest: 'scripts/mobile.js'
             }
         },

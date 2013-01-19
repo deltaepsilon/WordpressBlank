@@ -2,8 +2,7 @@ define('detection', ['jquery', 'cookies'], ($, Cookies) ->
   class detection
     constructor: (height, width, url) ->
       @url = url
-      Cookies.set 'mobileNotification', false
-      if (screen.height > height || screen.width > width) && Cookies.get('mobileNotification') != 'notified' || 1==1
+      if (screen.height > height || screen.width > width) && Cookies.get('mobileNotification') != 'notified'
         @prompt()
     prompt: ->
       template = $(@getTemplate())
