@@ -6,7 +6,9 @@ define('mobileHandlers', ['jquery'], ($) ->
       @register()
     register: ->
       that = this
-      @tab.on 'click', ->
+      @tab.on 'click touchstart', (e) ->
+        e.preventDefault();
+        console.log('clicked')
         that.body.toggleClass 'sidebar-open'
   mobileHandlers =
     sidebarHandler: sidebarHandler
