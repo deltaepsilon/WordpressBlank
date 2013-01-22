@@ -531,7 +531,7 @@ a, a:visited {
 }
 
 #isly-contact-message-wrapper {
-  display: inline-block;  
+  display: inline-block;
   position: relative;
   left: 244px;
 
@@ -578,7 +578,7 @@ a, a:visited {
   }
 
   .menu {
-    height: 30px;
+    height: 54px;
     background-image: @background1;
     text-align: justify;
     text-transform: uppercase;
@@ -590,9 +590,9 @@ a, a:visited {
   }
 
   a {
-    padding: 8px 25px 7px;
+    padding: 17px;
     letter-spacing: 2px;
-    font-size: 11px;
+    font-size: 14px;
     display: inline-block;
 
     &:hover, &.selected {
@@ -1186,7 +1186,7 @@ body.sidebar-open {
 }
 
 #left-panel-tab {
-  .absLayout(41px, -58px, initial, initial);
+  .absLayout(104px, -58px, initial, initial);
   .right-triangle-green-small;
   background-position: -496px -159px;
   height: 62px;
@@ -1195,6 +1195,12 @@ body.sidebar-open {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   cursor: pointer;
+
+  &:before {
+    content: "";
+    display: block;
+    .absLayout(-25px, -50px, -25px, 0);
+  }
 }
 
 #navigation {
@@ -1664,112 +1670,44 @@ body.sidebar-open {
   left: 191px;
   text-align: left;
 }
+.overlay-link {
+  float: left;
+  height: 120px;
+  width: 145px;
+  position: relative;
+  display: block;
+  top: -86px;
+  z-index: 1;
+}
+.overlay-right {
+  left: -25px;
+  float: right;
+}
 
 //  Categories and Archives
 .widget_categories, .widget_archive {
-  @width: 112px;
-  width: @width;
-  float: left;
-  position: relative;
-  margin-bottom: 45px;
-
-  &.open {
-    h2:before {
-      .triangle-down-white;
-      top: 13px;
-    }
-
-    .drop-down {
-      display: block;
-    }
-  }
+  margin: 20px 30px;
 
   h2 {
-    .isly-sidebar-title;
-    cursor: pointer;
-    margin: 0;
-    padding-left: 28px;
-    padding-right: 6px;
-    position: relative;
-    width: @width;
-
-
-    &:before {
-      .before(10px, inherit, inherit, 17px);
-      .triangle-right-white;
-    }
-  }
-
-
-
-  select {
     display: none;
   }
-}
 
-.widget_categories {
-  margin: 0 43px 45px 29px;
+  select {
+    background-image: @background1;
+    color: @whiteHEX;
+    font-size: 13px;
+    font-family: 'Cantarell' !important;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 300px;
+    height: 45px;
+  }
 }
 
 .widget_archive {
   z-index: 1;
 
-}
-
-//  Custom Drop Down
-.drop-down {
-  border: 1px solid @lineGrayHEX;
-  border-top: 0;
-  display: none;
-  position: relative;
-  width: 144px;
-  height: 130px;
-//  overflow: hidden; //Disable sliders
-  overflow: auto; //Disable sliders
-}
-.drop-down-list {
-  list-style-type: none;
-  text-overflow: ellipsis;
-  text-align: center;
-  text-transform: uppercase;
-//  margin: 0 10px 0 0; //Disable sliders
-  margin: 0;
-  position: relative;
-  top: 0;
-}
-
-.sliding {
-  &:before {
-    .before(0, 0, 0, 0);
-    z-index: 1;
-  }
-}
-
-.dropDownItem {
-  padding: 2px 0px 2px 3px;
-
-  &:hover, &.selected {
-    background-color: @lineGrayHEX;
-    color: @whiteHEX;
-  }
-}
-
-.dropDownItemLink {
-
-}
-
-.slider {
-  .absLayout(0, 0, 0, inherit);
-  border-left: 1px solid @lineGrayHEX;
-  width: 9px;
-  z-index: 10;
-  display: none;
-}
-
-.slider-bar {
-  background-color: @lineGrayHEX;
-  position: relative;
-  top: 0;
 }
 
 //  Copyright
