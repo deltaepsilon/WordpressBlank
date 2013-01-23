@@ -52,7 +52,7 @@
 			echo "<link rel='stylesheet' href='/wp-content/themes/isly-2013/mobile-style.css' type='text/css'>";
 			echo "<script type='text/javascript' data-main='/wp-content/themes/isly-2013/scripts/mobile.js' src='/wp-content/themes/isly-2013/scripts/require.js'></script>";
 		} else {
-			echo "<meta name='viewport' content='width=970, initial-scale=1.0, user-scalable=no'/>";
+			echo "<meta name='viewport' content='width=970, user-scalable=no'/>";
 			echo "<link rel='stylesheet' href='/wp-content/themes/isly-2013/style.css' type='text/css'>";
 			echo "<script type='text/javascript' data-main='/wp-content/themes/isly-2013/scripts/main.js' src='/wp-content/themes/isly-2013/scripts/require.js'></script>";
 		}

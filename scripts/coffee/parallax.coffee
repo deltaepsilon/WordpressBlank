@@ -2,7 +2,6 @@ define('parallax', ['jquery'], ($) ->
   class parallax
     constructor: (positioner) ->
       @scrollTarget = $(window)
-      console.log 'ready to parallax'
 
       @positioner = positioner
       @positioner()
