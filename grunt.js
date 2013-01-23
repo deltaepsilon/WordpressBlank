@@ -42,7 +42,7 @@ module.exports = function(grunt) {
                 dest: 'scripts/main.js'
             },
             mobile_css: {
-                src: ['styles/mobile/css/*.css'],
+                src: ['styles/css/reset.css', 'styles/mobile/css/*.css'],
                 dest: 'mobile-style.css'
             },
             mobile_js: {
