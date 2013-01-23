@@ -1,5 +1,4 @@
 define('mobileHandlers', ['jquery', 'jquery.move', 'jquery.swipe'], ($, move, swipe) ->
-  console.log arguments
   class sidebarHandler
     constructor: ->
       @tab = $('#left-panel-tab')
