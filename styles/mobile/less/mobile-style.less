@@ -368,6 +368,14 @@ a, a:visited {
     font-style: italic;
     color: @pantoneGreenHEX;
   }
+
+  a, a:visited {
+    color: @pantoneGreenHEX;
+  }
+  a:hover {
+    color: @pantoneGreenHEX;
+    text-decoration: underline;
+  }
 }
 
 #page-wrap {
@@ -617,6 +625,7 @@ a, a:visited {
 .post-title {
   font-size: 14px;
   font-style: normal;
+  font-weight: bold;
   letter-spacing: 2px;
   color: @pantoneGreenHEX;
   text-align: center;
@@ -639,18 +648,17 @@ a, a:visited {
   text-align: center;
   color: @pantoneGreenHEX;
   font-size: 10px;
+  font-style: italic;
 }
 
 .entry {
   margin: 0 @postPadding;
-  font-size: 11px;
-
-
+  font-size: 13px;
 }
 
-.pinterest-hover {
-  opacity: .8;
-}
+//.pinterest-hover {
+//  opacity: .8;
+//}
 
 .isly-divider {
   height: 1px;
@@ -814,6 +822,12 @@ a, a:visited {
   cursor: pointer;
 }
 
+.home {
+  .comment-view-button {
+    cursor: pointer;
+  }
+}
+
 .categories-list {
   display: inline-block;
   width: 70%;
@@ -880,7 +894,7 @@ a, a:visited {
 .comment-body {
   padding: 2px 3px;
   p {
-    font-size: 10px;
+    font-size: 12px;
     line-height: 13px;
   }
 }
@@ -893,6 +907,7 @@ a, a:visited {
 
 .fn {
   text-transform: uppercase;
+  font-style: normal;
 }
 
 .says {
@@ -1062,6 +1077,9 @@ a, a:visited {
   }
 }
 
+.comment-subscription-form {
+  font-size: 12px;
+}
 
 .home {
   .comment-list-wrapper, .respond {
@@ -1322,10 +1340,10 @@ body.sidebar-open {
 }
 
 #teaser {
-  margin-left: 60px;
+  margin-left: 85px;
   position: relative;
   text-align: center;
-  top: -43px;
+  top: -20px;
   z-index: 2;
 }
 

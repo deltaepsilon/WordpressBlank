@@ -15,3 +15,5 @@
 		</div>
 	<?php } ?>
 </div>
+
+<?php edit_post_link('Edit this entry','',''); ?>

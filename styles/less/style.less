@@ -353,6 +353,14 @@ a, a:visited {
     font-style: italic;
     color: @pantoneGreenHEX;
   }
+
+  a, a:visited {
+    color: @pantoneGreenHEX;
+  }
+  a:hover {
+    color: @pantoneGreenHEX;
+    text-decoration: underline;
+  }
 }
 
 #page-wrap {
@@ -601,6 +609,7 @@ a, a:visited {
 .post-title {
   font-size: 14px;
   font-style: normal;
+  font-weight: bold;
   letter-spacing: 2px;
   color: @pantoneGreenHEX;
   text-align: center;
@@ -623,18 +632,17 @@ a, a:visited {
   text-align: center;
   color: @pantoneGreenHEX;
   font-size: 10px;
+  font-style: italic;
 }
 
 .entry {
   margin: 0 @postPadding;
-  font-size: 11px;
-
-
+  font-size: 13px;
 }
 
-.pinterest-hover {
-  opacity: .8;
-}
+//.pinterest-hover {
+//  opacity: .8;
+//}
 
 .isly-divider {
   height: 1px;
@@ -795,7 +803,12 @@ a, a:visited {
   padding: 9px 16px;
   left: 0;
   letter-spacing: 2px;
-  cursor: pointer;
+}
+
+.home {
+  .comment-view-button {
+    cursor: pointer;
+  }
 }
 
 .categories-list {
@@ -862,7 +875,7 @@ a, a:visited {
 .comment-body {
   padding: 2px 3px;
   p {
-    font-size: 10px;
+    font-size: 12px;
     line-height: 13px;
   }
 }
@@ -875,6 +888,7 @@ a, a:visited {
 
 .fn {
   text-transform: uppercase;
+  font-style: normal;
 }
 
 .says {
@@ -1048,6 +1062,10 @@ a, a:visited {
   }
 }
 
+.comment-subscription-form {
+  font-size: 12px;
+}
+
 
 .home {
   .comment-list-wrapper, .respond {
@@ -1129,8 +1147,13 @@ a, a:visited {
 }
 
 .post-edit-link {
+  font-size: 11px;
   text-transform: uppercase;
-  margin: 30px;
+  margin: 10px 30px;
+  padding: 2px 5px;
+  background-color: @pantoneGreenHEX;
+  color: @whiteHEX !important;
+  display: inline-block;
 }
 
 //  Tags

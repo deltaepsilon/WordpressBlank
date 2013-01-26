@@ -18,7 +18,7 @@
 					$hasMoreLink = preg_match("/class=\"more-link\"/", $content);
 					$isFrontPage = get_query_var('paged');
 
-					if ($isFrontPage == 0 && $wp_query->current_post < 5) {
+					if ($isFrontPage == 0 && $wp_query->current_post < 10) {
 						echo $content;
 					} else { //Deal with truncated posts
 						$title = get_the_title();

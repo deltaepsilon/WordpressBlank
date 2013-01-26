@@ -31,7 +31,7 @@ if (count($errors) == 0) {
 	$headers = "From: $email\r\n";
 	$headers .= "Reply-To: $email\r\n";
 	$headers .= "Content-Type: text/html\r\n";
-	$result = mail('christopheresplin@gmail.com', $subject, $body, $headers);
+	$result = mail('melissa@melissaesplin.com', $subject, $body, $headers);
 	if ($result) {
 		echo json_encode(array( 'type' => 'success', 'notifications' => array(array('notification' => 'Email sent'))));
 		return;

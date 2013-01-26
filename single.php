@@ -15,8 +15,6 @@
 				<?php wp_link_pages(array('before' => 'Pages: ', 'next_or_number' => 'number')); ?>
 
 			</div>
-			
-			<?php edit_post_link('Edit this entry','',''); ?>
 
 			<?php comments_template(); ?>
 

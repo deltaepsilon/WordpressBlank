@@ -1,7 +1,8 @@
 define('detection', ['jquery', 'cookies'], ($, Cookies) ->
   class detection
-    constructor: (height, width, url) ->
-      @url = url
+    constructor: (height, width, subdomain) ->
+      @url = location.protocol + '//' + subdomain + '.' + location.host
+      @newDomain = subdomain + '.' + location.host
       if (screen.height <= height || screen.width <= width) && Cookies.get('mobileNotification') != 'notified'
         @prompt()
     prompt: ->
@@ -15,7 +16,7 @@ define('detection', ['jquery', 'cookies'], ($, Cookies) ->
       return """
              <div id="mobile-prompt" class="notification">
               <a href="#{@url}" class="mobile-prompt-message">
-                We have a mobile site: m.melissaesplin.com
+                Return to the full site: #{@newDomain}
               </a>
              </div>
              """
