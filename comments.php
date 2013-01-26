@@ -15,7 +15,10 @@
 	<div id="comments-<?php the_ID(); ?>" class="comments-header" data-id="<?php the_ID(); ?>">
 		<span class="comment-view-button">view or add a comment</span>
 		<div class="categories-list">
-			<?php wp_list_categories(); ?>
+			<li class="categories">
+				Categories
+				<?php the_category(); ?>
+			</li>
 		</div>
 
 	</div>
