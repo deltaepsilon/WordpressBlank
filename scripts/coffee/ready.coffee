@@ -34,4 +34,4 @@ require ['jquery', 'parallax', 'handlers', 'customDropDown', 'contactForm', 'det
 #      ,
 #        notification: 'this is sadder'
 #      ]
-    new detection(480, 480, 'm');
+    new detection(480, 480, 'm.');
