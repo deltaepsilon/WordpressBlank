@@ -11,7 +11,7 @@ define('mobileDetection', ['jquery', 'cookies'], ($, Cookies) ->
       $('body').append template
       template.slideToggle().delay(10000).slideToggle()
       Cookies.set('mobileNotification', 'notified',
-        expires: 604800 #one week expiration
+        expires: 2419200 #one month expiration
       )
     getTemplate: ->
       return """
