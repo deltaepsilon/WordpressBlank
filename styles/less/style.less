@@ -390,7 +390,7 @@ a, a:visited {
       margin-left: 0px;
     }
     #isly-logo {
-      left: -3px;
+      left: -4px;
     }
     #sidebar {
       padding-top: 268px;
@@ -401,18 +401,16 @@ a, a:visited {
     #searchform {
       background-color: @whiteHEX;
       position: fixed;
-      top: 143px;
+      top: 144px;
       z-index: 2;
 
       &:before {
-        .before(35px, -24px, inherit, 0);
-        height: 43px;
-        background-color: @whiteHEX;
+        right: -30px;
       }
     }
     #isly-social {
       position: fixed;
-      top: 178px;
+      top: 179px;
       z-index: 3;
     }
   }
@@ -1448,7 +1446,7 @@ a, a:visited {
   text-align: center;
   padding-top: 11px;
   background-color: @whiteHEX;
-  margin-left: 2px;
+  margin-left: 0px;
 }
 
 #isly-logo {
@@ -1479,6 +1477,14 @@ a, a:visited {
 
 #searchform {
   padding: 13px 0px 0px 30px;
+  position: relative;
+
+  &:before {
+    .before(35px, -7px, inherit, 0);
+    height: 60px;
+    background-color: @whiteHEX;
+    border-bottom: @grayBorder;
+  }
 }
 
 #searchsubmit {
@@ -1492,9 +1498,10 @@ a, a:visited {
   width: 280px;
   height: 20px;
   background-position: -2px -158px;
-  margin: 32px 0 38px;
+  margin: 12px 0 57px;
   padding: 0 42px;
   text-align: justify;
+  position: relative;
 
   li {
     .horizontalList;
