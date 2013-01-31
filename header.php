@@ -75,6 +75,7 @@
 			<input type="text" id="isly-contact-name" class="isly-contact-input isly-contact-left" placeholder="NAME" name="name" required/>
 			<input type="text" id="isly-contact-email" class="isly-contact-input isly-contact-left" placeholder="EMAIL" name="email" required/>
 			<input type="text" id="isly-contact-subject" class="isly-contact-input isly-contact-left" placeholder="SUBJECT" name="subject"/>
+            <input type="integer" id="isly-contact-captcha" class="isly-contact-input isly-contact-left" placeholder="1+1=?" name="captcha" required/>
 		</div>
 		<div id="isly-contact-message-wrapper">
 			<textarea id="isly-contact-message" class="isly-contact-input" placeholder="TYPE YOUR MESSAGE HERE ..." name="body" required></textarea>

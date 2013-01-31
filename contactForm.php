@@ -5,10 +5,11 @@
  * Date: 1/1/13
  * Time: 9:26 PM
  */
-$name = $_POST['name'];
+$name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
 $email = $_POST['email'];
-$subject = $_POST['subject'];
-$body = $_POST['body'];
+$subject = filter_var($_POST['subject'], FILTER_SANITIZE_STRING);
+$body = filter_var($_POST['body'], FILTER_SANITIZE_STRING);
+$captcha = filter_var(intval($_POST['captcha']), FILTER_SANITIZE_NUMBER_INT);
 
 $errors = array();
 
@@ -24,6 +25,10 @@ if (empty($email)) {
 
 if (empty($body)) {
 	$errors[] = array('notification' => 'Sender body is empty.');
+}
+
+if (empty($captcha) || $captcha != 2) {
+	$errors[] = array('notification' => "You'd best not be a dirty spammer. What is 1+1? Just type 2. Really. Just 2.  You typed ".$captcha.".");
 }
 
 if (count($errors) == 0) {
