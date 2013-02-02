@@ -1391,7 +1391,7 @@ body.sidebar-open {
 }
 
 .thumbnail-wrapper {
-  @wrapperWidth: 205px;
+  @wrapperWidth: 185px;
   margin: -128px 0 0 -10px;
   border: 1px solid @pantoneGreenHEX;
   border-radius: @wrapperWidth;
@@ -1400,13 +1400,13 @@ body.sidebar-open {
   margin-bottom: 15px;
   padding: 5px;
   width: @wrapperWidth;
+  overflow: hidden;
 
   .wp-post-image {
-    height: @wrapperWidth;
-    width: @wrapperWidth;
-    border-radius: @wrapperWidth;
     background: @whiteHEX;
     position: relative;
+    top: -7px;
+    left: -7px;
   }
 }
 
