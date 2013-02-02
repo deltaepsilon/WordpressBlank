@@ -217,34 +217,8 @@
   height: 116px;
 }
 
-/*  Fonts */
-@font-face {
-  font-family: 'Cantarell';
-  font-style: italic;
-  font-weight: 700;
-  src: local('Cantarell Bold Oblique'), local('Cantarell-BoldOblique'), url(http://themes.googleusercontent.com/static/fonts/cantarell/v3/weehrwMeZBXb0QyrWnRwFRbnBKKEOwRKgsHDreGcocg.woff) format('woff');
-}
-@font-face {
-  font-family: 'Cantarell';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Cantarell Bold'), local('Cantarell-Bold'), url(http://themes.googleusercontent.com/static/fonts/cantarell/v3/Yir4ZDsCn4g1kWopdg-ehKRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
-}
-@font-face {
-  font-family: 'Cantarell';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Cantarell Oblique'), local('Cantarell-Oblique'), url(http://themes.googleusercontent.com/static/fonts/cantarell/v3/Qd6zZq_wf1596L3V_8MIs7rIa-7acMAeDBVuclsi6Gc.woff) format('woff');
-}
-@font-face {
-  font-family: 'Cantarell';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Cantarell Regular'), local('Cantarell-Regular'), url(http://themes.googleusercontent.com/static/fonts/cantarell/v3/V86VyqXbc09Sss3BPsMj17O3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
-}
-
 .primaryFont {
-  font-family: 'Cantarell', sans-serif !important;
+  font-family: 'Trebuchet', 'Trebuchet MS', sans-serif !important;
 }
 
 /*  Colors */
@@ -348,7 +322,7 @@ a, a:visited {
     text-transform: uppercase;
   }
 
-  h2 {
+  h2, h5 {
     font-size: 11px;
     font-style: italic;
     color: @pantoneGreenHEX;
@@ -508,6 +482,10 @@ a, a:visited {
   .isly-input;
 }
 
+.isly-contact-label {
+  display: none;
+}
+
 #isly-contact-left-wrapper {
   .absLayout(33px, inherit, inherit, 28px);
   width: 196px;
@@ -579,7 +557,7 @@ a, a:visited {
   }
 
   a {
-    padding: 8px 23px 7px;
+    padding: 8px 23px 7px 22px;
     letter-spacing: 2px;
     font-size: 11px;
     display: inline-block;
@@ -596,7 +574,18 @@ a, a:visited {
   }
 
   .post {
-    padding-top: 14px;
+    padding-top: 15px;
+  }
+}
+
+.msie {
+  #you-might-like {
+    top: 20px;
+    left: 20px;
+  }
+
+  .isly-contact-label {
+    display: block;
   }
 }
 
@@ -622,7 +611,7 @@ a, a:visited {
 }
 
 .post {
-  padding: 15px 0px
+  padding: 16px 0px
 }
 
 .meta {
@@ -1370,7 +1359,7 @@ a, a:visited {
 }
 
 .thumbnail-wrapper {
-  @wrapperWidth: 205px;
+  @wrapperWidth: 198px;
   margin: -128px 0 0 -10px;
   border: 1px solid @pantoneGreenHEX;
   border-radius: @wrapperWidth;
@@ -1379,13 +1368,13 @@ a, a:visited {
   margin-bottom: 15px;
   padding: 5px;
   width: @wrapperWidth;
+  overflow: hidden;
 
   .wp-post-image {
-    height: @wrapperWidth;
-    width: @wrapperWidth;
-    border-radius: @wrapperWidth;
     background: @whiteHEX;
     position: relative;
+    top: -7px;
+    left: -7px;
   }
 }
 

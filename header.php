@@ -72,12 +72,17 @@
 			<li class="notification"></li>
 		</ul>
 		<div id="isly-contact-left-wrapper">
+			<label class="isly-contact-label" for="isly-contact-name">NAME</label>
 			<input type="text" id="isly-contact-name" class="isly-contact-input isly-contact-left" placeholder="NAME" name="name" required/>
+            <label class="isly-contact-label" for="isly-contact-email">EMAIL</label>
 			<input type="text" id="isly-contact-email" class="isly-contact-input isly-contact-left" placeholder="EMAIL" name="email" required/>
+            <label class="isly-contact-label" for="isly-contact-subject">SUBJECT</label>
 			<input type="text" id="isly-contact-subject" class="isly-contact-input isly-contact-left" placeholder="SUBJECT" name="subject"/>
+            <label class="isly-contact-label" for="isly-contact-captcha">1+1=?</label>
             <input type="integer" id="isly-contact-captcha" class="isly-contact-input isly-contact-left" placeholder="1+1=?" name="captcha" required/>
 		</div>
 		<div id="isly-contact-message-wrapper">
+            <label class="isly-contact-label" for="isly-contact-message">TYPE YOUR MESSAGE HERE...</label>
 			<textarea id="isly-contact-message" class="isly-contact-input" placeholder="TYPE YOUR MESSAGE HERE ..." name="body" required></textarea>
 		</div>
 		<button id="isly-contact-submit" class="isly-contact-input">SUBMIT</button>
