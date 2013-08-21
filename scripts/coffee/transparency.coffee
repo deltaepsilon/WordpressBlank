@@ -1,0 +1,3 @@
+define('transparency', ->
+  return Transparency;
+)

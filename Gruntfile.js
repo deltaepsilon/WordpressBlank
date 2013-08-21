@@ -24,12 +24,18 @@ module.exports = function(grunt) {
         },
         coffee: {
             app: {
+                expand: true,
+                flatten: true,
                 src: ['scripts/coffee/*.coffee'],
-                dest: 'scripts/js'
+                dest: 'scripts/js/',
+                ext: '.js'
             },
             mobile: {
+                expand: true,
+                flatten: true,
                 src: ['scripts/mobile/coffee/*.coffee'],
-                dest: 'scripts/mobile/js'
+                dest: 'scripts/mobile/js/',
+                ext: '.js'
             }
         },
         concat: {
@@ -53,17 +59,19 @@ module.exports = function(grunt) {
         watch: {
             less: {
                 files: ['styles/less/*', 'styles/mobile/less/*'],
-                tasks:'less concat'
+                tasks: ['less', 'concat']
             },
             js: {
                 files: ['scripts/coffee/*', 'scripts/mobile/coffee/*'],
-                tasks:'coffee concat'
+                tasks: ['coffee', 'concat']
             }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-coffee');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-coffee');
+    grunt.loadNpmTasks('grunt-contrib-concat');
 
 
     grunt.registerTask('default', ['less', 'coffee', 'concat']);

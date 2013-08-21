@@ -1,21 +1,22 @@
 {
-	"name": "ISLY 2013",
-	"description": "Designed by and for Melissa Esplin for use on melissaesplin.com",
-	"version": "1.0",
-	"author": "Christopher Esplin (http://christopheresplin.com)",
-	"homepage": "http://melissaesplin.com",
-	"repository": {
-		"type": "git",
-		"url": "git@github.com:deltaepsilon/WordpressBlank.git"
-	},
-	"engines": {
-		"node": ">= 0.8.0"
-	},
-	"devDependencies": {
-		"less": ">= 1.1.6",
-		"coffee-script": ">= 1.1.2",
-		"grunt": ">= 0.3.17",
-		"grunt-coffee": ">= 0.0.6",
-		"grunt-contrib-less": ">=0.3.2"
-	}
+  "name": "ISLY-2013",
+  "description": "Designed by and for Melissa Esplin for use on melissaesplin.com",
+  "version": "1.0.0",
+  "author": "Christopher Esplin (http://christopheresplin.com)",
+  "homepage": "http://melissaesplin.com",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:deltaepsilon/WordpressBlank.git"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "grunt-contrib-watch": "~0.5.2",
+    "grunt": "~0.4.1",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-less": "~0.7.0"
+  }
 }
