@@ -1,6 +1,7 @@
 define('contactForm', ['jquery', 'transparency'], ($, Transparency) ->
 
-  Transparency.register $
+#  Transparency.register $
+  jQuery.fn.render = Transparency.jQueryPlugin;
 
   class contactForm
     constructor: () ->

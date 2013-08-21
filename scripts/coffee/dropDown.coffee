@@ -1,6 +1,7 @@
 define('customDropDown', ['jquery', 'transparency'], ($, Transparency) ->
 
-  Transparency.register $
+#  Transparency.register $
+  jQuery.fn.render = Transparency.jQueryPlugin;
 
   class customDropDown
     constructor: (target, toggle, id, translator) ->
