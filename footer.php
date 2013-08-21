@@ -51,6 +51,11 @@
             echo "<script type='text/javascript' data-main='/wp-content/themes/isly-2013/scripts/main.js' src='/wp-content/themes/isly-2013/scripts/require.js'></script>";
         }
     ?>
+    <script type="text/javascript">
+        require.config({
+            baseUrl: "/wp-content/themes/isly-2013/scripts"
+        });
+    </script>
 	<!-- Don't forget analytics -->
     <script type="text/javascript">
 

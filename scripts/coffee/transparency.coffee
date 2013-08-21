@@ -1,3 +1,0 @@
-define('transparency', ->
-  return Transparency;
-)

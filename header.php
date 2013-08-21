@@ -42,7 +42,6 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
     <script type="text/javascript" src="/wp-content/themes/isly-2013/scripts/modernizr.custom.36318.js"></script>
-    <script type="text/javascript" src="/wp-content/themes/isly-2013/scripts/transparency.js"></script>
 
 	<?php
 
