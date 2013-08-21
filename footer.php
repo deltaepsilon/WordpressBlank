@@ -41,6 +41,16 @@
 
 
 	<?php wp_footer(); ?>
+
+    <?php
+        if($GLOBALS['mobile']) {
+            add_filter('home_url', 'mobilizeSiteUrl');
+            echo "<script>window.CDE = window.CDE || {};window.CDE.mobile = true;</script>";
+            echo "<script type='text/javascript' data-main='/wp-content/themes/isly-2013/scripts/mobile.js' src='/wp-content/themes/isly-2013/scripts/require.js'></script>";
+        } else {
+            echo "<script type='text/javascript' data-main='/wp-content/themes/isly-2013/scripts/main.js' src='/wp-content/themes/isly-2013/scripts/require.js'></script>";
+        }
+    ?>
 	<!-- Don't forget analytics -->
     <script type="text/javascript">
 
