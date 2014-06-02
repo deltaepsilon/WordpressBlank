@@ -5,6 +5,6 @@ define('detection', ['jquery', 'cookies'], ($, Cookies) ->
         Cookies.set('mobileNotification', 'notified',
           expires: 2419200 #four weeks expiration
         )
-        window.location = location.protocol + '//' + subdomain + location.host
+        window.location = location.protocol + '//' + subdomain + location.host + location.pathname
   return detection
 )
