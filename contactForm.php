@@ -10,7 +10,6 @@ $email = $_POST['email'];
 $subject = filter_var($_POST['subject'], FILTER_SANITIZE_STRING);
 $body = filter_var($_POST['body'], FILTER_SANITIZE_STRING);
 $captcha = filter_var(intval($_POST['captcha']), FILTER_SANITIZE_NUMBER_INT);
-
 $errors = array();
 
 if (empty($name)) {
@@ -33,10 +32,11 @@ if (empty($captcha) || $captcha != 2) {
 
 if (count($errors) == 0) {
 	$email = strip_tags($email);
-	$headers = "From: $email\r\n";
+	$headers = "From: melissa@melissaesplin.com\r\n";
 	$headers .= "Reply-To: $email\r\n";
 	$headers .= "Content-Type: text/html\r\n";
-	$result = mail('melissa@melissaesplin.com', $subject, $body, $headers);
+	$result = mail('melissaesplin@gmail.com', $subject, $body, $headers);
+	$secondCopy = mail('melissa@melissaesplin.com', $subject, $body, $headers);
 	if ($result) {
 		echo json_encode(array( 'type' => 'success', 'notifications' => array(array('notification' => 'Email sent'))));
 		return;
